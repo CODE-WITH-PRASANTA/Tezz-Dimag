@@ -1,121 +1,174 @@
 .HeroSection{
-    position: relative;
-    width: 100%;
-    height: 60vh;
-    overflow: hidden;
+position:relative;
+width:100%;
+height:90vh;
+overflow:hidden;
 }
 
-/* slide */
+/* slides */
 
 .HeroSection-slide{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: 0.8s;
+position:absolute;
+width:100%;
+height:100%;
+background-size:cover;
+background-position:center;
+opacity:0;
+transform:scale(1.08);
+transition:opacity 1s ease, transform 6s ease;
 }
 
 .HeroSection-slide.active{
-    opacity: 1;
+opacity:1;
+transform:scale(1);
 }
 
-/* overlay */
+/* gradient overlay */
 
 .HeroSection-overlay{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.45);
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(
+to right,
+rgba(150,0,0,0.55),
+rgba(0,0,0,0.45),
+rgba(0,0,0,0.25)
+);
 }
 
 /* content */
 
 .HeroSection-content{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center;
-    color: white;
-    width: 80%;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+color:white;
+width:80%;
+max-width:900px;
 }
+
+/* subtitle */
 
 .HeroSection-content h4{
-    font-size: 28px;
-    font-style: italic;
-    margin-bottom: 10px;
+font-size:32px;
+font-style:italic;
+margin-bottom:12px;
 }
 
+/* title */
+
 .HeroSection-content h1{
-    font-size: 55px;
-    font-weight: 700;
+font-size:65px;
+font-weight:700;
+letter-spacing:1px;
 }
 
 /* button */
 
+/* button */
+
+/* button */
+
 .HeroSection-btn{
-    margin-top: 25px;
-    display: inline-block;
-    padding: 12px 30px;
-    border: 2px solid white;
-    border-radius: 30px;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
+display:inline-block;
+margin-top:25px;
+padding:13px 34px;
+border:2px solid white;
+border-radius:40px;
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:all 0.3s ease;
+cursor:pointer;
 }
+
+/* hover */
 
 .HeroSection-btn:hover{
-    background:#00a2ff;
-    border-color:#00a2ff;
+background-color:#c81010 !important;
+border:2px solid #c81010 !important;
+color:white !important;
+transform:translateY(-3px);
 }
-
 /* arrows */
 
 .HeroSection-arrow{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 28px;
-    cursor: pointer;
-    z-index: 10;
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:transparent;
+border:none;
+color:white;
+font-size:32px;
+cursor:pointer;
+opacity:0.7;
+transition:0.3s;
+}
+
+.HeroSection-arrow:hover{
+opacity:1;
 }
 
 .HeroSection-arrow.left{
-    left: 25px;
+left:30px;
 }
 
 .HeroSection-arrow.right{
-    right: 25px;
+right:30px;
 }
 
 /* dots */
 
 .HeroSection-dots{
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center;
+position:absolute;
+bottom:25px;
+width:100%;
+text-align:center;
 }
 
 .HeroSection-dot{
-    height: 10px;
-    width: 10px;
-    background: white;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 0 6px;
-    opacity: 0.4;
-    cursor: pointer;
+height:10px;
+width:10px;
+background:white;
+border-radius:50%;
+display:inline-block;
+margin:0 6px;
+opacity:0.5;
+cursor:pointer;
+transition:0.3s;
 }
 
 .HeroSection-dot.active{
-    opacity: 1;
-    background:#00a2ff;
+background:#00a2ff;
+opacity:1;
+}
+
+/* text animation */
+
+.fade-up{
+opacity:0;
+transform:translateY(40px);
+animation:fadeUp 1s forwards;
+}
+
+.delay{
+animation-delay:.4s;
+}
+
+.delay2{
+animation-delay:.7s;
+}
+
+@keyframes fadeUp{
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
 }
 
 /* responsive */
@@ -123,15 +176,15 @@
 @media(max-width:992px){
 
 .HeroSection{
-height:70vh;
+height:75vh;
 }
 
 .HeroSection-content h1{
-font-size:40px;
+font-size:42px;
 }
 
 .HeroSection-content h4{
-font-size:22px;
+font-size:24px;
 }
 
 }
@@ -139,11 +192,15 @@ font-size:22px;
 @media(max-width:600px){
 
 .HeroSection{
-height:60vh;
+height:65vh;
+}
+
+.HeroSection-content{
+width:90%;
 }
 
 .HeroSection-content h1{
-font-size:28px;
+font-size:30px;
 }
 
 .HeroSection-content h4{
@@ -151,8 +208,12 @@ font-size:18px;
 }
 
 .HeroSection-btn{
-padding:10px 20px;
+padding:10px 22px;
 font-size:14px;
+}
+
+.HeroSection-arrow{
+font-size:24px;
 }
 
 }
