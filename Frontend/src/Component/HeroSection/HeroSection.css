@@ -1,0 +1,158 @@
+.HeroSection{
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+/* slide */
+
+.HeroSection-slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: 0.8s;
+}
+
+.HeroSection-slide.active{
+    opacity: 1;
+}
+
+/* overlay */
+
+.HeroSection-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+}
+
+/* content */
+
+.HeroSection-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: white;
+    width: 80%;
+}
+
+.HeroSection-content h4{
+    font-size: 28px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.HeroSection-content h1{
+    font-size: 55px;
+    font-weight: 700;
+}
+
+/* button */
+
+.HeroSection-btn{
+    margin-top: 25px;
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid white;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.HeroSection-btn:hover{
+    background:#00a2ff;
+    border-color:#00a2ff;
+}
+
+/* arrows */
+
+.HeroSection-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.HeroSection-arrow.left{
+    left: 25px;
+}
+
+.HeroSection-arrow.right{
+    right: 25px;
+}
+
+/* dots */
+
+.HeroSection-dots{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.HeroSection-dot{
+    height: 10px;
+    width: 10px;
+    background: white;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 6px;
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+.HeroSection-dot.active{
+    opacity: 1;
+    background:#00a2ff;
+}
+
+/* responsive */
+
+@media(max-width:992px){
+
+.HeroSection{
+height:70vh;
+}
+
+.HeroSection-content h1{
+font-size:40px;
+}
+
+.HeroSection-content h4{
+font-size:22px;
+}
+
+}
+
+@media(max-width:600px){
+
+.HeroSection{
+height:60vh;
+}
+
+.HeroSection-content h1{
+font-size:28px;
+}
+
+.HeroSection-content h4{
+font-size:18px;
+}
+
+.HeroSection-btn{
+padding:10px 20px;
+font-size:14px;
+}
+
+}
