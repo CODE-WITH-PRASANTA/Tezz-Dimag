@@ -1,0 +1,206 @@
+/* ===== NAVBAR WRAPPER ===== */
+
+.kgNavbar-wrapper{
+  width:100%;
+  background:#f5f6f8;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,0.06);
+}
+
+
+/* ===== CONTAINER ===== */
+
+.kgNavbar-container{
+  max-width:1300px;
+  margin:auto;
+  padding:14px 30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+
+/* ===== LOGO SECTION ===== */
+
+.kgNavbar-logoSection{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.kgNavbar-logoImg{
+  width:45px;
+}
+
+.kgNavbar-logoText{
+  font-size:20px;
+  font-weight:700;
+  color:#444;
+  letter-spacing:.5px;
+  white-space:nowrap;
+}
+
+
+/* ===== MENU ===== */
+
+.kgNavbar-menu{
+  display:flex;
+  gap:35px;
+  align-items:center;
+}
+
+.kgNavbar-link{
+  text-decoration:none;
+  color:#222;
+  font-weight:600;
+  font-size:16px;
+  letter-spacing:1px;
+  transition:all .3s ease;
+  position:relative;
+}
+
+.kgNavbar-link:hover{
+  color:#ff5757;
+}
+
+.kgNavbar-activeLink{
+  color:#ff5757;
+}
+
+
+/* ===== HAMBURGER ===== */
+
+.kgNavbar-toggleBtn{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+}
+
+.kgNavbar-toggleBtn span{
+  width:25px;
+  height:3px;
+  background:#333;
+  display:block;
+  border-radius:3px;
+  transition:.3s;
+}
+
+
+
+/* =========================
+   LARGE LAPTOP
+========================= */
+
+@media (max-width:1200px){
+
+  .kgNavbar-menu{
+    gap:25px;
+  }
+
+  .kgNavbar-link{
+    font-size:15px;
+  }
+
+}
+
+
+
+/* =========================
+   SMALL LAPTOP
+========================= */
+
+@media (max-width:1024px){
+
+  .kgNavbar-container{
+    padding:12px 20px;
+  }
+
+  .kgNavbar-menu{
+    gap:18px;
+  }
+
+  .kgNavbar-link{
+    font-size:14px;
+  }
+
+}
+
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width:900px){
+
+  .kgNavbar-toggleBtn{
+    display:flex;
+  }
+
+  .kgNavbar-menu{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:260px;
+    height:100vh;
+    background:white;
+    flex-direction:column;
+    padding-top:100px;
+    gap:30px;
+    box-shadow:-5px 0 20px rgba(0,0,0,0.08);
+    transition:.35s ease;
+    align-items:center;
+  }
+
+  .kgNavbar-menu a{
+    font-size:18px;
+  }
+
+  .kgNavbar-active{
+    right:0;
+  }
+
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:600px){
+
+  .kgNavbar-logoImg{
+    width:38px;
+  }
+
+  .kgNavbar-logoText{
+    font-size:17px;
+  }
+
+  .kgNavbar-menu{
+    width:230px;
+  }
+
+}
+
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width:400px){
+
+  .kgNavbar-logoText{
+    display:none;
+  }
+
+  .kgNavbar-logoImg{
+    width:36px;
+  }
+
+}

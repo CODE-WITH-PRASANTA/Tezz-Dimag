@@ -1,11 +1,76 @@
-import React from 'react'
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import "./Navbar.css";
+import logo from "../../assets/Logo.webp";
 
 const Navbar = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const [kgNavOpen, setKgNavOpen] = useState(false);
 
-export default Navbar
+  const toggleMenu = () => {
+    setKgNavOpen(!kgNavOpen);
+  };
+
+  const closeMenu = () => {
+    setKgNavOpen(false);
+  };
+
+  return (
+    <header className="kgNavbar-wrapper">
+      <div className="kgNavbar-container">
+
+        {/* Logo */}
+        <div className="kgNavbar-logoSection">
+          <img src={logo} alt="logo" className="kgNavbar-logoImg" />
+          <h2 className="kgNavbar-logoText">Kindergarten School</h2>
+        </div>
+
+        {/* Navigation */}
+        <nav className={`kgNavbar-menu ${kgNavOpen ? "kgNavbar-active" : ""}`}>
+
+          <NavLink to="/" onClick={closeMenu} className="kgNavbar-link">
+            Home
+          </NavLink>
+
+          <NavLink to="/about" onClick={closeMenu} className="kgNavbar-link">
+            About Us
+          </NavLink>
+
+          <NavLink to="/event" onClick={closeMenu} className="kgNavbar-link">
+            Event
+          </NavLink>
+
+          <NavLink to="/course" onClick={closeMenu} className="kgNavbar-link">
+            Course
+          </NavLink>
+
+          <NavLink to="/blog" onClick={closeMenu} className="kgNavbar-link">
+            Blog Page
+          </NavLink>
+
+          <NavLink to="/teacher" onClick={closeMenu} className="kgNavbar-link">
+            Teacher
+          </NavLink>
+
+          <NavLink to="/schedule" onClick={closeMenu} className="kgNavbar-link">
+            Schedule
+          </NavLink>
+
+          <NavLink to="/contact" onClick={closeMenu} className="kgNavbar-link">
+            Contact
+          </NavLink>
+
+        </nav>
+
+        {/* Mobile Toggle */}
+        <div className="kgNavbar-toggleBtn" onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+      </div>
+    </header>
+  );
+};
+
+export default Navbar;
