@@ -3,6 +3,7 @@ import "./App.css";
 
 import Navbar from "./Component/Navbar/Navbar";
 import Footer from "./Component/Footer/Footer";
+import Home from "./Pages/Home/Home";
 
  
 
@@ -11,7 +12,7 @@ import Footer from "./Component/Footer/Footer";
 
 
 /* Pages */
-import Home from "./Pages/Home/Home";
+
 
 function App() {
   return (
