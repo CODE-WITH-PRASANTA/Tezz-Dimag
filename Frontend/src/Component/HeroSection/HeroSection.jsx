@@ -3,9 +3,9 @@ import "./HeroSection.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import slide1 from "../../assets/slide1.jpg";
-import slide2 from "../../assets/slide2.jpg";
-import slide3 from "../../assets/slide3.jpg";
+import slide1 from "../../assets/slide_3.webp";
+import slide2 from "../../assets/slide_1.webp";
+import slide3 from "../../assets/slide_1.webp";
 
 const slides = [
   {
