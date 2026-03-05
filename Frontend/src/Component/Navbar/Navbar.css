@@ -1,3 +1,10 @@
+/* ===== GLOBAL FONT ===== */
+
+body{
+  font-family: 'Oswald', sans-serif;
+}
+
+
 /* ===== NAVBAR WRAPPER ===== */
 
 .kgNavbar-wrapper{
@@ -27,18 +34,18 @@
 .kgNavbar-logoSection{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:12px;
 }
 
 .kgNavbar-logoImg{
-  width:45px;
+  width:125px;
 }
 
 .kgNavbar-logoText{
-  font-size:20px;
-  font-weight:700;
+  font-size:16px;
+  font-weight:600;
   color:#444;
-  letter-spacing:.5px;
+  letter-spacing:.6px;
   white-space:nowrap;
 }
 
@@ -47,25 +54,31 @@
 
 .kgNavbar-menu{
   display:flex;
-  gap:35px;
+  gap:38px;
   align-items:center;
 }
 
 .kgNavbar-link{
   text-decoration:none;
   color:#222;
-  font-weight:600;
-  font-size:16px;
-  letter-spacing:1px;
+  font-weight:500;
+  font-size:18px;
+  letter-spacing:1.5px;
   transition:all .3s ease;
   position:relative;
 }
+
+
+/* Hover */
 
 .kgNavbar-link:hover{
   color:#ff5757;
 }
 
-.kgNavbar-activeLink{
+
+/* Active Link */
+
+.kgNavbar-link.active{
   color:#ff5757;
 }
 
@@ -80,12 +93,10 @@
 }
 
 .kgNavbar-toggleBtn span{
-  width:25px;
+  width:26px;
   height:3px;
   background:#333;
-  display:block;
-  border-radius:3px;
-  transition:.3s;
+  border-radius:2px;
 }
 
 
@@ -101,7 +112,7 @@
   }
 
   .kgNavbar-link{
-    font-size:15px;
+    font-size:17px;
   }
 
 }
@@ -123,7 +134,7 @@
   }
 
   .kgNavbar-link{
-    font-size:14px;
+    font-size:16px;
   }
 
 }
@@ -146,7 +157,7 @@
     right:-100%;
     width:260px;
     height:100vh;
-    background:white;
+    background:rgb(249, 248, 248);
     flex-direction:column;
     padding-top:100px;
     gap:30px;
@@ -155,8 +166,8 @@
     align-items:center;
   }
 
-  .kgNavbar-menu a{
-    font-size:18px;
+  .kgNavbar-link{
+    font-size:20px;
   }
 
   .kgNavbar-active{
@@ -178,7 +189,7 @@
   }
 
   .kgNavbar-logoText{
-    font-size:17px;
+    font-size:18px;
   }
 
   .kgNavbar-menu{

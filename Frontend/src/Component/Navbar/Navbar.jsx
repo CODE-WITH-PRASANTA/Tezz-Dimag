@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../assets/Logo.webp";
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet"></link>
 
 const Navbar = () => {
   const [kgNavOpen, setKgNavOpen] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="kgNavbar-logoSection">
           <img src={logo} alt="logo" className="kgNavbar-logoImg" />
-          <h2 className="kgNavbar-logoText">Kindergarten School</h2>
+        
         </div>
 
         {/* Navigation */}
@@ -61,7 +62,7 @@ const Navbar = () => {
 
         </nav>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Menu Button */}
         <div className="kgNavbar-toggleBtn" onClick={toggleMenu}>
           <span></span>
           <span></span>
