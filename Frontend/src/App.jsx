@@ -4,6 +4,12 @@ import "./App.css";
 import Navbar from "./Component/Navbar/Navbar";
 import Footer from "./Component/Footer/Footer";
 
+ 
+
+
+/* Navbar */
+
+
 /* Pages */
 import Home from "./Pages/Home/Home";
 
@@ -18,6 +24,9 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Home />} />
+      
+      
+       
 
       </Routes>
 

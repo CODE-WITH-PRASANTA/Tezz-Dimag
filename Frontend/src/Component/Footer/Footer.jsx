@@ -24,7 +24,7 @@ const Footer = () => {
 
           <div className="kgFooter-logoBox">
             <img src={logo} alt="logo" className="kgFooter-logoImg" />
-            <h3 className="kgFooter-schoolName">Kindergarten School</h3>
+            
           </div>
 
           <p className="kgFooter-description">

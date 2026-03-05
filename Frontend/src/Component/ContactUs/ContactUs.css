@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap');
+
+
+/* WRAPPER */
+
+.ContactUs-wrapper{
+  padding:50px 20px 0;
+  background:#f5f6f8;
+  font-family:'Baloo 2', cursive;
+}
+
+
+/* HEADER */
+
+.ContactUs-header{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.ContactUs-title{
+  font-size:52px;
+  color:#8a2fa0;
+  font-weight:700;
+}
+
+.ContactUs-subtitle{
+  margin-top:6px;
+  font-size:18px;
+  color:#777;
+}
+
+
+/* GRID */
+
+.ContactUs-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:40px;
+}
+
+
+/* CARD */
+
+.ContactUs-card{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.ContactUs-card h4{
+  font-size:20px;
+  margin-bottom:6px;
+}
+
+.ContactUs-card p{
+  color:#777;
+  line-height:1.6;
+}
+
+
+/* ICON */
+
+.ContactUs-icon{
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  border:2px solid;
+}
+
+
+/* ICON COLORS */
+
+.ContactUs-icon.orange{
+  color:#ff7a45;
+  border-color:#ff7a45;
+}
+
+.ContactUs-icon.blue{
+  color:#55c1e7;
+  border-color:#55c1e7;
+}
+
+.ContactUs-icon.yellow{
+  color:#f3b21a;
+  border-color:#f3b21a;
+}
+
+.ContactUs-icon.green{
+  color:#37c978;
+  border-color:#37c978;
+}
+
+
+/* MAP */
+
+.ContactUs-map{
+  margin-top:70px;
+  width:100%;
+  height:420px;
+}
+
+.ContactUs-map iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+
+
+/* RESPONSIVE */
+
+@media (max-width:1024px){
+
+  .ContactUs-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media (max-width:600px){
+
+  .ContactUs-grid{
+    grid-template-columns:1fr;
+  }
+
+  .ContactUs-title{
+    font-size:36px;
+  }
+
+}
