@@ -100,6 +100,14 @@ body{
 }
 
 
+/* ===== CLOSE BUTTON ===== */
+/* hidden on desktop */
+
+.kgNavbar-closeBtn{
+  display:none;
+}
+
+
 
 /* =========================
    LARGE LAPTOP
@@ -142,7 +150,7 @@ body{
 
 
 /* =========================
-   TABLET
+   TABLET & MOBILE MENU
 ========================= */
 
 @media (max-width:900px){
@@ -157,21 +165,40 @@ body{
     right:-100%;
     width:260px;
     height:100vh;
-    background:rgb(249, 248, 248);
+    background:#f9f8f8;
     flex-direction:column;
-    padding-top:100px;
-    gap:30px;
+    padding-top:90px;
+    gap:0;
     box-shadow:-5px 0 20px rgba(0,0,0,0.08);
     transition:.35s ease;
-    align-items:center;
-  }
-
-  .kgNavbar-link{
-    font-size:20px;
+    align-items:stretch;
   }
 
   .kgNavbar-active{
     right:0;
+  }
+
+  /* CLOSE BUTTON */
+
+  .kgNavbar-closeBtn{
+    display:block;
+    position:absolute;
+    top:20px;
+    left:20px;
+    font-size:30px;
+    cursor:pointer;
+    font-weight:600;
+    color:#000;
+  }
+
+  /* MOBILE MENU LINKS */
+
+  .kgNavbar-link{
+    font-size:20px;
+    width:100%;
+    padding:16px 0;
+    text-align:center;
+    border-bottom:1px solid #000;
   }
 
 }

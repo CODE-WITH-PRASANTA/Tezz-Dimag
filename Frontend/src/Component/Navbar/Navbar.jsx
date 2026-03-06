@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../assets/Logo.webp";
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet"></link>
+import { IoClose } from "react-icons/io5";
 
 const Navbar = () => {
   const [kgNavOpen, setKgNavOpen] = useState(false);
@@ -22,11 +22,15 @@ const Navbar = () => {
         {/* Logo */}
         <div className="kgNavbar-logoSection">
           <img src={logo} alt="logo" className="kgNavbar-logoImg" />
-        
         </div>
 
         {/* Navigation */}
         <nav className={`kgNavbar-menu ${kgNavOpen ? "kgNavbar-active" : ""}`}>
+
+          {/* Close Button (Mobile Only via CSS) */}
+          <div className="kgNavbar-closeBtn" onClick={closeMenu}>
+            <IoClose />
+          </div>
 
           <NavLink to="/" onClick={closeMenu} className="kgNavbar-link">
             Home
@@ -62,7 +66,7 @@ const Navbar = () => {
 
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Hamburger Button */}
         <div className="kgNavbar-toggleBtn" onClick={toggleMenu}>
           <span></span>
           <span></span>
