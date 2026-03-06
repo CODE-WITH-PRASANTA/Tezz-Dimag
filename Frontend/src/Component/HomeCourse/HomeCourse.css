@@ -42,19 +42,24 @@ gap:45px;
 background:linear-gradient(180deg,#39c9de,#1eb6cd);
 text-align:center;
 border-radius:120px 120px 35px 35px;
-padding-bottom:40px; /* reduced */
+padding-bottom:40px;
 position:relative;
-height:260px; /* reduced */
+height:260px;
 display:flex;
 flex-direction:column;
 justify-content:flex-start;
+transition:0.3s;
+}
+
+.HomeCourse-card:hover{
+transform:translateY(-5px);
 }
 
 /* image */
 
 .HomeCourse-image{
 width:100%;
-height:200px; /* slightly reduced */
+height:200px;
 overflow:hidden;
 border-radius:120px 120px 0 0;
 }
@@ -107,6 +112,43 @@ border:none;
 font-size:14px;
 cursor:pointer;
 font-weight:500;
+color:#000;
+}
+
+/* pagination */
+
+.HomeCourse-pagination{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:20px;
+margin-top:50px;
+}
+
+.HomeCourse-pagination button{
+background:#8e2a8f;
+color:white;
+border:none;
+padding:10px 22px;
+border-radius:30px;
+cursor:pointer;
+font-size:14px;
+transition:0.3s;
+}
+
+.HomeCourse-pagination button:hover{
+background:#6d1f6f;
+}
+
+.HomeCourse-pagination button:disabled{
+background:#ccc;
+cursor:not-allowed;
+}
+
+.HomeCourse-pagination span{
+font-size:14px;
+color:#444;
+font-weight:600;
 }
 
 /* tablet */
@@ -134,6 +176,7 @@ height:190px;
 
 .HomeCourse-grid{
 grid-template-columns:1fr;
+gap:30px;
 }
 
 .HomeCourse-header h2{
@@ -146,6 +189,46 @@ height:240px;
 
 .HomeCourse-image{
 height:180px;
+}
+
+.HomeCourse-pagination{
+margin-top:40px;
+}
+
+}
+
+/* hide pagination on desktop */
+
+@media(min-width:601px){
+
+.HomeCourse-pagination{
+display:none;
+}
+
+}
+/* mobile */
+
+@media(max-width:600px){
+
+.HomeCourse-grid{
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.HomeCourse-header h2{
+font-size:32px;
+}
+
+.HomeCourse-card{
+height:230px;
+}
+
+.HomeCourse-image{
+height:160px;
+}
+
+.HomeCourse-pagination{
+margin-top:40px;
 }
 
 }
