@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./HomeCourse.css";
 
 import img1 from "../../assets/course_1.webp";
@@ -22,7 +22,48 @@ const courses = [
 ];
 
 const HomeCourse = () => {
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const coursesPerPage = 4;
+
+  useEffect(() => {
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+
+  }, []);
+
+  const totalPages = Math.ceil(courses.length / coursesPerPage);
+
+  const indexOfLast = currentPage * coursesPerPage;
+  const indexOfFirst = indexOfLast - coursesPerPage;
+
+  const currentCourses = isMobile
+    ? courses.slice(indexOfFirst, indexOfLast)
+    : courses;
+
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(prev => prev + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(prev => prev - 1);
+    }
+  };
+
   return (
+
     <section className="HomeCourse">
 
       <div className="HomeCourse-container">
@@ -34,7 +75,8 @@ const HomeCourse = () => {
 
         <div className="HomeCourse-grid">
 
-          {courses.map((course, index) => (
+          {currentCourses.map((course, index) => (
+
             <div className="HomeCourse-card" key={index}>
 
               <div className="HomeCourse-image">
@@ -49,13 +91,33 @@ const HomeCourse = () => {
               </div>
 
             </div>
+
           ))}
 
         </div>
 
+        {isMobile && (
+
+          <div className="HomeCourse-pagination">
+
+            <button onClick={prevPage} disabled={currentPage === 1}>
+              Prev
+            </button>
+
+            <span>{currentPage} / {totalPages}</span>
+
+            <button onClick={nextPage} disabled={currentPage === totalPages}>
+              Next
+            </button>
+
+          </div>
+
+        )}
+
       </div>
 
     </section>
+
   );
 };
 
