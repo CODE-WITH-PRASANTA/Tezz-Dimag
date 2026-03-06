@@ -1,12 +1,34 @@
-import React from 'react'
-import './Topbar.css'
+import React from "react";
+import "./Topbar.css";
 
-const Topbar = () => {
+import { FaBars, FaBell, FaMoon, FaSun } from "react-icons/fa";
+
+const Topbar = ({ toggleSidebar, toggleTheme, kgDarkMode }) => {
+
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <div className="kgTopbar-wrapper">
 
-export default Topbar
+      <div className="kgTopbar-left">
+
+        <FaBars
+          className="kgTopbar-menuIcon"
+          onClick={toggleSidebar}
+        />
+
+      </div>
+
+      <div className="kgTopbar-right">
+
+        <FaBell className="kgTopbar-icon"/>
+
+        <div className="kgTopbar-theme" onClick={toggleTheme}>
+          {kgDarkMode ? <FaSun /> : <FaMoon />}
+        </div>
+
+      </div>
+
+    </div>
+  );
+};
+
+export default Topbar;

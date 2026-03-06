@@ -1,0 +1,128 @@
+/* ===== LAYOUT WRAPPER ===== */
+
+.kgLayout-wrapper{
+  display:flex;
+  height:100vh;
+  width:100%;
+  background:#f1f5f9;
+  overflow:hidden;
+  position:relative;
+}
+
+/* ===== MAIN AREA ===== */
+
+.kgLayout-main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  transition:all .3s ease;
+  width:100%;
+}
+
+/* ===== CONTENT AREA ===== */
+
+.kgLayout-contentScroll{
+  flex:1;
+  overflow-y:auto;
+  padding:25px;
+  background:white;
+  transition:all .3s ease;
+}
+
+/* ===== SCROLLBAR ===== */
+
+.kgLayout-contentScroll::-webkit-scrollbar{
+  width:8px;
+}
+
+.kgLayout-contentScroll::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+.kgLayout-contentScroll::-webkit-scrollbar-thumb{
+  background:#cbd5e1;
+  border-radius:10px;
+}
+
+.kgLayout-contentScroll::-webkit-scrollbar-thumb:hover{
+  background:#94a3b8;
+}
+
+/* ===== DARK MODE ===== */
+
+.kgLayout-dark{
+  background:#0f172a;
+}
+
+.kgLayout-dark .kgTopbar-wrapper{
+  background:#1e293b;
+  color:white;
+}
+
+.kgLayout-dark .kgLayout-contentScroll{
+  background:#0f172a;
+  color:white;
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width:1024px){
+
+.kgLayout-contentScroll{
+  padding:20px;
+}
+
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width:768px){
+
+/* Sidebar fixed for mobile */
+
+.kgSidebar-wrapper{
+  position:fixed;
+  top:0;
+  left:0;
+  height:100%;
+  z-index:1200;
+  transform:translateX(-100%);
+  transition:transform .35s ease;
+}
+
+/* Sidebar open */
+
+.kgSidebar-open{
+  transform:translateX(0);
+  width:250px;
+}
+
+/* Sidebar close */
+
+.kgSidebar-close{
+  transform:translateX(-100%);
+}
+
+/* Main full width */
+
+.kgLayout-main{
+  width:100%;
+}
+
+/* Content padding */
+
+.kgLayout-contentScroll{
+  padding:18px;
+}
+
+}
+
+/* ===== SMALL MOBILE ===== */
+
+@media (max-width:480px){
+
+.kgLayout-contentScroll{
+  padding:15px;
+}
+
+}
