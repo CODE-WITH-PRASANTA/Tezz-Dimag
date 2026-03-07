@@ -39,7 +39,7 @@ const Sidebar = ({ kgSidebarOpen, setKgSidebarOpen }) => {
       <ul className="kgSidebar-menu">
 
         <li>
-          <Link to="/dashboard">
+          <Link to="/">
             <FaTachometerAlt />
             {kgSidebarOpen && <span>Dashboard</span>}
           </Link>

@@ -6,6 +6,7 @@ const TeacherPosting = () => {
 const base = "teacher-posting";
 
 const [editId,setEditId] = useState(null);
+const [openMenu,setOpenMenu] = useState(null);
 
 const [form,setForm] = useState({
 name:"",
@@ -37,24 +38,14 @@ preview:"https://randomuser.me/api/portraits/men/32.jpg"
 
 const handleChange=(e)=>{
 const {name,value}=e.target;
-
-setForm({
-...form,
-[name]:value
-});
+setForm({...form,[name]:value});
 };
 
 const handleImage=(e)=>{
-
 const file=e.target.files[0];
-
 if(file){
-setForm({
-...form,
-preview:URL.createObjectURL(file)
-});
+setForm({...form,preview:URL.createObjectURL(file)});
 }
-
 };
 
 const saveTeacher=()=>{
@@ -84,7 +75,6 @@ setTeachers([
 }
 
 clearForm();
-
 };
 
 const clearForm=()=>{
@@ -99,108 +89,76 @@ preview:""
 };
 
 const editTeacher=(teacher)=>{
-
 setForm(teacher);
 setEditId(teacher.id);
-
 };
 
 const deleteTeacher=(id)=>{
-
 setTeachers(teachers.filter(t=>t.id!==id));
-
 };
 
 return(
 
 <div className={base}>
 
-{/* FORM + PREVIEW */}
-
-<div className={`${base}__top`}>
+<div className={`${base}__grid`}>
 
 {/* FORM */}
 
-<div className={`${base}__form`}>
+<div className={`${base}__card`}>
 
 <h2>Teacher Posting Form</h2>
 
-<input
-type="text"
-placeholder="Teacher Name"
-name="name"
-value={form.name}
-onChange={handleChange}
-/>
+<div className="form-group">
+<input type="text" placeholder="Teacher Name" name="name" value={form.name} onChange={handleChange}/>
+</div>
 
-<select
-name="role"
-value={form.role}
-onChange={handleChange}
->
+<div className="form-group">
+<select name="role" value={form.role} onChange={handleChange}>
 <option value="">Teacher Role</option>
 <option>Teacher</option>
 <option>Assistant Teacher</option>
 <option>Professor</option>
 </select>
+</div>
 
+<div className="form-group">
 <input type="file" onChange={handleImage}/>
+</div>
 
-<textarea
-placeholder="Short Bio"
-name="bio"
-value={form.bio}
-onChange={handleChange}
-/>
+<div className="form-group">
+<textarea placeholder="Short Bio" name="bio" value={form.bio} onChange={handleChange}/>
+</div>
 
-<input
-type="number"
-placeholder="Experience"
-name="experience"
-value={form.experience}
-onChange={handleChange}
-/>
+<div className="form-group">
+<input type="number" placeholder="Experience" name="experience" value={form.experience} onChange={handleChange}/>
+</div>
 
-<input
-type="text"
-placeholder="Subject"
-name="subject"
-value={form.subject}
-onChange={handleChange}
-/>
+<div className="form-group">
+<input type="text" placeholder="Subject" name="subject" value={form.subject} onChange={handleChange}/>
+</div>
 
 <div className="buttons">
-
-<button className="save" onClick={saveTeacher}>
-{editId ? "Update" : "Save"}
-</button>
-
-<button className="clear" onClick={clearForm}>
-Clear
-</button>
-
+<button className="save" onClick={saveTeacher}>{editId ? "Update" : "Save"}</button>
+<button className="clear" onClick={clearForm}>Clear</button>
 </div>
 
 </div>
+
 
 {/* PREVIEW */}
 
-<div className={`${base}__preview`}>
+<div className={`${base}__card ${base}__preview`}>
 
 <h2>Live Preview</h2>
 
 <div className="preview-card">
 
-<img
-src={form.preview || "https://via.placeholder.com/200x160"}
-alt=""
-/>
+<img src={form.preview || "https://via.placeholder.com/200x160"} alt=""/>
 
 <div className="preview-info">
-
 <h4>{form.name || "Teacher Name"}</h4>
 <p>{form.role || "Teacher Role"}</p>
-
 </div>
 
 </div>
@@ -208,17 +166,19 @@ alt=""
 </div>
 
 </div>
+
 
 {/* TABLE */}
 
-<div className={`${base}__tableBox`}>
+<div className={`${base}__card`}>
 
 <h2>Teacher Posting List</h2>
+
+<div className="table-wrap">
 
 <table className="teacher-table">
 
 <thead>
-
 <tr>
 <th>Photo</th>
 <th>Name</th>
@@ -226,7 +186,6 @@ alt=""
 <th>Subject</th>
 <th>Action</th>
 </tr>
-
 </thead>
 
 <tbody>
@@ -234,7 +193,7 @@ alt=""
 {teachers.map((t)=>(
 <tr key={t.id}>
 
-<td>
+<td className="photo">
 <img src={t.preview} alt=""/>
 </td>
 
@@ -242,21 +201,32 @@ alt=""
 <td>{t.role}</td>
 <td>{t.subject}</td>
 
-<td className="actions">
+<td className="action-cell">
+
+<div className="action-dropdown">
 
 <button
-className="edit"
-onClick={()=>editTeacher(t)}
+className="action-btn"
+onClick={()=>setOpenMenu(openMenu===t.id ? null : t.id)}
 >
-Edit
+⋮
 </button>
 
-<button
-className="delete"
-onClick={()=>deleteTeacher(t.id)}
->
+{openMenu===t.id && (
+
+<div className="dropdown-menu">
+
+<button onClick={()=>editTeacher(t)}>Edit</button>
+
+<button className="delete" onClick={()=>deleteTeacher(t.id)}>
 Delete
 </button>
+
+</div>
+
+)}
+
+</div>
 
 </td>
 
@@ -266,6 +236,8 @@ Delete
 </tbody>
 
 </table>
+
+</div>
 
 </div>
 
