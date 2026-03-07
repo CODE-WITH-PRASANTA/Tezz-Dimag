@@ -5,6 +5,7 @@ import TeacherPosting from "./Pages/TeacherPosting/TeacherPosting";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import CoursePosting from "./Pages/CoursePosting/CoursePosting";
 import BlogPosting from "./Pages/BlogPosting/BlogPosting";
+import Testimonial from "./Pages/Testimonial/Testimonial";
 
 // import CoursesPost from "./pages/CoursesPost";
 // import Testimonial from "./pages/Testimonial";
@@ -26,6 +27,7 @@ function App() {
           <Route path="/blog-posting" element={<BlogPosting/>}/>
           {/* <Route path="/testimonial" element={<Testimonial />} /> */}
           {/* <Route path="/blog-posting" element={<BlogPost />} /> */}
+          <Route path="/testimonial" element={<Testimonial />} />
 
         </Route>
 
