@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { Outlet } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
 import Topbar from "../Topbar/Topbar";
 import "./Layout.css";
 
-const Layout = ({ children }) => {
+const Layout = () => {
 
   const [kgSidebarOpen, setKgSidebarOpen] = useState(true);
   const [kgDarkMode, setKgDarkMode] = useState(false);
@@ -19,18 +20,14 @@ const Layout = ({ children }) => {
   return (
     <div className={`kgLayout-wrapper ${kgDarkMode ? "kgLayout-dark" : ""}`}>
 
-      {/* SIDEBAR */}
-
+      {/* Sidebar */}
       <Sidebar
         kgSidebarOpen={kgSidebarOpen}
         setKgSidebarOpen={setKgSidebarOpen}
       />
 
-      {/* MAIN AREA */}
-
+      {/* Main */}
       <div className={`kgLayout-main ${kgSidebarOpen ? "sidebar-open" : "sidebar-close"}`}>
-
-        {/* TOPBAR */}
 
         <Topbar
           toggleSidebar={toggleSidebar}
@@ -38,18 +35,9 @@ const Layout = ({ children }) => {
           kgDarkMode={kgDarkMode}
         />
 
-        {/* CONTENT */}
-
+        {/* Page Content */}
         <div className="kgLayout-contentScroll">
-
-          {children || (
-            <>
-              <h2>Admin Dashboard</h2>
-              <p>Add your tables, charts or forms here.</p>
-              <div style={{ height: "1200px" }}></div>
-            </>
-          )}
-
+          <Outlet />
         </div>
 
       </div>
