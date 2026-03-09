@@ -1,16 +1,36 @@
+/* TOPBAR */
+
 .kgTopbar-wrapper{
   height:65px;
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:0 25px;
+
+  background:#ffffff;                 /* clean topbar */
   border-bottom:1px solid #e2e8f0;
+  box-shadow:0 2px 4px rgba(0,0,0,0.04);
+
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
+
+/* LEFT MENU ICON */
 
 .kgTopbar-menuIcon{
   font-size:20px;
   cursor:pointer;
+  color:#0F4C5C;                      /* match sidebar color */
+  transition:all .25s ease;
 }
+
+.kgTopbar-menuIcon:hover{
+  color:#1ABC9C;                      /* green accent */
+  transform:scale(1.05);
+}
+
+/* RIGHT SECTION */
 
 .kgTopbar-right{
   display:flex;
@@ -18,12 +38,64 @@
   gap:20px;
 }
 
+/* COMMON ICON STYLE */
+
 .kgTopbar-icon{
   font-size:18px;
   cursor:pointer;
+  color:#475569;
+  transition:all .25s ease;
 }
+
+.kgTopbar-icon:hover{
+  color:#1ABC9C;
+  transform:scale(1.08);
+}
+
+/* THEME ICON */
 
 .kgTopbar-theme{
   font-size:18px;
   cursor:pointer;
+  color:#475569;
+  transition:all .25s ease;
+}
+
+.kgTopbar-theme:hover{
+  color:#1ABC9C;
+  transform:scale(1.08);
+}
+
+/* USER PROFILE (optional future use) */
+
+.kgTopbar-profile{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  cursor:pointer;
+}
+
+.kgTopbar-avatar{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:768px){
+
+  .kgTopbar-wrapper{
+    padding:0 18px;
+  }
+
+  .kgTopbar-right{
+    gap:14px;
+  }
+
+  .kgTopbar-menuIcon{
+    font-size:22px;
+  }
+
 }
