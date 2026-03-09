@@ -63,17 +63,13 @@ image:null
 };
 
 const handleEdit = (index)=>{
-
 setFormData(blogs[index]);
 setEditIndex(index);
-
 };
 
 const handleDelete = (index)=>{
-
 const updatedBlogs = blogs.filter((_,i)=>i!==index);
 setBlogs(updatedBlogs);
-
 };
 
 return(
@@ -206,7 +202,10 @@ onChange={handleChange}
 
 <tr>
 
+<th>Image</th>
 <th>Title</th>
+<th>Quote</th>
+<th>Content</th>
 <th>Author</th>
 <th>Designation</th>
 <th>Location</th>
@@ -224,7 +223,26 @@ onChange={handleChange}
 
 <tr key={index}>
 
+<td>
+{blog.image && (
+<img
+src={URL.createObjectURL(blog.image)}
+alt="blog"
+className="BlogPosting-img"
+/>
+)}
+</td>
+
 <td>{blog.title}</td>
+<td>{blog.quote}</td>
+
+<td
+className="BlogPosting-content"
+dangerouslySetInnerHTML={{
+__html: blog.content.slice(0,120)+"..."
+}}
+></td>
+
 <td>{blog.author}</td>
 <td>{blog.designation}</td>
 <td>{blog.location}</td>
