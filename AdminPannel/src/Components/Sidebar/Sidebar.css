@@ -1,11 +1,15 @@
+/* SIDEBAR */
+
 .kgSidebar-wrapper{
-  background:#0b3d45;
-  color:white;
+  background:#0F4C5C;            /* Main Sidebar Color */
+  color:#FFFFFF;
   height:100vh;
   transition:all .35s ease;
   display:flex;
   flex-direction:column;
 }
+
+/* WIDTH */
 
 .kgSidebar-open{
   width:250px;
@@ -22,7 +26,7 @@
   align-items:center;
   justify-content:center;
   padding:20px;
-  border-bottom:1px solid rgba(255,255,255,.1);
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 /* LOGO */
@@ -34,7 +38,8 @@
 /* OPEN SIDEBAR */
 
 .logo-open{
-  width:110px;
+  width:115px;
+  height:85px;
 }
 
 /* CLOSED SIDEBAR */
@@ -50,6 +55,8 @@
   padding:20px 0;
 }
 
+/* MENU ITEM */
+
 .kgSidebar-menu li{
   display:flex;
   align-items:center;
@@ -59,17 +66,53 @@
   transition:.25s;
 }
 
-.kgSidebar-menu li:hover{
-  background:#1e293b;
-}
+/* MENU LINK */
+
 .kgSidebar-menu li a{
   display:flex;
   align-items:center;
   gap:14px;
-  color:white;
+  color:#E6F4F1;             /* Soft white text */
   text-decoration:none;
   width:100%;
+  font-size:15px;
 }
+
+/* ICON */
+
+.kgSidebar-menu li svg{
+  font-size:18px;
+  color:#B8E1DD;             /* Light teal icon */
+}
+
+/* HOVER EFFECT */
+
+.kgSidebar-menu li:hover{
+  background:#0B3A45;
+}
+
+.kgSidebar-menu li:hover a{
+  color:#FFFFFF;
+}
+
+.kgSidebar-menu li:hover svg{
+  color:#1ABC9C;             /* Green highlight */
+}
+
+/* ACTIVE MENU */
+
+.kgSidebar-menu li.active{
+  background:#1ABC9C;
+}
+
+.kgSidebar-menu li.active a{
+  color:#FFFFFF;
+}
+
+.kgSidebar-menu li.active svg{
+  color:#FFFFFF;
+}
+
 /* MOBILE CLOSE BUTTON */
 
 .kgSidebar-mobileClose{
