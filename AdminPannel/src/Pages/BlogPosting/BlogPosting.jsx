@@ -16,7 +16,8 @@ designation:"",
 location:"",
 category:"",
 tags:"",
-image:null
+image:null,
+imagePreview:""
 });
 
 const handleChange = (e)=>{
@@ -29,7 +30,19 @@ setFormData({...formData,content});
 };
 
 const handleImage = (e)=>{
-setFormData({...formData,image:e.target.files[0]});
+const file = e.target.files[0];
+
+if(file){
+
+const preview = URL.createObjectURL(file);
+
+setFormData({
+...formData,
+image:file,
+imagePreview:preview
+});
+
+}
 };
 
 const handleSubmit = (e)=>{
@@ -57,7 +70,8 @@ designation:"",
 location:"",
 category:"",
 tags:"",
-image:null
+image:null,
+imagePreview:""
 });
 
 };
@@ -105,18 +119,18 @@ onChange={handleChange}
 <label>Blog Content</label>
 
 <Editor
-apiKey="no-api-key"
+apiKey="gpl"
 value={formData.content}
 init={{
 height:300,
-menubar:true,
+menubar:false,
 plugins:[
-'advlist','autolink','lists','link','image','charmap','preview',
-'anchor','searchreplace','visualblocks','code','fullscreen',
-'insertdatetime','media','table','help','wordcount'
+'advlist','autolink','lists','link','image','charmap',
+'preview','anchor','searchreplace','visualblocks',
+'code','fullscreen','insertdatetime','media','table'
 ],
 toolbar:
-'undo redo | formatselect | bold italic | alignleft aligncenter alignright | bullist numlist | removeformat'
+'undo redo | bold italic underline | alignleft aligncenter alignright | bullist numlist'
 }}
 onEditorChange={handleEditorChange}
 />
@@ -178,6 +192,14 @@ onChange={handleChange}
 <label>Upload Blog Image</label>
 <input type="file" onChange={handleImage}/>
 
+{formData.imagePreview && (
+<img
+src={formData.imagePreview}
+className="BlogPosting-preview"
+alt="preview"
+/>
+)}
+
 <button type="submit">
 
 {editIndex !== null ? "Update Blog" : "Publish Blog"}
@@ -201,18 +223,13 @@ onChange={handleChange}
 <thead>
 
 <tr>
-
 <th>Image</th>
 <th>Title</th>
 <th>Quote</th>
 <th>Content</th>
 <th>Author</th>
-<th>Designation</th>
-<th>Location</th>
 <th>Category</th>
-<th>Tags</th>
 <th>Action</th>
-
 </tr>
 
 </thead>
@@ -224,9 +241,9 @@ onChange={handleChange}
 <tr key={index}>
 
 <td>
-{blog.image && (
+{blog.imagePreview && (
 <img
-src={URL.createObjectURL(blog.image)}
+src={blog.imagePreview}
 alt="blog"
 className="BlogPosting-img"
 />
@@ -236,18 +253,12 @@ className="BlogPosting-img"
 <td>{blog.title}</td>
 <td>{blog.quote}</td>
 
-<td
-className="BlogPosting-content"
-dangerouslySetInnerHTML={{
-__html: blog.content.slice(0,120)+"..."
-}}
-></td>
+<td className="BlogPosting-content">
+{blog.content.replace(/<[^>]+>/g,"").slice(0,80)}...
+</td>
 
 <td>{blog.author}</td>
-<td>{blog.designation}</td>
-<td>{blog.location}</td>
 <td>{blog.category}</td>
-<td>{blog.tags}</td>
 
 <td className="BlogPosting-actions">
 
