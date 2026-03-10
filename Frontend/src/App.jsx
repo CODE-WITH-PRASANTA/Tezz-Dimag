@@ -5,15 +5,6 @@ import Navbar from "./Component/Navbar/Navbar";
 import Footer from "./Component/Footer/Footer";
 import Home from "./Pages/Home/Home";
 
- 
-
-
-/* Navbar */
-
-
-/* Pages */
-
-
 function App() {
   return (
     <BrowserRouter>
