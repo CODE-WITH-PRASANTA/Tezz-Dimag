@@ -1,32 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./OurBlog.css";
 
-import blog1 from "../../assets/Blog-1.webp";
-import blog2 from "../../assets/Blog_2.webp";
-import blog3 from "../../assets/Blog-3.webp";
-
 import { FaRegCalendarAlt, FaRegCommentDots, FaThumbsUp } from "react-icons/fa";
+
+import API, { IMAGE_URL } from "../../api/axios";
 
 const OurBlog = () => {
 
   const [currentPage, setCurrentPage] = useState(0);
+  const [posts, setPosts] = useState([]);
 
-  const posts = [
-    {
-      image: blog1,
-      title: "Uncovers Ancient Ashkenaz."
-    },
-    {
-      image: blog2,
-      title: "Uncovers Ancient Ashkenaz."
-    },
-    {
-      image: blog3,
-      title: "Uncovers Ancient Ashkenaz."
+  /* ================= FETCH BLOGS ================= */
+
+  const fetchBlogs = async () => {
+
+    try {
+
+      const res = await API.get("/blogs/all");
+
+      if (res.data.success) {
+
+        const blogs = res.data.data.map((blog) => ({
+
+          image: `${IMAGE_URL}${blog.image}`,
+          title: blog.title,
+          description: blog.content?.replace(/<[^>]+>/g, "").slice(0,120),
+          date: new Date(blog.createdAt).toLocaleDateString(),
+          comments: blog.comments || 0,
+          likes: blog.likes || 0
+
+        }));
+
+        setPosts(blogs);
+
+      }
+
+    } catch (error) {
+
+      console.log("Blog fetch error");
+
     }
-  ];
 
-  const visiblePost = posts[currentPage];
+  };
+
+  useEffect(() => {
+
+    fetchBlogs();
+
+  }, []);
+
+  const visiblePost = posts[currentPage] || {};
 
   return (
     <section className="OurBlog-wrapper">
@@ -54,9 +77,7 @@ const OurBlog = () => {
               </h3>
 
               <p className="OurBlog-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Alias itaque eaque deserunt atque laborum ex ad facilis
-                praesentium placeat tenetur.
+                {post.description}
               </p>
 
             </div>
@@ -65,17 +86,17 @@ const OurBlog = () => {
 
               <span>
                 <FaRegCalendarAlt />
-                10.06.2017
+                {post.date}
               </span>
 
               <span>
                 <FaRegCommentDots />
-                5 Comments
+                {post.comments} Comments
               </span>
 
               <span>
                 <FaThumbsUp />
-                5 Like
+                {post.likes} Like
               </span>
 
             </div>
@@ -103,9 +124,7 @@ const OurBlog = () => {
             </h3>
 
             <p className="OurBlog-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Alias itaque eaque deserunt atque laborum ex ad facilis
-              praesentium placeat tenetur.
+              {visiblePost.description}
             </p>
 
           </div>
@@ -114,17 +133,17 @@ const OurBlog = () => {
 
             <span>
               <FaRegCalendarAlt />
-              10.06.2017
+              {visiblePost.date}
             </span>
 
             <span>
               <FaRegCommentDots />
-              5 Comments
+              {visiblePost.comments} Comments
             </span>
 
             <span>
               <FaThumbsUp />
-              5 Like
+              {visiblePost.likes} Like
             </span>
 
           </div>
