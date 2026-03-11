@@ -1,17 +1,17 @@
 import React from "react";
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
-
 import {
   FaTachometerAlt,
   FaChalkboardTeacher,
   FaBook,
   FaQuoteRight,
   FaBlog,
+  FaEnvelope,
   FaTimes
 } from "react-icons/fa";
 
-import logo from "../../assets/Logo.webp";
+import logo from "../../assets/Tezz-Logo.webp";
 
 const Sidebar = ({ kgSidebarOpen, setKgSidebarOpen }) => {
 
@@ -72,6 +72,13 @@ const Sidebar = ({ kgSidebarOpen, setKgSidebarOpen }) => {
             {kgSidebarOpen && <span>Blog Posting</span>}
           </Link>
         </li>
+
+        <li>
+  <Link to="/contact">
+    <FaEnvelope />
+    {kgSidebarOpen && <span>Contact</span>}
+  </Link>
+</li>
 
       </ul>
 
