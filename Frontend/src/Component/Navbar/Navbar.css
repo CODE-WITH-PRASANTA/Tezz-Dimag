@@ -2,298 +2,411 @@
 GLOBAL
 ========================= */
 
-body{
-font-family:'Poppins',sans-serif;
+body {
+  font-family: "Poppins", sans-serif;
 }
 
 /* =========================
 NAVBAR WRAPPER
 ========================= */
 
-.kgNavbar-wrapper{
-width:100%;
-background:#f5f6f8;
-position:sticky;
-top:0;
-z-index:999;
-box-shadow:0 3px 14px rgba(0,0,0,0.05);
+.kgNavbar-wrapper {
+  width: 100%;
+  background: #f5f6f8;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.05);
 }
 
 /* =========================
 CONTAINER
 ========================= */
 
-.kgNavbar-container{
-max-width:1320px;
-margin:auto;
-padding:5px 30px;
-display:flex;
-align-items:center;
-justify-content:space-between;
+.kgNavbar-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 10px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* =========================
 LOGO
 ========================= */
 
-.kgNavbar-logoImg{
-width:140px;
-object-fit:contain;
+.kgNavbar-logoImg {
+  width: 150px;
+  object-fit: contain;
 }
 
 /* =========================
 MENU
 ========================= */
 
-.kgNavbar-menu{
-display:flex;
-align-items:center;
-gap:32px;
+.kgNavbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
 }
 
 /* =========================
 LINK
 ========================= */
 
-.kgNavbar-link{
-text-decoration:none;
-color:#222;
-font-weight:600;
-font-size:17px;
-letter-spacing:.6px;
-transition:.3s;
-position:relative;
+.kgNavbar-link {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
-.kgNavbar-link:hover{
-color:#ff5757;
+.kgNavbar-link:hover {
+  color: #ff5757;
 }
 
-.kgNavbar-link.active{
-color:#ff5757;
+.kgNavbar-link.active {
+  color: #ff5757;
 }
 
 /* =========================
 RIGHT BUTTON
 ========================= */
 
-.kgNavbar-right{
-display:flex;
-align-items:center;
+.kgNavbar-right {
+  display: flex;
+  align-items: center;
 }
 
-/* BUTTON */
+.kgNavbar-contactBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: #ff5a57;
+  color: #fff;
 
-.kgNavbar-contactBtn{
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
+  padding: 12px 26px;
+  border-radius: 50px;
 
-background:#ff5a57;
-color:#fff;
+  text-decoration: none;
 
-padding:14px 28px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 
-border-radius:50px;
+  transition: 0.3s ease;
 
-text-decoration:none;
-
-box-shadow:0 6px 16px rgba(0,0,0,0.15);
-
-transition:.3s ease;
-
-min-width:200px;
+  min-width: 200px;
 }
 
-.kgNavbar-contactText{
-font-size:14px;
-font-weight:550;
+.kgNavbar-contactText {
+  font-size: 13px;
 }
 
-.kgNavbar-phone{
-font-size:18px;
-font-weight:600;
-letter-spacing:.5px;
+.kgNavbar-phone {
+  font-size: 17px;
+  font-weight: 600;
 }
 
-.kgNavbar-contactBtn:hover{
-background:#ff3c38;
-transform:translateY(-2px);
-box-shadow:0 10px 20px rgba(0,0,0,0.18);
+.kgNavbar-contactBtn:hover {
+  background: #ff3c38;
 }
 
 /* =========================
 HAMBURGER
 ========================= */
 
-.kgNavbar-toggleBtn{
-display:none;
-flex-direction:column;
-gap:5px;
-cursor:pointer;
+.kgNavbar-toggleBtn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
 }
 
-.kgNavbar-toggleBtn span{
-width:26px;
-height:3px;
-background:#333;
-border-radius:3px;
+.kgNavbar-toggleBtn span {
+  width: 26px;
+  height: 3px;
+  background: #333;
+  border-radius: 3px;
 }
 
 /* =========================
-CLOSE BUTTON
+CLOSE BTN
 ========================= */
 
-.kgNavbar-closeBtn{
-display:none;
+.kgNavbar-closeBtn {
+  display: none;
 }
 
 /* =========================
 MOBILE FOOTER
 ========================= */
 
-.kgNavbar-mobileFooter{
-display:none;
+.kgNavbar-mobileFooter {
+  display: none;
 }
 
-.kgNavbar-mobileCall{
-background:#ff5a57;
-color:#fff;
-padding:12px;
-text-align:center;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-margin-top:20px;
+.kgNavbar-mobileCall {
+  background: #ff5a57;
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 20px;
 }
 
-.kgNavbar-mobileSocial{
-display:flex;
-gap:15px;
-justify-content:center;
-margin-top:20px;
-font-size:18px;
+.kgNavbar-mobileSocial {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 18px;
 }
 
-/* =========================
+/* =====================================================
+LARGE DESKTOP
+===================================================== */
+
+@media (min-width: 1400px) {
+  .kgNavbar-container {
+    max-width: 1400px;
+  }
+
+  .kgNavbar-menu {
+    gap: 32px;
+  }
+
+  .kgNavbar-link {
+    font-size: 17px;
+  }
+}
+
+/* =====================================================
 LAPTOP
-========================= */
+===================================================== */
 
-@media(max-width:1200px){
+@media (max-width: 1200px) {
+  .kgNavbar-container {
+    padding: 10px 20px;
+  }
 
-.kgNavbar-container{
-padding:12px 20px;
+  .kgNavbar-menu {
+    gap: 22px;
+  }
+
+  .kgNavbar-logoImg {
+    width: 130px;
+  }
+
+  .kgNavbar-contactBtn {
+    min-width: 180px;
+  }
 }
 
-.kgNavbar-menu{
-gap:24px;
-}
-
-}
-
-/* =========================
+/* =====================================================
 TABLET
-========================= */
+===================================================== */
 
-@media(max-width:992px){
+@media (max-width: 992px) {
+  .kgNavbar-contactBtn {
+    padding: 10px 18px;
+    min-width: 160px;
+  }
 
-.kgNavbar-contactBtn{
-padding:10px 20px;
-min-width:180px;
+  .kgNavbar-phone {
+    font-size: 15px;
+  }
+
+  .kgNavbar-link {
+    font-size: 15px;
+  }
 }
 
-.kgNavbar-phone{
-font-size:16px;
+/* =====================================================
+SMALL TABLET → MOBILE MENU START
+===================================================== */
+
+@media (max-width: 900px) {
+  .kgNavbar-toggleBtn {
+    display: flex;
+  }
+
+  .kgNavbar-right {
+    display: none;
+  }
+
+  .kgNavbar-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    padding-top: 80px;
+    gap: 0;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.08);
+    transition: 0.4s ease;
+    align-items: flex-start;
+    padding-left: 25px;
+  }
+
+  .kgNavbar-active {
+    right: 0;
+  }
+
+  .kgNavbar-closeBtn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .kgNavbar-link {
+    font-size: 18px;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid #eee;
+
+    text-align: center;
+  }
+
+  .kgNavbar-mobileFooter {
+    display: grid;
+    padding-left: 50px;
+    margin-top: auto;
+    margin-bottom: 25px;
+  }
 }
 
-}
-
-/* =========================
-MOBILE MENU
-========================= */
-
-@media(max-width:900px){
-
-.kgNavbar-toggleBtn{
-display:flex;
-}
-
-.kgNavbar-right{
-display:none;
-}
-
-.kgNavbar-menu{
-position:fixed;
-top:0;
-right:-100%;
-width:270px;
-height:100vh;
-background:#fff;
-flex-direction:column;
-padding-top:80px;
-gap:0;
-box-shadow:-5px 0 25px rgba(0,0,0,0.08);
-transition:.4s ease;
-align-items:stretch;
-}
-
-.kgNavbar-active{
-right:0;
-}
-
-.kgNavbar-closeBtn{
-display:block;
-position:absolute;
-top:20px;
-left:20px;
-font-size:30px;
-cursor:pointer;
-}
-
-.kgNavbar-link{
-font-size:19px;
-padding:16px 0;
-border-bottom:1px solid #eee;
-text-align:center;
-}
-
-.kgNavbar-mobileFooter{
-display:block;
-padding:20px;
-margin-top:auto;
-}
-
-}
-
-/* =========================
+/* =====================================================
 MOBILE
-========================= */
+===================================================== */
 
-@media(max-width:600px){
+@media (max-width: 600px) {
+  .kgNavbar-logoImg {
+    width: 110px;
+  }
 
-.kgNavbar-logoImg{
-width:100px;
+  .kgNavbar-menu {
+    display: flex;
+    width: 250px;
+    align-items: flex-start;
+    padding-left: 17px;
+  }
 }
 
-.kgNavbar-menu{
-width:240px;
-}
-
-}
-
-/* =========================
+/* =====================================================
 SMALL MOBILE
-========================= */
+===================================================== */
 
-@media(max-width:400px){
+@media (max-width: 400px) {
+  .kgNavbar-logoImg {
+    width: 90px;
+  }
 
-.kgNavbar-logoImg{
-width:85px;
+  .kgNavbar-menu {
+    width: 220px;
+  }
 }
 
-.kgNavbar-menu{
-width:220px;
+/* =====================================================
+EXTRA SMALL
+===================================================== */
+
+@media (max-width: 320px) {
+  .kgNavbar-logoImg {
+    width: 75px;
+  }
+
+  .kgNavbar-menu {
+    width: 200px;
+  }
 }
 
+/* ===============================
+LAPTOP 1200px
+=============================== */
+
+@media (max-width: 1200px) {
+  .kgNavbar-contactBtn {
+    padding: 10px 18px;
+    min-width: 180px;
+  }
+
+  .kgNavbar-phone {
+    font-size: 15px;
+  }
+}
+
+/* ===============================
+TABLET 1024px (your screen)
+=============================== */
+
+@media (max-width: 1050px) {
+  .kgNavbar-contactBtn {
+    padding: 8px 14px;
+    min-width: 160px;
+    border-radius: 40px;
+    gap: 5px;
+    margin: 0 5px;
+  }
+
+  .kgNavbar-phone {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .kgNavbar-contactText {
+    font-size: 12px;
+  }
+}
+
+/* ===============================
+SMALL TABLET 992px
+=============================== */
+
+@media (max-width: 992px) {
+  .kgNavbar-contactBtn {
+    padding: 8px 12px;
+    min-width: 150px;
+  }
+
+  .kgNavbar-phone {
+    font-size: 13px;
+  }
+}
+
+/* ===============================
+900px → hide button (mobile menu starts)
+=============================== */
+
+@media (max-width: 900px) {
+  .kgNavbar-right {
+    display: none;
+  }
+}
+
+/* ===============================
+LARGE DESKTOP
+=============================== */
+
+@media (min-width: 1400px) {
+  .kgNavbar-contactBtn {
+    padding: 14px 30px;
+    min-width: 220px;
+  }
+
+  .kgNavbar-phone {
+    font-size: 18px;
+  }
 }
