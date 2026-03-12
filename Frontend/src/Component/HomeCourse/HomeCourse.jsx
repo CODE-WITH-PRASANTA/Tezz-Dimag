@@ -87,7 +87,7 @@ const HomeCourse = () => {
 
               <div className="HomeCourse-footer">
                 <span>80 <small>USD</small></span>
-                <button>Readmore</button>
+                <button>Contact Us</button>
               </div>
 
             </div>

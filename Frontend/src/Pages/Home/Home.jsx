@@ -8,6 +8,8 @@ import About from "../../Component/About/About";
 import HomeCourse from "../../Component/HomeCourse/HomeCourse";
 import HomeParents from "../../Component/HomeParents/HomeParents";
 
+
+
 const Home = () => {
   return (
     <div>
@@ -35,7 +37,7 @@ const Home = () => {
       <div id="blog">
         <OurBlog />
       </div>
-      <div id="cont">
+      <div id="contact">
         <ContactUs />
       </div>
     </div>

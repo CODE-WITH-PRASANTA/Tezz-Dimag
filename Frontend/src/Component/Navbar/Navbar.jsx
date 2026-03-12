@@ -19,7 +19,6 @@ const Navbar = () => {
   return (
     <header className="kgNavbar-wrapper">
       <div className="kgNavbar-container">
-
         {/* LOGO */}
         <div className="kgNavbar-logoSection">
           <img src={logo} alt="logo" className="kgNavbar-logoImg" />
@@ -27,49 +26,53 @@ const Navbar = () => {
 
         {/* NAVIGATION */}
         <nav className={`kgNavbar-menu ${kgNavOpen ? "kgNavbar-active" : ""}`}>
-
           {/* CLOSE BUTTON */}
           <div className="kgNavbar-closeBtn" onClick={closeMenu}>
             <IoClose />
           </div>
 
-          <NavLink to="#home" onClick={closeMenu} className="kgNavbar-link">
+          <a href="#home" onClick={closeMenu} className="kgNavbar-link">
             Home
-          </NavLink>
+          </a>
 
-          <NavLink to="#about" onClick={closeMenu} className="kgNavbar-link">
-            About Us
-          </NavLink>
+          <a href="#about" onClick={closeMenu} className="kgNavbar-link">
+            About
+          </a>
 
-          <NavLink to="#event" onClick={closeMenu} className="kgNavbar-link">
+          <a href="#event" onClick={closeMenu} className="kgNavbar-link">
             Event
-          </NavLink>
+          </a>
 
-          <NavLink to="#course" onClick={closeMenu} className="kgNavbar-link">
+          <a href="#course" onClick={closeMenu} className="kgNavbar-link">
             Course
-          </NavLink>
+          </a>
 
-          <NavLink to="#blog" onClick={closeMenu} className="kgNavbar-link">
-            Blog Page
-          </NavLink>
+          <a href="#blog" onClick={closeMenu} className="kgNavbar-link">
+            Blog
+          </a>
 
-          <NavLink to="#teacher" onClick={closeMenu} className="kgNavbar-link">
+          <a href="#teacher" onClick={closeMenu} className="kgNavbar-link">
             Teacher
-          </NavLink>
+          </a>
 
-          <NavLink to="#schedule" onClick={closeMenu} className="kgNavbar-link">
+          <a href="#schedule" onClick={closeMenu} className="kgNavbar-link">
             Schedule
-          </NavLink>
+          </a>
 
-          <NavLink to="#contact" onClick={closeMenu} className="kgNavbar-link">
+          <a href="#test" onClick={closeMenu} className="kgNavbar-link">
+            Testimonial
+          </a>
+
+          <a href="#contact" onClick={closeMenu} className="kgNavbar-link">
             Contact
-          </NavLink>
+          </a>
 
           {/* MOBILE FOOTER */}
           <div className="kgNavbar-mobileFooter">
-
             <a href="tel:+919876543210" className="kgNavbar-mobileCall">
-              Get Consultant<br />+91 9876543210
+              Get Consultant
+              <br />
+              +91 9876543210
             </a>
 
             <div className="kgNavbar-mobileSocial">
@@ -77,23 +80,15 @@ const Navbar = () => {
               <FaTwitter />
               <FaInstagram />
             </div>
-
           </div>
-
         </nav>
 
         {/* RIGHT BUTTON */}
         <div className="kgNavbar-right">
           <a href="tel:+919876543210" className="kgNavbar-contactBtn">
+            <span className="kgNavbar-contactText">Get Consultant</span>
 
-            <span className="kgNavbar-contactText">
-              Get Consultant
-            </span>
-
-            <span className="kgNavbar-phone">
-              +91 9876543210
-            </span>
-
+            <span className="kgNavbar-phone">+91 9876543210</span>
           </a>
         </div>
 
@@ -103,7 +98,6 @@ const Navbar = () => {
           <span></span>
           <span></span>
         </div>
-
       </div>
     </header>
   );

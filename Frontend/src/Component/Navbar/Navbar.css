@@ -26,7 +26,7 @@ CONTAINER
 .kgNavbar-container{
 max-width:1320px;
 margin:auto;
-padding:12px 30px;
+padding:5px 30px;
 display:flex;
 align-items:center;
 justify-content:space-between;
@@ -58,7 +58,7 @@ LINK
 .kgNavbar-link{
 text-decoration:none;
 color:#222;
-font-weight:500;
+font-weight:600;
 font-size:17px;
 letter-spacing:.6px;
 transition:.3s;
@@ -108,12 +108,12 @@ min-width:200px;
 
 .kgNavbar-contactText{
 font-size:14px;
-font-weight:500;
+font-weight:550;
 }
 
 .kgNavbar-phone{
 font-size:18px;
-font-weight:700;
+font-weight:600;
 letter-spacing:.5px;
 }
 

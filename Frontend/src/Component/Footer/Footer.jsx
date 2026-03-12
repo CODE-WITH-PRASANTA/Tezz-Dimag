@@ -63,15 +63,11 @@ const Footer = () => {
               </li>
 
               <li>
-                <a href="#news">NEWS</a>
+                <a href="#blog">BLOG</a>
               </li>
 
               <li>
-                <a href="#teachers">TEACHERS</a>
-              </li>
-
-              <li>
-                <a href="#gallery">GALLERY</a>
+                <a href="#teacher">TEACHERS</a>
               </li>
 
               <li>
@@ -87,7 +83,7 @@ const Footer = () => {
               </li>
 
               <li>
-                <a href="#classes">CLASSES</a>
+                <a href="#course">CLASSES</a>
               </li>
 
               <li>
@@ -95,7 +91,7 @@ const Footer = () => {
               </li>
 
               <li>
-                <a href="#testimonials">TESTIMONIALS</a>
+                <a href="#test">TESTIMONIALS</a>
               </li>
 
             </ul>
