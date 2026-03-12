@@ -3,190 +3,245 @@ import "./Contact.css";
 
 const Contact = () => {
 
-  const [formData, setFormData] = useState({
-    name:"",
-    email:"",
-    phone:"",
-    subject:"",
-    message:"",
-    address:"",
-    openHours:""
-  });
+const [editId,setEditId] = useState(null);
 
-  const [contactList,setContactList] = useState([]);
+const [formData,setFormData] = useState({
+name:"",
+email:"",
+phone:"",
+subject:"",
+message:"",
+address:"",
+openHours:""
+});
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]:e.target.value
-    })
-  }
+const [contactList,setContactList] = useState([]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleChange=(e)=>{
+setFormData({
+...formData,
+[e.target.name]:e.target.value
+});
+};
 
-    setContactList([...contactList,{...formData,id:Date.now()}]);
+const handleSubmit=(e)=>{
+e.preventDefault();
 
-    setFormData({
-      name:"",
-      email:"",
-      phone:"",
-      subject:"",
-      message:"",
-      address:"",
-      openHours:""
-    });
-  }
+if(editId){
 
-  return (
-    <div className="contactUsAdmin-wrapper">
+setContactList(
+contactList.map((item)=>
+item.id === editId ? {...formData,id:editId} : item
+)
+);
 
-      {/* LEFT SIDE FORM */}
+setEditId(null);
 
-      <div className="contactUsAdmin-formSection">
+}else{
 
-        <h2 className="contactUsAdmin-heading">
-          Create Contact Info
-        </h2>
+setContactList([
+...contactList,
+{...formData,id:Date.now()}
+]);
 
-        <form
-        className="contactUsAdmin-form"
-        onSubmit={handleSubmit}
-        >
+}
 
-          <div className="contactUsAdmin-inputGroup">
-            <label>Name</label>
-            <input
-            type="text"
-            name="name"
-            placeholder="Enter full name"
-            value={formData.name}
-            onChange={handleChange}
-            />
-          </div>
+setFormData({
+name:"",
+email:"",
+phone:"",
+subject:"",
+message:"",
+address:"",
+openHours:""
+});
+};
 
-          <div className="contactUsAdmin-inputGroup">
-            <label>Email</label>
-            <input
-            type="email"
-            name="email"
-            placeholder="Enter email address"
-            value={formData.email}
-            onChange={handleChange}
-            />
-          </div>
+const handleEdit=(item)=>{
+setFormData(item);
+setEditId(item.id);
+};
 
-          <div className="contactUsAdmin-inputGroup">
-            <label>Phone</label>
-            <input
-            type="text"
-            name="phone"
-            placeholder="Enter phone number"
-            value={formData.phone}
-            onChange={handleChange}
-            />
-          </div>
+const handleDelete=(id)=>{
+setContactList(contactList.filter(item=>item.id !== id));
+};
 
-          <div className="contactUsAdmin-inputGroup">
-            <label>Subject</label>
-            <input
-            type="text"
-            name="subject"
-            placeholder="Enter subject"
-            value={formData.subject}
-            onChange={handleChange}
-            />
-          </div>
+return(
 
-          <div className="contactUsAdmin-inputGroup">
-            <label>Address</label>
-            <input
-            type="text"
-            name="address"
-            placeholder="Enter office address"
-            value={formData.address}
-            onChange={handleChange}
-            />
-          </div>
+<div className="contactUsAdmin-wrapper">
 
-          <div className="contactUsAdmin-inputGroup">
-            <label>Open Hours</label>
-            <input
-            type="text"
-            name="openHours"
-            placeholder="Mon - Sat : 8AM - 9PM"
-            value={formData.openHours}
-            onChange={handleChange}
-            />
-          </div>
+{/* LEFT FORM */}
 
-          <div className="contactUsAdmin-inputGroup">
-            <label>Message</label>
-            <textarea
-            name="message"
-            placeholder="Write message..."
-            value={formData.message}
-            onChange={handleChange}
-            />
-          </div>
+<div className="contactUsAdmin-formSection">
 
-          <button className="contactUsAdmin-submitBtn">
-            Add Contact
-          </button>
+<h2 className="contactUsAdmin-heading">
+Create Contact Info
+</h2>
 
-        </form>
+<form
+className="contactUsAdmin-form"
+onSubmit={handleSubmit}
+>
 
-      </div>
+<div className="contactUsAdmin-inputGroup">
+<label>Name</label>
+<input
+type="text"
+name="name"
+value={formData.name}
+onChange={handleChange}
+/>
+</div>
+
+<div className="contactUsAdmin-inputGroup">
+<label>Email</label>
+<input
+type="email"
+name="email"
+value={formData.email}
+onChange={handleChange}
+/>
+</div>
+
+<div className="contactUsAdmin-inputGroup">
+<label>Phone</label>
+<input
+type="text"
+name="phone"
+value={formData.phone}
+onChange={handleChange}
+/>
+</div>
+
+<div className="contactUsAdmin-inputGroup">
+<label>Subject</label>
+<input
+type="text"
+name="subject"
+value={formData.subject}
+onChange={handleChange}
+/>
+</div>
+
+<div className="contactUsAdmin-inputGroup">
+<label>Address</label>
+<input
+type="text"
+name="address"
+value={formData.address}
+onChange={handleChange}
+/>
+</div>
+
+<div className="contactUsAdmin-inputGroup">
+<label>Open Hours</label>
+<input
+type="text"
+name="openHours"
+value={formData.openHours}
+onChange={handleChange}
+/>
+</div>
+
+<div className="contactUsAdmin-inputGroup">
+<label>Message</label>
+<textarea
+name="message"
+value={formData.message}
+onChange={handleChange}
+/>
+</div>
+
+<button className="contactUsAdmin-submitBtn">
+{editId ? "Update Contact" : "Add Contact"}
+</button>
+
+</form>
+
+</div>
 
 
-      {/* RIGHT SIDE TABLE */}
+{/* RIGHT TABLE */}
 
-      <div className="contactUsAdmin-tableSection">
+<div className="contactUsAdmin-tableSection">
 
-        <h2 className="contactUsAdmin-heading">
-          Contact List
-        </h2>
+<h2 className="contactUsAdmin-heading">
+Contact List
+</h2>
 
-        <div className="contactUsAdmin-tableWrapper">
+<div className="contactUsAdmin-tableWrapper">
 
-          <table className="contactUsAdmin-table">
+<table className="contactUsAdmin-table">
 
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Subject</th>
-                <th>Address</th>
-                <th>Open Hours</th>
-                <th>Message</th>
-              </tr>
-            </thead>
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Subject</th>
+<th>Address</th>
+<th>Open Hours</th>
+<th>Message</th>
+<th>Action</th>
+</tr>
+</thead>
 
-            <tbody>
+<tbody>
 
-              {contactList.map((item)=>(
-                <tr key={item.id}>
-                  <td>{item.name}</td>
-                  <td>{item.email}</td>
-                  <td>{item.phone}</td>
-                  <td>{item.subject}</td>
-                  <td>{item.address}</td>
-                  <td>{item.openHours}</td>
-                  <td>{item.message}</td>
-                </tr>
-              ))}
+{contactList.length === 0 ? (
 
-            </tbody>
+<tr>
+<td colSpan="8" className="no-data">
+No contacts added
+</td>
+</tr>
 
-          </table>
+):( 
 
-        </div>
+contactList.map((item)=>(
+<tr key={item.id}>
 
-      </div>
+<td>{item.name}</td>
+<td>{item.email}</td>
+<td>{item.phone}</td>
+<td>{item.subject}</td>
+<td>{item.address}</td>
+<td>{item.openHours}</td>
+<td>{item.message}</td>
 
-    </div>
-  );
+<td className="contact-action">
+
+<button
+className="edit-btn"
+onClick={()=>handleEdit(item)}
+>
+Edit
+</button>
+
+<button
+className="delete-btn"
+onClick={()=>handleDelete(item.id)}
+>
+Delete
+</button>
+
+</td>
+
+</tr>
+))
+
+)}
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+);
 };
 
 export default Contact;

@@ -1,333 +1,263 @@
-.HeroSection{
-position:relative;
-width:100%;
-height:90vh;
-overflow:hidden;
+/* ================= HERO SECTION ================= */
+
+.HeroSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
 }
 
-/* slides */
+/* ================= SLIDE ================= */
 
-.HeroSection-slide{
-position:absolute;
-width:100%;
-height:100%;
-background-size:cover;
-background-position:center;
-opacity:0;
-transform:scale(1.08);
-transition:opacity 1s ease, transform 6s ease;
+.HeroSection-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 1s ease-in-out, transform 6s ease;
 }
 
-.HeroSection-slide.active{
-opacity:1;
-transform:scale(1);
+.HeroSection-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
 }
 
-/* overlay */
+/* ================= OVERLAY ================= */
 
-.HeroSection-overlay{
-position:absolute;
-width:100%;
-height:100%;
-background:linear-gradient(
-to right,
-rgba(150,0,0,0.55),
-rgba(0,0,0,0.45),
-rgba(0,0,0,0.25)
-);
+.HeroSection-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.35)
+  );
+  z-index: 2;
 }
 
-/* content */
+/* ================= CONTENT ================= */
 
-.HeroSection-content{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-text-align:center;
-color:white;
-width:80%;
-max-width:900px;
+.HeroSection-content {
+  position: relative;
+  z-index: 3;
+  max-width: 1100px;
+  height: 100%;
+  margin: auto;
+  padding: 0 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  color: #fff;
 }
 
-/* subtitle */
+/* small heading */
 
-.HeroSection-content h4{
-font-size:32px;
-font-style:italic;
-margin-bottom:12px;
+.HeroSection-content h4 {
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  color: #ffd700;
+  font-weight: 600;
 }
 
-/* title */
+/* main heading */
 
-.HeroSection-content h1{
-font-size:65px;
-font-weight:700;
-letter-spacing:1px;
+.HeroSection-content h1 {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 650px;
+  margin-bottom: 25px;
 }
 
 /* button */
 
-.HeroSection-btn{
-display:inline-block;
-margin-top:25px;
-padding:13px 34px;
-border:2px solid white;
-border-radius:40px;
-color:white;
-text-decoration:none;
-font-weight:500;
-transition:all .3s ease;
-cursor:pointer;
+.HeroSection-btn {
+  display: inline-block;
+  padding: 14px 34px;
+  background: #ff7a00;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.HeroSection-btn:hover{
-background:#c81010 !important;
-border:2px solid #c81010 !important;
-color:white !important;
-transform:translateY(-3px);
+.HeroSection-btn:hover {
+  background: #ff5200;
+  transform: translateY(-3px);
 }
 
-/* arrows */
+/* ================= ARROWS ================= */
 
-.HeroSection-arrow{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-background:transparent;
-border:none;
-color:white;
-font-size:32px;
-cursor:pointer;
-opacity:.7;
-transition:.3s;
+.HeroSection-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+
+  color: #fff;
+  font-size: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.HeroSection-arrow:hover{
-opacity:1;
+.HeroSection-arrow:hover {
+  background: #ff7a00;
 }
 
-.HeroSection-arrow.left{
-left:30px;
+.HeroSection-arrow.left {
+  left: 25px;
 }
 
-.HeroSection-arrow.right{
-right:30px;
+.HeroSection-arrow.right {
+  right: 25px;
 }
 
-/* dots */
+/* ================= DOTS ================= */
 
-.HeroSection-dots{
-position:absolute;
-bottom:25px;
-width:100%;
-text-align:center;
+.HeroSection-dots {
+  position: absolute;
+  bottom: 35px;
+  width: 100%;
+  text-align: center;
+  z-index: 5;
 }
 
-.HeroSection-dot{
-height:10px;
-width:10px;
-background:white;
-border-radius:50%;
-display:inline-block;
-margin:0 6px;
-opacity:.5;
-cursor:pointer;
-transition:.3s;
+.HeroSection-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.HeroSection-dot.active{
-background:#00a2ff;
-opacity:1;
+.HeroSection-dot.active {
+  background: #ff7a00;
+  transform: scale(1.3);
 }
 
-/* text animation */
+/* ================= TEXT ANIMATION ================= */
 
-.fade-up{
-opacity:0;
-transform:translateY(40px);
-animation:fadeUp 1s forwards;
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s forwards;
 }
 
-.delay{
-animation-delay:.4s;
+.fade-up.delay {
+  animation-delay: 0.3s;
 }
 
-.delay2{
-animation-delay:.7s;
+.fade-up.delay2 {
+  animation-delay: 0.6s;
 }
 
-@keyframes fadeUp{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-
-/* ===================== */
-/* SMALL MOBILE */
-/* ===================== */
-
-@media (max-width:480px){
-
-.HeroSection{
-height:60vh;
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.HeroSection-content{
-width:90%;
+/* ================= RESPONSIVE ================= */
+
+/* laptop */
+
+@media (max-width: 1200px) {
+  .HeroSection-content h1 {
+    font-size: 50px;
+  }
 }
 
-.HeroSection-content h1{
-font-size:26px;
+/* tablet */
+
+@media (max-width: 992px) {
+  .HeroSection {
+    height: 80vh;
+  }
+
+  .HeroSection-content h1 {
+    font-size: 40px;
+  }
+
+  .HeroSection-content h4 {
+    font-size: 18px;
+  }
 }
 
-.HeroSection-content h4{
-font-size:16px;
+/* mobile */
+
+@media (max-width: 768px) {
+  .HeroSection {
+    height: 75vh;
+  }
+
+  .HeroSection-content {
+    padding: 0 25px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .HeroSection-content h1 {
+    font-size: 32px;
+  }
+
+  .HeroSection-content h4 {
+    font-size: 16px;
+  }
+
+  .HeroSection-btn {
+    padding: 12px 28px;
+    font-size: 14px;
+  }
+
+  .HeroSection-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
 }
 
-.HeroSection-btn{
-padding:9px 20px;
-font-size:13px;
-}
+/* small mobile */
 
-.HeroSection-arrow{
-font-size:22px;
-}
+@media (max-width: 480px) {
+  .HeroSection {
+    height: 70vh;
+  }
 
-.HeroSection-arrow.left{
-left:12px;
-}
+  .HeroSection-content h1 {
+    font-size: 26px;
+  }
 
-.HeroSection-arrow.right{
-right:12px;
-}
-
-}
-
-
-/* ===================== */
-/* MOBILE */
-/* ===================== */
-
-@media (min-width:481px) and (max-width:767px){
-
-.HeroSection{
-height:65vh;
-}
-
-.HeroSection-content h1{
-font-size:32px;
-}
-
-.HeroSection-content h4{
-font-size:18px;
-}
-
-.HeroSection-btn{
-padding:10px 24px;
-}
-
-.HeroSection-arrow{
-font-size:24px;
-}
-
-}
-
-
-/* ===================== */
-/* TABLET */
-/* ===================== */
-
-@media (min-width:768px) and (max-width:1023px){
-
-.HeroSection{
-height:70vh;
-}
-
-.HeroSection-content h1{
-font-size:42px;
-}
-
-.HeroSection-content h4{
-font-size:22px;
-}
-
-.HeroSection-arrow{
-font-size:28px;
-}
-
-}
-
-
-/* ===================== */
-/* LAPTOP */
-/* ===================== */
-
-@media (min-width:1024px) and (max-width:1279px){
-
-.HeroSection{
-height:80vh;
-}
-
-.HeroSection-content h1{
-font-size:52px;
-}
-
-.HeroSection-content h4{
-font-size:26px;
-}
-
-}
-
-
-/* ===================== */
-/* DESKTOP */
-/* ===================== */
-
-@media (min-width:1280px) and (max-width:1599px){
-
-.HeroSection{
-height:90vh;
-}
-
-.HeroSection-content h1{
-font-size:60px;
-}
-
-}
-
-
-/* ===================== */
-/* LARGE DESKTOP */
-/* ===================== */
-
-@media (min-width:1600px){
-
-.HeroSection{
-height:95vh;
-}
-
-.HeroSection-content{
-max-width:1100px;
-}
-
-.HeroSection-content h1{
-font-size:72px;
-}
-
-.HeroSection-content h4{
-font-size:36px;
-}
-
-.HeroSection-btn{
-padding:15px 40px;
-font-size:18px;
-}
-
-.HeroSection-arrow{
-font-size:36px;
-}
-
+  .HeroSection-btn {
+    padding: 10px 22px;
+  }
 }

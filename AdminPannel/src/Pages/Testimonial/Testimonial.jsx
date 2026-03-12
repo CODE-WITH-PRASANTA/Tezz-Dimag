@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Testimonial.css";
 import { FaStar, FaEdit, FaTrash } from "react-icons/fa";
+import API, { IMAGE_URL } from "../../api/axios";
 
 const Testimonial = () => {
 
@@ -16,65 +17,135 @@ const Testimonial = () => {
   const [testimonials,setTestimonials] = useState([])
   const [editIndex,setEditIndex] = useState(null)
 
+  /* ================= FETCH TESTIMONIALS ================= */
+
+  const fetchTestimonials = async () => {
+
+    try{
+
+      const res = await API.get("/testimonials/all")
+
+      if(res.data.success){
+
+        const data = res.data.data.map(item => ({
+          ...item,
+          image:`${IMAGE_URL}${item.image}`
+        }))
+
+        setTestimonials(data)
+
+      }
+
+    }catch(error){
+      console.error("Failed to fetch testimonials")
+    }
+
+  }
+
+  useEffect(()=>{
+    fetchTestimonials()
+  },[])
+
+
+  /* ================= INPUT CHANGE ================= */
+
   const handleChange=(e)=>{
     setFormData({...formData,[e.target.name]:e.target.value})
   }
 
+  /* ================= IMAGE ================= */
+
   const handleImage=(e)=>{
     const file = e.target.files[0]
+
     if(file){
       setFormData({...formData,image:file})
       setPreview(URL.createObjectURL(file))
     }
   }
 
+  /* ================= RATING ================= */
+
   const handleRating=(value)=>{
     setFormData({...formData,rating:value})
   }
 
-  const handleSubmit=(e)=>{
+
+  /* ================= SUBMIT ================= */
+
+  const handleSubmit=async(e)=>{
     e.preventDefault()
 
-    const newData={
-      ...formData,
-      image:preview
-    }
+    try{
 
-    if(editIndex !== null){
+      const form = new FormData()
 
-      const updated=[...testimonials]
-      updated[editIndex]=newData
-      setTestimonials(updated)
+      form.append("name",formData.name)
+      form.append("designation",formData.designation)
+      form.append("feedback",formData.feedback)
+      form.append("rating",formData.rating)
+
+      if(formData.image){
+        form.append("image",formData.image)
+      }
+
+      if(editIndex){
+
+        await API.put(`/testimonials/update/${editIndex}`,form,{
+          headers:{ "Content-Type":"multipart/form-data" }
+        })
+
+      }else{
+
+        await API.post("/testimonials/create",form,{
+          headers:{ "Content-Type":"multipart/form-data" }
+        })
+
+      }
+
+      fetchTestimonials()
+
+      setFormData({
+        image:null,
+        name:"",
+        designation:"",
+        feedback:"",
+        rating:0
+      })
+
+      setPreview(null)
       setEditIndex(null)
 
-    }else{
-
-      setTestimonials([...testimonials,newData])
-
+    }catch(error){
+      console.error("Submit testimonial error")
     }
+
+  }
+
+
+  /* ================= DELETE ================= */
+
+  const handleDelete = async(id)=>{
+
+    try{
+
+      await API.delete(`/testimonials/delete/${id}`)
+
+      fetchTestimonials()
+
+    }catch(error){
+      console.error("Delete testimonial error")
+    }
+
+  }
+
+
+  /* ================= EDIT ================= */
+
+  const handleEdit=(item)=>{
 
     setFormData({
       image:null,
-      name:"",
-      designation:"",
-      feedback:"",
-      rating:0
-    })
-
-    setPreview(null)
-  }
-
-  const handleDelete=(index)=>{
-    const updated=testimonials.filter((_,i)=>i!==index)
-    setTestimonials(updated)
-  }
-
-  const handleEdit=(index)=>{
-
-    const item=testimonials[index]
-
-    setFormData({
-      image:item.image,
       name:item.name,
       designation:item.designation,
       feedback:item.feedback,
@@ -82,8 +153,10 @@ const Testimonial = () => {
     })
 
     setPreview(item.image)
-    setEditIndex(index)
+    setEditIndex(item._id)
+
   }
+
 
   return (
     <div className="testimonialAdmin-wrapper">
@@ -93,7 +166,7 @@ const Testimonial = () => {
       <div className="testimonialAdmin-formSection">
 
         <h2 className="testimonialAdmin-heading">
-          {editIndex !== null ? "Edit Testimonial" : "Add Testimonial"}
+          {editIndex ? "Edit Testimonial" : "Add Testimonial"}
         </h2>
 
         <form
@@ -208,7 +281,7 @@ const Testimonial = () => {
             type="submit"
             className="testimonialAdmin-submitBtn"
           >
-            {editIndex !== null ? "Update Testimonial" : "Submit Testimonial"}
+            {editIndex ? "Update Testimonial" : "Submit Testimonial"}
           </button>
 
         </form>
@@ -242,8 +315,8 @@ const Testimonial = () => {
 
             <tbody>
 
-              {testimonials.map((item,index)=>(
-                <tr key={index}>
+              {testimonials.map((item)=>(
+                <tr key={item._id}>
 
                   <td>
                     <img
@@ -274,14 +347,14 @@ const Testimonial = () => {
 
                     <button
                       className="testimonialAdmin-editBtn"
-                      onClick={()=>handleEdit(index)}
+                      onClick={()=>handleEdit(item)}
                     >
                       <FaEdit/>
                     </button>
 
                     <button
                       className="testimonialAdmin-deleteBtn"
-                      onClick={()=>handleDelete(index)}
+                      onClick={()=>handleDelete(item._id)}
                     >
                       <FaTrash/>
                     </button>
