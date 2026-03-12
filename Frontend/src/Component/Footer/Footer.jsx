@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import logo from "../../assets/Tezz-Logo.webp";
+import logo from "../../assets/TezzDimag_Bhubaneswar_logo.png";
 
 import {
   FaFacebookF,
@@ -17,8 +17,9 @@ const Footer = () => {
 
       <div className="kgFooter-container">
 
-        {/* LEFT SECTION */}
+        {/* LEFT ABOUT */}
         <div className="kgFooter-about">
+
           <img src={logo} alt="logo" className="kgFooter-logo" />
 
           <p>
@@ -27,43 +28,86 @@ const Footer = () => {
           </p>
 
           <div className="kgFooter-social">
-            <FaTwitter />
-            <FaFacebookF />
-            <FaLinkedinIn />
-            <FaInstagram />
+
+            <a href="#">
+              <FaTwitter />
+            </a>
+
+            <a href="#">
+              <FaFacebookF />
+            </a>
+
+            <a href="#">
+              <FaLinkedinIn />
+            </a>
+
+            <a href="#">
+              <FaInstagram />
+            </a>
+
           </div>
+
         </div>
 
-        {/* USEFUL LINKS */}
-        <div className="kgFooter-links">
-          <h3>Useful Link</h3>
+        {/* INFORMATION */}
+        <div className="kgFooter-info">
 
-          <ul>
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Event</li>
-            <li>Course</li>
-            <li>Blog Page</li>
-            <li>Teacher</li>
-            <li>Schedule</li>
-            <li>Contact</li>
-          </ul>
+          <h3>INFORMATION</h3>
+
+          <div className="kgFooter-info-links">
+
+            <ul>
+
+              <li>
+                <a href="#home">HOME</a>
+              </li>
+
+              <li>
+                <a href="#news">NEWS</a>
+              </li>
+
+              <li>
+                <a href="#teachers">TEACHERS</a>
+              </li>
+
+              <li>
+                <a href="#gallery">GALLERY</a>
+              </li>
+
+              <li>
+                <a href="#contact">CONTACT</a>
+              </li>
+
+            </ul>
+
+            <ul>
+
+              <li>
+                <a href="#about">ABOUT</a>
+              </li>
+
+              <li>
+                <a href="#classes">CLASSES</a>
+              </li>
+
+              <li>
+                <a href="#events">EVENTS</a>
+              </li>
+
+              <li>
+                <a href="#testimonials">TESTIMONIALS</a>
+              </li>
+
+            </ul>
+
+          </div>
+
         </div>
 
-        {/* CATEGORIES */}
-        <div className="kgFooter-category">
-          <h3>Categories</h3>
-
-          <ul>
-            <li>Art Design</li>
-            <li>Graphic Design</li>
-            <li>Web Design</li>
-            <li>UX/UI Design</li>
-          </ul>
-        </div>
 
         {/* NEWSLETTER */}
         <div className="kgFooter-newsletter">
+
           <h3>Newsletter</h3>
 
           <p>
@@ -71,23 +115,36 @@ const Footer = () => {
           </p>
 
           <div className="kgFooter-inputBox">
+
             <input type="email" placeholder="Enter Your Email*" />
+
             <button>
               <IoSend />
             </button>
+
           </div>
 
-          <div className="kgFooter-checkbox">
+          <label className="kgFooter-checkbox">
+
             <input type="checkbox" />
-            <span>I agree to the terms of use and privacy policy.</span>
-          </div>
+
+            <span>
+              I agree to the terms of use and privacy policy.
+            </span>
+
+          </label>
+
         </div>
 
       </div>
 
       {/* FOOTER BOTTOM */}
+
       <div className="kgFooter-bottom">
-        Copyright © 2026 All Rights Reserved by Eduan
+
+        © 2025 Tezz Dimag Bubaneswar. All Rights Reserved.  
+        <span> | Powered by Tezz Dimag | Developed by PR WEBSTOCK</span>
+
       </div>
 
     </footer>
