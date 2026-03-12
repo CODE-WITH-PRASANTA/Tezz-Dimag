@@ -1,129 +1,163 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SendMessage.css";
-import { FaUser, FaEnvelope, FaPhoneAlt, FaInfoCircle, FaPen } from "react-icons/fa";
+import {
+  FaUser,
+  FaEnvelope,
+  FaPhoneAlt,
+  FaInfoCircle,
+  FaPen,
+} from "react-icons/fa";
+
+import { useParams } from "react-router-dom";
+import API from "../../api/axios";
 
 const SendMessage = () => {
+  const base = "send-message";
 
-const base = "send-message";
+  const { id } = useParams();
 
-return (
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+    agree: false,
+  });
 
-<section className={base}>
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
 
-<div className={`${base}__container`}>
+    setForm({
+      ...form,
+      [name]: type === "checkbox" ? checked : value,
+    });
+  };
 
-<h2 className={`${base}__title`}>
-Send Me Message
-</h2>
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-<form className={`${base}__form`}>
+    try {
+      await API.post("/messages/create", {
+        ...form,
+        blogId: id,
+      });
 
-{/* NAME */}
+      alert("Message sent successfully");
 
-<div className={`${base}__input-group`}>
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+        agree: false,
+      });
 
-<FaUser className={`${base}__icon`} />
+    } catch (err) {
+      console.log("Message error", err);
+    }
+  };
 
-<input
-type="text"
-placeholder="Your Name"
-/>
+  return (
+    <section className={base}>
+      <div className={`${base}__container`}>
+        <h2 className={`${base}__title`}>Send Me Message</h2>
 
-</div>
+        <form className={`${base}__form`} onSubmit={handleSubmit}>
 
+          {/* NAME */}
+          <div className={`${base}__input-group`}>
+            <FaUser className={`${base}__icon`} />
 
-{/* EMAIL */}
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={form.name}
+              onChange={handleChange}
+            />
+          </div>
 
-<div className={`${base}__input-group`}>
+          {/* EMAIL */}
+          <div className={`${base}__input-group`}>
+            <FaEnvelope className={`${base}__icon`} />
 
-<FaEnvelope className={`${base}__icon`} />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              value={form.email}
+              onChange={handleChange}
+            />
+          </div>
 
-<input
-type="email"
-placeholder="Email Address"
-/>
+          {/* PHONE */}
+          <div className={`${base}__input-group`}>
+            <FaPhoneAlt className={`${base}__icon`} />
 
-</div>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Your Number"
+              value={form.phone}
+              onChange={handleChange}
+            />
+          </div>
 
+          {/* SUBJECT */}
+          <div className={`${base}__input-group`}>
+            <FaInfoCircle className={`${base}__icon`} />
 
-{/* PHONE */}
+            <select
+              name="subject"
+              value={form.subject}
+              onChange={handleChange}
+            >
+              <option value="">Select Subject</option>
+              <option>General Inquiry</option>
+              <option>Course Information</option>
+              <option>Technical Support</option>
+              <option>Admission Query</option>
+              <option>Feedback</option>
+            </select>
 
-<div className={`${base}__input-group`}>
+            <span className={`${base}__select-arrow`}></span>
+          </div>
 
-<FaPhoneAlt className={`${base}__icon`} />
+          {/* MESSAGE */}
+          <div className={`${base}__textarea-group`}>
+            <FaPen className={`${base}__icon`} />
 
-<input
-type="tel"
-placeholder="Your Number"
-/>
+            <textarea
+              name="message"
+              placeholder="Feel free to get in touch!"
+              rows="4"
+              value={form.message}
+              onChange={handleChange}
+            />
+          </div>
 
-</div>
+          {/* FOOTER */}
+          <div className={`${base}__footer`}>
+            <button className={`${base}__btn`}>Send Message</button>
 
+            <label className={`${base}__checkbox`}>
+              <input
+                type="checkbox"
+                name="agree"
+                checked={form.agree}
+                onChange={handleChange}
+              />
 
-{/* SUBJECT */}
+              <span>I agree that my data is collected and stored.</span>
+            </label>
+          </div>
 
-<div className={`${base}__input-group`}>
-
-<FaInfoCircle className={`${base}__icon`} />
-
-<select>
-
-<option value="">Select Subject</option>
-<option>General Inquiry</option>
-<option>Course Information</option>
-<option>Technical Support</option>
-<option>Admission Query</option>
-<option>Feedback</option>
-
-</select>
-
-<span className={`${base}__select-arrow`}></span>
-
-</div>
-
-
-{/* MESSAGE */}
-
-<div className={`${base}__textarea-group`}>
-
-<FaPen className={`${base}__icon`} />
-
-<textarea
-placeholder="Feel free to get in touch!"
-rows="4"
-/>
-
-</div>
-
-
-{/* FOOTER */}
-
-<div className={`${base}__footer`}>
-
-<button className={`${base}__btn`}>
-Send Message
-</button>
-
-<label className={`${base}__checkbox`}>
-
-<input type="checkbox"/>
-
-<span>
-I agree that my data is collected and stored.
-</span>
-
-</label>
-
-</div>
-
-</form>
-
-</div>
-
-</section>
-
-);
-
+        </form>
+      </div>
+    </section>
+  );
 };
 
 export default SendMessage;
