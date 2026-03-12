@@ -15,20 +15,16 @@ import Blog from "./Pages/Blog/Blog";
 
 /* Navbar */
 
-
 /* Pages */
-
 
 function App() {
   return (
     <BrowserRouter>
-
       {/* Navbar */}
       <Navbar />
 
       {/* Page Content */}
       <Routes>
-
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog/>}/>
         <Route path="/blog/:id" element={<BlogDetails/>}/>
@@ -41,7 +37,6 @@ function App() {
 
       {/* Footer */}
       <Footer />
-
     </BrowserRouter>
   );
 }

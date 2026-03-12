@@ -91,7 +91,7 @@ const HomeCourse = () => {
               <h3>{course.name}</h3>
 
               <div className="HomeCourse-footer">
-                <span>{course.price || 80} <small>USD</small></span>
+                <span>{course.price || 80} <small> ₹</small></span>
                 <button>Readmore</button>
               </div>
 
