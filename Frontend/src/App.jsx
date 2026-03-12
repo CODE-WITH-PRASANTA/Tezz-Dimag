@@ -5,6 +5,11 @@ import Navbar from "./Component/Navbar/Navbar";
 import Footer from "./Component/Footer/Footer";
 import Home from "./Pages/Home/Home";
 
+
+import BlogDetails from "./Pages/BlogDetails/BlogDetails";
+import Price from "./Pages/Price/Price";
+import Blog from "./Pages/Blog/Blog";
+
  
 
 
@@ -25,7 +30,10 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Home />} />
-      
+        <Route path="/blog" element={<Blog/>}/>
+        <Route path="/blog/details" element={<BlogDetails/>}/>
+        <Route path="/price" element={<Price/>}/>
+        
       
        
 
