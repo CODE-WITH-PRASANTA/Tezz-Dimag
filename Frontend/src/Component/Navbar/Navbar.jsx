@@ -31,7 +31,7 @@ const Navbar = () => {
             <IoClose />
           </div>
 
-          <a href="#home" onClick={closeMenu} className="kgNavbar-link">
+          <a href="/" onClick={closeMenu} className="kgNavbar-link">
             Home
           </a>
 

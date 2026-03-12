@@ -13,7 +13,7 @@ import HomeParents from "../../Component/HomeParents/HomeParents";
 const Home = () => {
   return (
     <div>
-      <div id="home">
+      <div id="/">
         <HeroSection />
       </div>
 

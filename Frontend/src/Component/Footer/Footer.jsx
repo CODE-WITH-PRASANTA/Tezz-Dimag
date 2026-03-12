@@ -59,7 +59,7 @@ const Footer = () => {
             <ul>
 
               <li>
-                <a href="#home">HOME</a>
+                <a href="/">HOME</a>
               </li>
 
               <li>
