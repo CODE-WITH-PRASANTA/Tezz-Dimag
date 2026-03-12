@@ -1,34 +1,32 @@
 import React, { useState, useEffect } from "react";
 import "./HomeCourse.css";
-
-import img1 from "../../assets/course_1.webp";
-import img2 from "../../assets/course_2.webp";
-import img3 from "../../assets/course_3.webp";
-import img4 from "../../assets/about.webp";
-import img5 from "../../assets/course_5.webp";
-import img6 from "../../assets/course_6.webp";
-import img7 from "../../assets/course_7.webp";
-import img8 from "../../assets/course_8.webp";
-
-const courses = [
-  { title: "Water Color", img: img1 },
-  { title: "Oil Painting", img: img2 },
-  { title: "Biology", img: img3 },
-  { title: "Swimming", img: img4 },
-  { title: "English", img: img5 },
-  { title: "Acrylic Painting", img: img6 },
-  { title: "Tennis Practice", img: img7 },
-  { title: "Cooking", img: img8 }
-];
+import API, { IMAGE_URL } from "../../api/axios";
 
 const HomeCourse = () => {
 
+  const [courses, setCourses] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
 
   const coursesPerPage = 4;
 
+  /* ================= LOAD COURSES ================= */
+
+  const fetchCourses = async () => {
+    try {
+
+      const res = await API.get("/courses/all");
+
+      setCourses(res.data.data || []);
+
+    } catch (err) {
+      console.error("Course Fetch Error:", err);
+    }
+  };
+
   useEffect(() => {
+
+    fetchCourses();
 
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 600);
@@ -75,19 +73,26 @@ const HomeCourse = () => {
 
         <div className="HomeCourse-grid">
 
-          {currentCourses.map((course, index) => (
+          {currentCourses.map((course) => (
 
-            <div className="HomeCourse-card" key={index}>
+            <div className="HomeCourse-card" key={course._id}>
 
               <div className="HomeCourse-image">
-                <img src={course.img} alt={course.title} />
+                <img
+                  src={
+                    course.image
+                      ? IMAGE_URL + course.image
+                      : "https://placehold.co/300x200"
+                  }
+                  alt={course.name}
+                />
               </div>
 
-              <h3>{course.title}</h3>
+              <h3>{course.name}</h3>
 
               <div className="HomeCourse-footer">
-                <span>80 <small>USD</small></span>
-                <button>Contact Us</button>
+                <span>{course.price || 80} <small> ₹</small></span>
+                <button>Readmore</button>
               </div>
 
             </div>

@@ -1,221 +1,172 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Search.css";
 import { FaSearch, FaClock } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-/* images */
-import post1 from "../../assets/RecentPost1.webp";
-import post2 from "../../assets/RecentPost2.webp";
-import post3 from "../../assets/RecentPost3.webp";
+import API, { IMAGE_URL } from "../../api/axios";
 
+/* images for courses */
 import course1 from "../../assets/Popular1.webp";
 import course2 from "../../assets/Popular2.webp";
 import course3 from "../../assets/Popular3.webp";
 
 const Search = () => {
+  const base = "search-sidebar";
 
-const base = "search-sidebar";
+  const [recentPosts, setRecentPosts] = useState([]);
 
-return (
+  /* ================= FETCH RECENT BLOGS ================= */
 
-<aside className={base}>
+  const fetchRecentBlogs = async () => {
+    try {
 
-{/* SEARCH BOX */}
+      const res = await API.get("/blogs/all");
 
-<div className={`${base}__card`}>
+      if (res.data.success) {
 
-<h3 className={`${base}__title`}>
-Search
-</h3>
+        const posts = res.data.data
+          .slice(0, 3)
+          .map((blog) => ({
+            id: blog._id,
+            image: `${IMAGE_URL}${blog.image}`,
+            title: blog.title,
+            date: new Date(blog.createdAt).toLocaleDateString(),
+          }));
 
-<div className={`${base}__search-box`}>
+        setRecentPosts(posts);
+      }
 
-<input
-type="text"
-placeholder="Search here..."
-/>
+    } catch (error) {
+      console.log("Recent blog fetch error");
+    }
+  };
 
-<button>
-<FaSearch/>
-</button>
+  useEffect(() => {
+    fetchRecentBlogs();
+  }, []);
 
-</div>
+  return (
+    <aside className={base}>
+      {/* SEARCH BOX */}
 
-</div>
+      <div className={`${base}__card`}>
+        <h3 className={`${base}__title`}>Search</h3>
 
+        <div className={`${base}__search-box`}>
+          <input type="text" placeholder="Search here..." />
 
+          <button>
+            <FaSearch />
+          </button>
+        </div>
+      </div>
 
-{/* RECENT POSTS */}
+      {/* RECENT POSTS */}
 
-<div className={`${base}__card`}>
+      <div className={`${base}__card`}>
+        <h3 className={`${base}__title`}>Recent Posts</h3>
 
-<h3 className={`${base}__title`}>
-Recent Posts
-</h3>
+        <div className={`${base}__recent`}>
 
-<div className={`${base}__recent`}>
+          {recentPosts.map((post) => (
 
-<div className={`${base}__post`}>
+            <Link className="blog-link" to={`/blog/${post.id}`} key={post.id}>
 
-<img src={post1} alt=""/>
+              <div className={`${base}__post`}>
 
-<div>
-<span className={`${base}__date`}>
-<FaClock/> June 23, 2023
-</span>
+                <img src={post.image} alt="" />
 
-<p>
-Education Week News and Views on Education...
-</p>
-</div>
+                <div>
+                  <span className={`${base}__date`}>
+                    <FaClock /> {post.date}
+                  </span>
 
-</div>
+                  <p>
+                    {post.title.length > 45
+                      ? post.title.slice(0, 45) + "..."
+                      : post.title}
+                  </p>
 
+                </div>
 
+              </div>
 
-<div className={`${base}__post`}>
+            </Link>
 
-<img src={post2} alt=""/>
+          ))}
 
-<div>
-<span className={`${base}__date`}>
-<FaClock/> June 23, 2023
-</span>
+        </div>
+      </div>
 
-<p>
-The Learning Network: Teaching and Learning...
-</p>
-</div>
+      {/* CATEGORIES */}
 
-</div>
+      <div className={`${base}__card`}>
+        <h3 className={`${base}__title`}>Categories</h3>
 
+        <ul className={`${base}__categories`}>
+          <li>College</li>
+          <li>High School</li>
+          <li>Primary</li>
+          <li>University</li>
+          <li>Course</li>
+        </ul>
+      </div>
 
-
-<div className={`${base}__post`}>
-
-<img src={post3} alt=""/>
-
-<div>
-<span className={`${base}__date`}>
-<FaClock/> June 23, 2023
-</span>
-
-<p>
-Nothing is Impossible to Learn If You...
-</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-{/* CATEGORIES */}
-
-<div className={`${base}__card`}>
-
-<h3 className={`${base}__title`}>
-Categories
-</h3>
-
-<ul className={`${base}__categories`}>
-
-<li>College</li>
-<li>High School</li>
-<li>Primary</li>
-<li>University</li>
-<li>Course</li>
-
-</ul>
-
-</div>
-
-
-
-{/* POPULAR COURSES */}
-
-<div className={`${base}__card`}>
-
-<h3 className={`${base}__title`}>
-Popular Courses
-</h3>
-
-<div className={`${base}__courses`}>
-
-<div className={`${base}__course`}>
-
-<img src={course1} alt=""/>
-
-<div>
-<p>The Complete JavaScript Course From Zero...</p>
-<span>Free</span>
-</div>
-
-</div>
-
-
-
-<div className={`${base}__course`}>
-
-<img src={course2} alt=""/>
-
-<div>
-<p>High-Quality Online Course Access For...</p>
-<span>Free</span>
-</div>
-
-</div>
-
-
-
-<div className={`${base}__course`}>
-
-<img src={course3} alt=""/>
-
-<div>
-<p>Access Premium Content With Online Cou...</p>
-<span>Free</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-{/* TAGS */}
-
-<div className={`${base}__card`}>
-
-<h3 className={`${base}__title`}>
-Tags
-</h3>
-
-<div className={`${base}__tags`}>
-
-<span>Consulting</span>
-<span>Student</span>
-<span>Course</span>
-<span>Art</span>
-<span>School</span>
-<span>Education</span>
-<span>Learning</span>
-<span>Design</span>
-<span>Online Courses</span>
-<span>UI Design</span>
-
-</div>
-
-</div>
-
-</aside>
-
-);
-
+      {/* POPULAR COURSES */}
+
+      <div className={`${base}__card`}>
+        <h3 className={`${base}__title`}>Popular Courses</h3>
+
+        <div className={`${base}__courses`}>
+          <div className={`${base}__course`}>
+            <img src={course1} alt="" />
+
+            <div>
+              <p>The Complete JavaScript Course From Zero...</p>
+              <span>Free</span>
+            </div>
+          </div>
+
+          <div className={`${base}__course`}>
+            <img src={course2} alt="" />
+
+            <div>
+              <p>High-Quality Online Course Access For...</p>
+              <span>Free</span>
+            </div>
+          </div>
+
+          <div className={`${base}__course`}>
+            <img src={course3} alt="" />
+
+            <div>
+              <p>Access Premium Content With Online Cou...</p>
+              <span>Free</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* TAGS */}
+
+      <div className={`${base}__card`}>
+        <h3 className={`${base}__title`}>Tags</h3>
+
+        <div className={`${base}__tags`}>
+          <span>Consulting</span>
+          <span>Student</span>
+          <span>Course</span>
+          <span>Art</span>
+          <span>School</span>
+          <span>Education</span>
+          <span>Learning</span>
+          <span>Design</span>
+          <span>Online Courses</span>
+          <span>UI Design</span>
+        </div>
+      </div>
+    </aside>
+  );
 };
 
 export default Search;

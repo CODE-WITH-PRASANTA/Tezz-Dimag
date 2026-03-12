@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ContactUs.css";
 
 import { FaMapMarkedAlt, FaMobileAlt, FaEnvelope, FaCalendarAlt } from "react-icons/fa";
 
+import API from "../../api/axios";
+
 const ContactUs = () => {
+
+  const [contact,setContact] = useState(null);
+
+  /* ================= FETCH CONTACT ================= */
+
+  const fetchContact = async () => {
+
+    try{
+
+      const res = await API.get("/contact/all");
+
+      if(res.data.data && res.data.data.length > 0){
+        setContact(res.data.data[0]);
+      }
+
+    }catch(err){
+      console.error(err);
+    }
+
+  };
+
+  useEffect(()=>{
+    fetchContact();
+  },[]);
+
+
   return (
     <section className="ContactUs-wrapper">
 
@@ -22,7 +50,9 @@ const ContactUs = () => {
           </div>
           <div>
             <h4>Our Address</h4>
-            <p>525 tenth Avenue,<br/>Godson, PS 5945</p>
+            <p>
+              {contact?.address || "No Address"}
+            </p>
           </div>
         </div>
 
@@ -32,7 +62,9 @@ const ContactUs = () => {
           </div>
           <div>
             <h4>Phone</h4>
-            <p>+1 800 123 45 67<br/>+1 800 123 45 67</p>
+            <p>
+              {contact?.phone || "No Phone"}
+            </p>
           </div>
         </div>
 
@@ -42,7 +74,9 @@ const ContactUs = () => {
           </div>
           <div>
             <h4>Email</h4>
-            <p>mail@domain.com<br/>mail@domain.com</p>
+            <p>
+              {contact?.email || "No Email"}
+            </p>
           </div>
         </div>
 
@@ -52,7 +86,9 @@ const ContactUs = () => {
           </div>
           <div>
             <h4>Open Hours</h4>
-            <p>Mn - St: 8:00am<br/>9:00pm</p>
+            <p>
+              {contact?.openHours || "Not Available"}
+            </p>
           </div>
         </div>
 
