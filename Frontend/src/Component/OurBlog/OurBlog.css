@@ -28,7 +28,9 @@
   font-size:18px;
   color:#777;
 }
-
+.blog-link{
+  text-decoration: none;
+}
 
 /* ===== GRID ===== */
 

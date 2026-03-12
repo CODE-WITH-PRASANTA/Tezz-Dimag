@@ -10,6 +10,8 @@ import HomeParents from '../../Component/HomeParents/HomeParents'
 
 
 
+
+
 const Home = () => {
   return (
     <div>
@@ -20,6 +22,8 @@ const Home = () => {
       <HomeCourse/>
        <HomeParents/>
       <OurBlog />
+      
+      
       <ContactUs />
 
       
