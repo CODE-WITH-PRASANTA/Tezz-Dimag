@@ -22,32 +22,24 @@ body{
 .kgNavbar-container{
   max-width:1300px;
   margin:auto;
-  padding:14px 30px;
+  padding:10px 30px;
   display:flex;
   align-items:center;
   justify-content:space-between;
 }
 
 
-/* ===== LOGO SECTION ===== */
+/* ===== LOGO ===== */
 
 .kgNavbar-logoSection{
   display:flex;
   align-items:center;
-  gap:12px;
 }
 
 .kgNavbar-logoImg{
-  width:95px;
-  height: 75px;
-}
-
-.kgNavbar-logoText{
-  font-size:16px;
-  font-weight:600;
-  color:#444;
-  letter-spacing:.6px;
-  white-space:nowrap;
+  width:130px;
+  height:auto;
+  object-fit:contain;
 }
 
 
@@ -55,7 +47,7 @@ body{
 
 .kgNavbar-menu{
   display:flex;
-  gap:38px;
+  gap:34px;
   align-items:center;
 }
 
@@ -63,8 +55,8 @@ body{
   text-decoration:none;
   color:#222;
   font-weight:500;
-  font-size:18px;
-  letter-spacing:1.5px;
+  font-size:17px;
+  letter-spacing:1px;
   transition:all .3s ease;
   position:relative;
 }
@@ -77,10 +69,36 @@ body{
 }
 
 
-/* Active Link */
+/* Active */
 
 .kgNavbar-link.active{
   color:#ff5757;
+}
+
+
+/* ===== RIGHT SIDE BUTTON ===== */
+
+.kgNavbar-right{
+  display:flex;
+  align-items:center;
+}
+
+.kgNavbar-contactBtn{
+  padding:10px 24px;
+  background:#ff5757;
+  color:white;
+  text-decoration:none;
+  border-radius:30px;
+  font-size:15px;
+  font-weight:500;
+  transition:.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.kgNavbar-contactBtn:hover{
+  background:#e84444;
 }
 
 
@@ -102,12 +120,10 @@ body{
 
 
 /* ===== CLOSE BUTTON ===== */
-/* hidden on desktop */
 
 .kgNavbar-closeBtn{
   display:none;
 }
-
 
 
 /* =========================
@@ -117,15 +133,10 @@ body{
 @media (max-width:1200px){
 
   .kgNavbar-menu{
-    gap:25px;
-  }
-
-  .kgNavbar-link{
-    font-size:17px;
+    gap:24px;
   }
 
 }
-
 
 
 /* =========================
@@ -135,29 +146,29 @@ body{
 @media (max-width:1024px){
 
   .kgNavbar-container{
-    padding:12px 20px;
+    padding:10px 20px;
   }
 
-  .kgNavbar-menu{
-    gap:18px;
-  }
-
-  .kgNavbar-link{
-    font-size:16px;
+  .kgNavbar-contactBtn{
+    padding:8px 20px;
+    font-size:14px;
   }
 
 }
 
 
-
 /* =========================
-   TABLET & MOBILE MENU
+   MOBILE MENU
 ========================= */
 
 @media (max-width:900px){
 
   .kgNavbar-toggleBtn{
     display:flex;
+  }
+
+  .kgNavbar-right{
+    display:none;
   }
 
   .kgNavbar-menu{
@@ -192,18 +203,17 @@ body{
     color:#000;
   }
 
-  /* MOBILE MENU LINKS */
+  /* MOBILE LINKS */
 
   .kgNavbar-link{
     font-size:20px;
     width:100%;
     padding:16px 0;
     text-align:center;
-    border-bottom:1px solid #000;
+    border-bottom:1px solid #ddd;
   }
 
 }
-
 
 
 /* =========================
@@ -213,11 +223,7 @@ body{
 @media (max-width:600px){
 
   .kgNavbar-logoImg{
-    width:38px;
-  }
-
-  .kgNavbar-logoText{
-    font-size:18px;
+    width:95px;
   }
 
   .kgNavbar-menu{
@@ -227,19 +233,14 @@ body{
 }
 
 
-
 /* =========================
    SMALL MOBILE
 ========================= */
 
 @media (max-width:400px){
 
-  .kgNavbar-logoText{
-    display:none;
-  }
-
   .kgNavbar-logoImg{
-    width:36px;
+    width:85px;
   }
 
 }

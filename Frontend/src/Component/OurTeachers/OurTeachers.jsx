@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./OurTeachers.css";
 
-import teacher1 from "../../assets/teacher_1.webp";
-import teacher2 from "../../assets/teacher_2.webp";
-import teacher3 from "../../assets/teacher_3.webp";
-import teacher4 from "../../assets/teacher_4.webp";
+import API, { IMAGE_URL } from "../../api/axios";
 
 import wave from "../../assets/Team-bg.webp";
 
@@ -13,29 +10,37 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 const OurTeachers = () => {
 
   const [currentPage, setCurrentPage] = useState(0);
+  const [teachers, setTeachers] = useState([]);
 
-  const teachers = [
-    {
-      name: "Angel Di Maria",
-      role: "Assistant Teacher",
-      image: teacher1
-    },
-    {
-      name: "Albert Cole",
-      role: "Teacher",
-      image: teacher2
-    },
-    {
-      name: "Fanny Greer",
-      role: "Professor",
-      image: teacher3
-    },
-    {
-      name: "Rhoda Byrd",
-      role: "Teacher",
-      image: teacher4
+  /* ================= FETCH TEACHERS ================= */
+
+  const fetchTeachers = async () => {
+    try {
+
+      const res = await API.get("/teachers/all");
+
+      if (res.data.success) {
+
+        const data = res.data.data.map((t) => ({
+          name: t.name,
+          role: t.role,
+          image: `${IMAGE_URL}${t.image}`
+        }));
+
+        setTeachers(data);
+
+      }
+
+    } catch (error) {
+      console.error("Failed to fetch teachers");
     }
-  ];
+  };
+
+  useEffect(() => {
+    fetchTeachers();
+  }, []);
+
+  if (teachers.length === 0) return null;
 
   const visibleTeacher = teachers[currentPage];
 

@@ -18,7 +18,6 @@ const Navbar = () => {
   return (
     <header className="kgNavbar-wrapper">
       <div className="kgNavbar-container">
-
         {/* Logo */}
         <div className="kgNavbar-logoSection">
           <img src={logo} alt="logo" className="kgNavbar-logoImg" />
@@ -26,8 +25,7 @@ const Navbar = () => {
 
         {/* Navigation */}
         <nav className={`kgNavbar-menu ${kgNavOpen ? "kgNavbar-active" : ""}`}>
-
-          {/* Close Button (Mobile Only via CSS) */}
+          {/* Close Button */}
           <div className="kgNavbar-closeBtn" onClick={closeMenu}>
             <IoClose />
           </div>
@@ -63,16 +61,21 @@ const Navbar = () => {
           <NavLink to="/contact" onClick={closeMenu} className="kgNavbar-link">
             Contact
           </NavLink>
-
         </nav>
 
-        {/* Mobile Hamburger Button */}
+       {/* RIGHT SIDE BUTTON */}
+<div className="kgNavbar-right">
+  <a href="tel:+919876543210" className="kgNavbar-contactBtn">
+    Get Consultant: +91 9876543210
+  </a>
+</div>
+
+        {/* Mobile Hamburger */}
         <div className="kgNavbar-toggleBtn" onClick={toggleMenu}>
           <span></span>
           <span></span>
           <span></span>
         </div>
-
       </div>
     </header>
   );
