@@ -83,6 +83,13 @@
   min-height: 40px;
 }
 
+.HomeCourse-desc{
+font-size:14px;
+color:#666;
+margin:8px 0 12px;
+line-height:1.4;
+}
+
 /* footer */
 
 .HomeCourse-footer {

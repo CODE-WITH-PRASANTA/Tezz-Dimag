@@ -68,7 +68,6 @@ const HomeCourse = () => {
   return (
     <section className="HomeCourse">
       <div className="HomeCourse-container">
-
         <div className="HomeCourse-header">
           <h2>Our Courses</h2>
           <p>Additional courses for your kids</p>
@@ -79,7 +78,6 @@ const HomeCourse = () => {
         <div className="HomeCourse-grid">
           {currentCourses.map((course) => (
             <div className="HomeCourse-card" key={course._id}>
-
               <div className="HomeCourse-image">
                 <img
                   src={
@@ -114,7 +112,6 @@ const HomeCourse = () => {
                 </div>
 
               </div>
-
             </div>
           ))}
         </div>
