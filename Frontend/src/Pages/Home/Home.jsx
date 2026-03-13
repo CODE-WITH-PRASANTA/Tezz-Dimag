@@ -7,6 +7,8 @@ import ContactUs from "../../Component/ContactUs/ContactUs";
 import About from "../../Component/About/About";
 import HomeCourse from "../../Component/HomeCourse/HomeCourse";
 import HomeParents from "../../Component/HomeParents/HomeParents";
+import OurGallary from "../../Component/OurGallary/OurGallary";
+import Admission from "../../Component/Admission/Admission";
 
 
 
@@ -25,6 +27,8 @@ const Home = () => {
         <SchoolFacilites />
       </div>
 
+      <Admission />
+
       <div id="teacher">
         <OurTeachers />
       </div>
@@ -37,9 +41,12 @@ const Home = () => {
       <div id="blog">
         <OurBlog />
       </div>
+      <OurGallary />
       <div id="contact">
         <ContactUs />
       </div>
+      
+      
     </div>
   );
 };

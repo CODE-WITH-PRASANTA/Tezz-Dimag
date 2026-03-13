@@ -1,84 +1,78 @@
-/* =========================
-MAIN FOOTER
-========================= */
+/* MAIN FOOTER */
 
 .kgFooter{
-background:#f5f6fa;
-padding:80px 20px 0;
+background:#1d0251;
+color:white;
+padding:80px 8% 0;
 font-family:"Poppins",sans-serif;
 }
 
-/* =========================
-CONTAINER
-========================= */
+/* CONTAINER */
 
 .kgFooter-container{
 max-width:1200px;
 margin:auto;
 display:grid;
-grid-template-columns:1.2fr 1fr 1.2fr;
+grid-template-columns:1.3fr 1fr 1.3fr;
 gap:60px;
-align-items:flex-start;
 }
 
-/* =========================
-LOGO
-========================= */
+/* LOGO */
 
 .kgFooter-logo{
-width:140px;
+width:150px;
 margin-bottom:20px;
 }
 
-/* =========================
-ABOUT TEXT
-========================= */
+/* ABOUT */
 
 .kgFooter-about p{
-color:#666;
-font-size:15px;
+color:#ddd;
 line-height:1.8;
 margin-bottom:25px;
 max-width:320px;
 }
 
-/* =========================
-SOCIAL ICONS
-========================= */
+/* SOCIAL ICONS */
 
 .kgFooter-social{
 display:flex;
-gap:12px;
+gap:15px;
+margin-top:10px;
 }
 
 .kgFooter-social a{
-width:36px;
-height:36px;
-border:1px solid #ddd;
+width:45px;
+height:45px;
+border-radius:50%;
+background:#ffd400;
+color:#000;
 display:flex;
 align-items:center;
 justify-content:center;
-border-radius:4px;
-color:#333;
-font-size:14px;
+font-size:16px;
 transition:.3s;
 }
 
 .kgFooter-social a:hover{
-background:#2f66ff;
-color:#fff;
-border-color:#2f66ff;
+transform:translateY(-3px);
 }
 
-/* =========================
-INFO SECTION
-========================= */
+/* INFO */
 
 .kgFooter-info h3{
-color:#2f66ff;
-font-size:20px;
+font-size:22px;
 margin-bottom:25px;
-letter-spacing:.5px;
+position:relative;
+}
+
+.kgFooter-info h3::after{
+content:"";
+width:35px;
+height:3px;
+background:#ffd400;
+display:block;
+margin-top:8px;
 }
 
 .kgFooter-info-links{
@@ -93,25 +87,22 @@ margin:0;
 }
 
 .kgFooter-info-links li{
-margin-bottom:14px;
+margin-bottom:12px;
 }
 
 .kgFooter-info-links a{
 text-decoration:none;
+color:#ddd;
 font-size:15px;
-color:#444;
-font-weight:500;
 transition:.3s;
 }
 
 .kgFooter-info-links a:hover{
-color:#2f66ff;
+color:#ffd400;
 padding-left:4px;
 }
 
-/* =========================
-NEWSLETTER
-========================= */
+/* NEWSLETTER */
 
 .kgFooter-newsletter h3{
 font-size:22px;
@@ -119,105 +110,70 @@ margin-bottom:15px;
 }
 
 .kgFooter-newsletter p{
-color:#666;
-font-size:14px;
-margin-bottom:22px;
-line-height:1.6;
+color:#ddd;
+margin-bottom:20px;
 max-width:300px;
 }
 
-/* =========================
-INPUT
-========================= */
+/* INPUT */
 
 .kgFooter-inputBox{
 display:flex;
-border:1px solid #ddd;
-border-radius:6px;
+border-radius:30px;
 overflow:hidden;
+background:white;
 max-width:320px;
-background:#fff;
 }
 
 .kgFooter-inputBox input{
 flex:1;
 border:none;
-padding:12px 14px;
-font-size:14px;
+padding:12px 16px;
 outline:none;
+font-size:14px;
 }
 
 .kgFooter-inputBox button{
 width:60px;
 border:none;
-background:#2f66ff;
-color:#fff;
+background:#ffd400;
+color:black;
 font-size:18px;
 cursor:pointer;
 display:flex;
 align-items:center;
 justify-content:center;
-transition:.3s;
 }
 
-.kgFooter-inputBox button:hover{
-background:#1849c6;
-}
-
-/* =========================
-CHECKBOX
-========================= */
+/* CHECKBOX */
 
 .kgFooter-checkbox{
 margin-top:15px;
+font-size:13px;
+color:#ddd;
 display:flex;
 gap:8px;
-font-size:13px;
-color:#777;
-cursor:pointer;
-max-width:320px;
+align-items:center;
 }
 
-.kgFooter-checkbox input{
-cursor:pointer;
-}
-
-/* =========================
-FOOTER BOTTOM
-========================= */
+/* BOTTOM */
 
 .kgFooter-bottom{
-margin-top:70px;
-border-top:1px solid #ddd;
-padding:25px 10px;
+border-top:1px solid rgba(255,255,255,0.2);
+margin-top:60px;
+padding:20px 0;
 text-align:center;
 font-size:14px;
-color:#777;
-line-height:1.6;
+color:#ddd;
 }
 
 .kgFooter-bottom span{
-color:#555;
-font-weight:500;
+color:#ffd400;
 }
 
-/* =========================
-LARGE LAPTOP
-========================= */
+/* TABLET */
 
-@media (max-width:1200px){
-
-.kgFooter-container{
-gap:40px;
-}
-
-}
-
-/* =========================
-TABLET
-========================= */
-
-@media (max-width:992px){
+@media(max-width:992px){
 
 .kgFooter-container{
 grid-template-columns:1fr 1fr;
@@ -230,11 +186,9 @@ grid-column:span 2;
 
 }
 
-/* =========================
-SMALL TABLET
-========================= */
+/* MOBILE */
 
-@media (max-width:768px){
+@media(max-width:768px){
 
 .kgFooter-container{
 grid-template-columns:1fr;
@@ -252,12 +206,6 @@ justify-content:center;
 
 .kgFooter-info-links{
 justify-content:center;
-gap:50px;
-}
-
-.kgFooter-newsletter p{
-margin:auto;
-margin-bottom:20px;
 }
 
 .kgFooter-inputBox{
@@ -266,52 +214,6 @@ margin:auto;
 
 .kgFooter-checkbox{
 justify-content:center;
-margin:auto;
-}
-
-}
-
-/* =========================
-MOBILE
-========================= */
-
-@media (max-width:576px){
-
-.kgFooter{
-padding:60px 20px 0;
-}
-
-.kgFooter-logo{
-width:120px;
-}
-
-.kgFooter-info-links{
-flex-direction:column;
-gap:10px;
-}
-
-.kgFooter-info-links ul{
-margin-bottom:10px;
-}
-
-.kgFooter-bottom{
-font-size:13px;
-}
-
-}
-
-/* =========================
-SMALL MOBILE
-========================= */
-
-@media (max-width:400px){
-
-.kgFooter-inputBox{
-max-width:100%;
-}
-
-.kgFooter-checkbox{
-font-size:12px;
 }
 
 }
