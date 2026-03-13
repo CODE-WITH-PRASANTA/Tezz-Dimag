@@ -7,6 +7,7 @@ import CoursePosting from "./Pages/CoursePosting/CoursePosting";
 import BlogPosting from "./Pages/BlogPosting/BlogPosting";
 import Testimonial from "./Pages/Testimonial/Testimonial";
 import Contact from "./Pages/Contact/Contact";
+import Profile from "./pages/Profile/Profile";
 
 // import CoursesPost from "./pages/CoursesPost";
 // import Testimonial from "./pages/Testimonial";
@@ -30,6 +31,7 @@ function App() {
           {/* <Route path="/blog-posting" element={<BlogPost />} /> */}
           <Route path="/testimonial" element={<Testimonial />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/profile" element={<Profile />} />
 
         </Route>
 
