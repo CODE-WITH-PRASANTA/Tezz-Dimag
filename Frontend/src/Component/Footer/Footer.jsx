@@ -1,101 +1,145 @@
 import React from "react";
 import "./Footer.css";
-import logo from "../../assets/Logo.webp";
+import logo from "../../assets/TezzDimag_Bhubaneswar_logo.png";
 
 import {
   FaFacebookF,
   FaTwitter,
   FaLinkedinIn,
   FaInstagram,
-  FaSkype,
-  FaRss
 } from "react-icons/fa";
 
 import { IoSend } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <footer className="kgFooter-wrapper">
+    <footer className="kgFooter">
 
       <div className="kgFooter-container">
 
-        {/* LEFT SECTION */}
-        <div className="kgFooter-aboutSection">
+        {/* LEFT ABOUT */}
+        <div className="kgFooter-about">
 
-          <div className="kgFooter-logoBox">
-            <img src={logo} alt="logo" className="kgFooter-logoImg" />
-            
-          </div>
+          <img src={logo} alt="logo" className="kgFooter-logo" />
 
-          <p className="kgFooter-description">
-            Kindergarten school is a wonderland for Kids to learn,
-            play, and grow naturally and creatively.
+          <p>
+            Through a combination of lectures, readings and discussions,
+            students will gain solid foundation in education.
           </p>
 
-          <ul className="kgFooter-featureList">
-            <li>Advanced Educational Programs</li>
-            <li>Creativity & Thinking</li>
-            <li>Yoga & Swimming</li>
-          </ul>
+          <div className="kgFooter-social">
+
+            <a href="#">
+              <FaTwitter />
+            </a>
+
+            <a href="#">
+              <FaFacebookF />
+            </a>
+
+            <a href="#">
+              <FaLinkedinIn />
+            </a>
+
+            <a href="#">
+              <FaInstagram />
+            </a>
+
+          </div>
+
+        </div>
+
+        {/* INFORMATION */}
+        <div className="kgFooter-info">
+
+          <h3>INFORMATION</h3>
+
+          <div className="kgFooter-info-links">
+
+            <ul>
+
+              <li>
+                <a href="/">HOME</a>
+              </li>
+
+              <li>
+                <a href="#blog">BLOG</a>
+              </li>
+
+              <li>
+                <a href="#teacher">TEACHERS</a>
+              </li>
+
+              <li>
+                <a href="#contact">CONTACT</a>
+              </li>
+
+            </ul>
+
+            <ul>
+
+              <li>
+                <a href="#about">ABOUT</a>
+              </li>
+
+              <li>
+                <a href="#course">CLASSES</a>
+              </li>
+
+              <li>
+                <a href="#events">EVENTS</a>
+              </li>
+
+              <li>
+                <a href="#test">TESTIMONIALS</a>
+              </li>
+
+            </ul>
+
+          </div>
 
         </div>
 
 
-        {/* CENTER SECTION */}
-        <div className="kgFooter-instagramSection">
+        {/* NEWSLETTER */}
+        <div className="kgFooter-newsletter">
 
-          <h3 className="kgFooter-sectionTitle yellowTitle">
-            Instagram
-          </h3>
+          <h3>Newsletter</h3>
 
-          <div className="kgFooter-titleUnderline yellowUnderline"></div>
-
-        </div>
-
-
-        {/* RIGHT SECTION */}
-        <div className="kgFooter-newsletterSection">
-
-          <h3 className="kgFooter-sectionTitle redTitle">
-            Newsletter Signup
-          </h3>
-
-          <div className="kgFooter-titleUnderline redUnderline"></div>
-
-          <p className="kgFooter-newsletterText">
-            Get Update Our News Everytime,
-            You Need Just Subscribe
+          <p>
+            Sign up for our newsletter and get 34% off your next course.
           </p>
 
           <div className="kgFooter-inputBox">
 
-            <input
-              type="email"
-              placeholder="Enter Your Email"
-              className="kgFooter-emailInput"
-            />
+            <input type="email" placeholder="Enter Your Email*" />
 
-            <button className="kgFooter-submitBtn">
+            <button>
               <IoSend />
             </button>
 
           </div>
 
+          <label className="kgFooter-checkbox">
 
-          {/* SOCIAL ICONS */}
+            <input type="checkbox" />
 
-          <div className="kgFooter-socialIcons">
+            <span>
+              I agree to the terms of use and privacy policy.
+            </span>
 
-            <FaFacebookF />
-            <FaTwitter />
-            <FaLinkedinIn />
-            <FaInstagram />
-            <FaSkype />
-            <FaRss />
-
-          </div>
+          </label>
 
         </div>
+
+      </div>
+
+      {/* FOOTER BOTTOM */}
+
+      <div className="kgFooter-bottom">
+
+        © 2025 Tezz Dimag Bubaneswar. All Rights Reserved.  
+        <span> | Powered by Tezz Dimag | Developed by PR WEBSTOCK</span>
 
       </div>
 

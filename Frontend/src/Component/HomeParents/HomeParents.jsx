@@ -1,11 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./HomeParents.css";
 
-import p1 from "../../assets/member-01.webp";
-import p2 from "../../assets/member-02.webp";
-import p3 from "../../assets/member-03.webp";
+import API, { IMAGE_URL } from "../../api/axios";
 
 const HomeParents = () => {
+
+  const [testimonials,setTestimonials] = useState([])
+
+  /* ================= FETCH TESTIMONIALS ================= */
+
+  const fetchTestimonials = async () => {
+
+    try{
+
+      const res = await API.get("/testimonials/all")
+
+      if(res.data.success){
+
+        const data = res.data.data.map(item => ({
+          ...item,
+          image:`${IMAGE_URL}${item.image}`
+        }))
+
+        setTestimonials(data)
+
+      }
+
+    }catch(error){
+
+      console.error("Failed to load testimonials")
+
+    }
+
+  }
+
+  useEffect(()=>{
+    fetchTestimonials()
+  },[])
+
+  if(testimonials.length === 0) return null
+
   return (
     <section className="HomeParents">
 
@@ -18,15 +52,13 @@ const HomeParents = () => {
 
         <div className="HomeParents-track">
 
-          {[1,2,3,1,2,3].map((item,index)=>(
+          {[...testimonials,...testimonials].map((item,index)=>(
             <div className="HomeParents-card" key={index}>
 
               <div className="HomeParents-message">
 
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                  sed do eiusmod tempor incididunt ut labore et dolore magna
-                  aliqua. Ut enim ad minim
+                  {item.feedback}
                 </p>
 
                 <span className="HomeParents-tail"></span>
@@ -36,13 +68,13 @@ const HomeParents = () => {
               <div className="HomeParents-user">
 
                 <img
-                  src={index%3===0?p1:index%3===1?p2:p3}
-                  alt="parent"
+                  src={item.image}
+                  alt={item.name}
                 />
 
                 <div>
-                  <h4>David Gondar</h4>
-                  <span>CEO & Founder</span>
+                  <h4>{item.name}</h4>
+                  <span>{item.designation}</span>
                 </div>
 
               </div>

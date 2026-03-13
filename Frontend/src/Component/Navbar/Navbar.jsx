@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-import logo from "../../assets/Tezz-Logo.webp";
+import logo from "../../assets/TezzDimag_Bhubaneswar_logo.png";
 import { IoClose } from "react-icons/io5";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Navbar = () => {
   const [kgNavOpen, setKgNavOpen] = useState(false);
@@ -18,61 +19,85 @@ const Navbar = () => {
   return (
     <header className="kgNavbar-wrapper">
       <div className="kgNavbar-container">
-
-        {/* Logo */}
+        {/* LOGO */}
         <div className="kgNavbar-logoSection">
           <img src={logo} alt="logo" className="kgNavbar-logoImg" />
         </div>
 
-        {/* Navigation */}
+        {/* NAVIGATION */}
         <nav className={`kgNavbar-menu ${kgNavOpen ? "kgNavbar-active" : ""}`}>
-
-          {/* Close Button (Mobile Only via CSS) */}
+          {/* CLOSE BUTTON */}
           <div className="kgNavbar-closeBtn" onClick={closeMenu}>
             <IoClose />
           </div>
 
-          <NavLink to="/" onClick={closeMenu} className="kgNavbar-link">
+          <a href="/" onClick={closeMenu} className="kgNavbar-link">
             Home
-          </NavLink>
+          </a>
 
-          <NavLink to="/about" onClick={closeMenu} className="kgNavbar-link">
-            About Us
-          </NavLink>
+          <a href="#about" onClick={closeMenu} className="kgNavbar-link">
+            About
+          </a>
 
-          <NavLink to="/event" onClick={closeMenu} className="kgNavbar-link">
+          <a href="#event" onClick={closeMenu} className="kgNavbar-link">
             Event
-          </NavLink>
+          </a>
 
-          <NavLink to="/course" onClick={closeMenu} className="kgNavbar-link">
+          <a href="#course" onClick={closeMenu} className="kgNavbar-link">
             Course
-          </NavLink>
+          </a>
 
-          <NavLink to="/blog" onClick={closeMenu} className="kgNavbar-link">
-            Blog Page
-          </NavLink>
+          <a href="#blog" onClick={closeMenu} className="kgNavbar-link">
+            Blog
+          </a>
 
-          <NavLink to="/teacher" onClick={closeMenu} className="kgNavbar-link">
+          <a href="#teacher" onClick={closeMenu} className="kgNavbar-link">
             Teacher
-          </NavLink>
+          </a>
 
-          <NavLink to="/schedule" onClick={closeMenu} className="kgNavbar-link">
+          <a href="#schedule" onClick={closeMenu} className="kgNavbar-link">
             Schedule
-          </NavLink>
+          </a>
 
-          <NavLink to="/contact" onClick={closeMenu} className="kgNavbar-link">
+          <a href="#test" onClick={closeMenu} className="kgNavbar-link">
+            Testimonial
+          </a>
+
+          <a href="#contact" onClick={closeMenu} className="kgNavbar-link">
             Contact
-          </NavLink>
+          </a>
 
+          {/* MOBILE FOOTER */}
+          <div className="kgNavbar-mobileFooter">
+            <a href="tel:+919876543210" className="kgNavbar-mobileCall">
+              Get Consultant
+              <br />
+              +91 9876543210
+            </a>
+
+            <div className="kgNavbar-mobileSocial">
+              <FaFacebookF />
+              <FaTwitter />
+              <FaInstagram />
+            </div>
+          </div>
         </nav>
 
-        {/* Mobile Hamburger Button */}
+        {/* RIGHT BUTTON */}
+        <div className="kgNavbar-right">
+          <a href="tel:+919876543210" className="kgNavbar-contactBtn">
+            <span className="kgNavbar-contactText">Get Consultant</span>
+
+            <span className="kgNavbar-phone">+91 9876543210</span>
+          </a>
+        </div>
+
+        {/* HAMBURGER */}
         <div className="kgNavbar-toggleBtn" onClick={toggleMenu}>
           <span></span>
           <span></span>
           <span></span>
         </div>
-
       </div>
     </header>
   );

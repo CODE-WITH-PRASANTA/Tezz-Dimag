@@ -1,32 +1,57 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./OurBlog.css";
 
-import blog1 from "../../assets/Blog-1.webp";
-import blog2 from "../../assets/Blog_2.webp";
-import blog3 from "../../assets/Blog-3.webp";
-
 import { FaRegCalendarAlt, FaRegCommentDots, FaThumbsUp } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
+import API, { IMAGE_URL } from "../../api/axios";
 
 const OurBlog = () => {
 
   const [currentPage, setCurrentPage] = useState(0);
+  const [posts, setPosts] = useState([]);
 
-  const posts = [
-    {
-      image: blog1,
-      title: "Uncovers Ancient Ashkenaz."
-    },
-    {
-      image: blog2,
-      title: "Uncovers Ancient Ashkenaz."
-    },
-    {
-      image: blog3,
-      title: "Uncovers Ancient Ashkenaz."
+  /* ================= FETCH BLOGS ================= */
+
+  const fetchBlogs = async () => {
+
+    try {
+
+      const res = await API.get("/blogs/all");
+
+      if (res.data.success) {
+
+        const blogs = res.data.data.map((blog) => ({
+
+          id: blog._id,
+          image: `${IMAGE_URL}${blog.image}`,
+          title: blog.title,
+          description: blog.content?.replace(/<[^>]+>/g, "").slice(0,120),
+          date: new Date(blog.createdAt).toLocaleDateString(),
+          comments: blog.comments || 0,
+          likes: blog.likes || 0
+
+        }));
+
+        setPosts(blogs);
+
+      }
+
+    } catch (error) {
+
+      console.log("Blog fetch error");
+
     }
-  ];
 
-  const visiblePost = posts[currentPage];
+  };
+
+  useEffect(() => {
+
+    fetchBlogs();
+
+  }, []);
+
+  const visiblePost = posts[currentPage] || {};
 
   return (
     <section className="OurBlog-wrapper">
@@ -41,46 +66,48 @@ const OurBlog = () => {
 
         {posts.map((post, index) => (
 
-          <div className="OurBlog-card" key={index}>
+          <Link to={`/blog/${post.id}`} key={index} className="blog-link">
 
-            <div className="OurBlog-imageBox">
-              <img src={post.image} alt="blog" />
+            <div className="OurBlog-card">
+
+              <div className="OurBlog-imageBox">
+                <img src={post.image} alt="blog" />
+              </div>
+
+              <div className="OurBlog-content">
+
+                <h3 className="OurBlog-cardTitle">
+                  {post.title}
+                </h3>
+
+                <p className="OurBlog-description">
+                  {post.description}
+                </p>
+
+              </div>
+
+              <div className="OurBlog-meta">
+
+                <span>
+                  <FaRegCalendarAlt />
+                  {post.date}
+                </span>
+
+                <span>
+                  <FaRegCommentDots />
+                  {post.comments} Comments
+                </span>
+
+                <span>
+                  <FaThumbsUp />
+                  {post.likes} Like
+                </span>
+
+              </div>
+
             </div>
 
-            <div className="OurBlog-content">
-
-              <h3 className="OurBlog-cardTitle">
-                {post.title}
-              </h3>
-
-              <p className="OurBlog-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Alias itaque eaque deserunt atque laborum ex ad facilis
-                praesentium placeat tenetur.
-              </p>
-
-            </div>
-
-            <div className="OurBlog-meta">
-
-              <span>
-                <FaRegCalendarAlt />
-                10.06.2017
-              </span>
-
-              <span>
-                <FaRegCommentDots />
-                5 Comments
-              </span>
-
-              <span>
-                <FaThumbsUp />
-                5 Like
-              </span>
-
-            </div>
-
-          </div>
+          </Link>
 
         ))}
 
@@ -90,46 +117,48 @@ const OurBlog = () => {
       {/* MOBILE VIEW WITH PAGINATION */}
       <div className="OurBlog-mobile">
 
-        <div className="OurBlog-card">
+        <Link to={`/blog/${visiblePost.id}`}>
 
-          <div className="OurBlog-imageBox">
-            <img src={visiblePost.image} alt="blog" />
+          <div className="OurBlog-card">
+
+            <div className="OurBlog-imageBox">
+              <img src={visiblePost.image} alt="blog" />
+            </div>
+
+            <div className="OurBlog-content">
+
+              <h3 className="OurBlog-cardTitle">
+                {visiblePost.title}
+              </h3>
+
+              <p className="OurBlog-description">
+                {visiblePost.description}
+              </p>
+
+            </div>
+
+            <div className="OurBlog-meta">
+
+              <span>
+                <FaRegCalendarAlt />
+                {visiblePost.date}
+              </span>
+
+              <span>
+                <FaRegCommentDots />
+                {visiblePost.comments} Comments
+              </span>
+
+              <span>
+                <FaThumbsUp />
+                {visiblePost.likes} Like
+              </span>
+
+            </div>
+
           </div>
 
-          <div className="OurBlog-content">
-
-            <h3 className="OurBlog-cardTitle">
-              {visiblePost.title}
-            </h3>
-
-            <p className="OurBlog-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Alias itaque eaque deserunt atque laborum ex ad facilis
-              praesentium placeat tenetur.
-            </p>
-
-          </div>
-
-          <div className="OurBlog-meta">
-
-            <span>
-              <FaRegCalendarAlt />
-              10.06.2017
-            </span>
-
-            <span>
-              <FaRegCommentDots />
-              5 Comments
-            </span>
-
-            <span>
-              <FaThumbsUp />
-              5 Like
-            </span>
-
-          </div>
-
-        </div>
+        </Link>
 
 
         {/* PAGINATION DOTS */}
