@@ -9,6 +9,7 @@ import HomeCourse from "../../Component/HomeCourse/HomeCourse";
 import HomeParents from "../../Component/HomeParents/HomeParents";
 import OurGallary from "../../Component/OurGallary/OurGallary";
 import Admission from "../../Component/Admission/Admission";
+import AboutSection from "../../Component/AboutSection/AboutSection";
 
 
 
@@ -18,7 +19,7 @@ const Home = () => {
       <div id="/">
         <HeroSection />
       </div>
-
+        <AboutSection />
       <div id="about">
         <About />
       </div>
