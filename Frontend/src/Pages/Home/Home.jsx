@@ -10,6 +10,8 @@ import HomeParents from "../../Component/HomeParents/HomeParents";
 import OurGallary from "../../Component/OurGallary/OurGallary";
 import Admission from "../../Component/Admission/Admission";
 import AboutSection from "../../Component/AboutSection/AboutSection";
+import ClubsSection from "../../Component/ClubsSection/ClubsSection";
+
 
 const Home = () => {
   return (
@@ -24,6 +26,8 @@ const Home = () => {
       <section id="about">
         <About />
       </section>
+      
+      <ClubsSection />
 
       <section id="sclf">
         <SchoolFacilites />

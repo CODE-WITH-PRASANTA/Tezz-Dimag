@@ -13,11 +13,13 @@ import lineshape from "../../assets/line-shape.png";
 const AboutSection = () => {
   return (
     <section className="homeabout">
-      {/* Decorative line */}
+
+      {/* Decorative Line */}
       <img src={lineshape} alt="" className="homeabout-line" />
 
       <div className="homeabout-container">
-        {/* LEFT IMAGE */}
+
+        {/* LEFT SIDE IMAGE */}
         <div className="homeabout-left">
           <img src={Bordershape} alt="" className="homeabout-border" />
 
@@ -26,79 +28,88 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* RIGHT CONTENT */}
+        {/* RIGHT SIDE CONTENT */}
         <div className="homeabout-right">
           <img src={frame} alt="" className="homeabout-frame" />
 
           <span className="homeabout-subtitle">About Us</span>
 
-        <h2 className="homeabout-title homeabout-title--colorful">
-            Welcome To Learning Step <br />
-            <span>International School</span>
+          <h2 className="homeabout-title homeabout-title--colorful">
+            Welcome To TEZZ DIMAG <br />
+            <span>School</span>
           </h2>
 
-
           <p className="homeabout-desc">
-            Founded in 2019, Learning Step International School provides a
-            nurturing and inclusive environment where students grow with
-            confidence, creativity, and strong values. We focus on academic
-            excellence along with moral, social, and personal development.
+            TEZZ DIMAG is a professionally managed institute dedicated to building and nurturing young talent. Our goal is to help students discover their true potential and develop the skills they need for a successful future.
+
+            We offer a research-based and scientifically designed holistic learning curriculum that encourages children to imagine, innovate, and grow intellectually. Our programs are carefully structured to support the overall development of a child’s mind, creativity, and confidence.
+
+            At TEZZ DIMAG, we believe that the potential of the human brain goes far beyond our imagination. With this belief, we have developed a unique program under the brand name “TEZZDIMAG”, designed to support the learning and development needs of students.
           </p>
 
           {/* FEATURES */}
           <div className="homeabout-features">
+
+            {/* Mission */}
             <div className="homeabout-feature1">
               <div className="feature-icon">
                 <img src={MissionIcon} alt="Mission" />
               </div>
+
               <div>
                 <h4>Our Mission</h4>
                 <p>
-                  To inspire lifelong learners through quality education,
-                  creativity, and global awareness.
+                  OUR MISSION IS TO PLACE INDIA IN TOP 3 COUNTRIES ACROSS THE WORLD IN HAPPINESS INDEX TILL 2025
                 </p>
               </div>
             </div>
 
+            {/* Vision */}
             <div className="homeabout-feature2">
               <div className="feature-icon">
                 <img src={VisionIcon} alt="Vision" />
               </div>
+
               <div>
                 <h4>Our Vision</h4>
                 <p>
-                  To empower students with knowledge, values, and skills for a
-                  successful future.
+                  TEZZ DIMAG IS A VISION TRANSFORMED TO CREATE AN EDUCATION SYSTEM WITH A GOAL TO DEVELOP A WHOLE NEW ART OF TEACHING AND LEARNING ENCIRCLED WITHIN FUN AND CREATIVITY..
                 </p>
               </div>
             </div>
+
           </div>
 
           <hr className="homeabout-divider" />
 
-          {/* AUTHOR */}
+          {/* AUTHOR / FOUNDER SECTION */}
           <div className="homeabout-author">
+
             <div className="author-info">
               <img src={authorimg} alt="Founder" />
+
               <div>
                 <h5>Mr. Vishnu Sharma</h5>
                 <span>Founder & Managing Director</span>
               </div>
             </div>
 
+            {/* CALL BUTTON */}
             <a
-            href="tel:+917014627894"
-            className="author-call"
-            aria-label="Call Learning Step International School"
-          >
-            <div className="call-icon">📞</div>
-            <div>
-              <span>Call Us Now</span> <br />
-              <strong>+91 7014627894</strong>
-            </div>
-          </a>
+              href="tel:+917014627894"
+              className="author-call"
+              aria-label="Call Learning Step International School"
+            >
+              <div className="call-icon">📞</div>
+
+              <div>
+                <span>Call Us Now</span> <br />
+                <strong>+91 7327817155</strong>
+              </div>
+            </a>
 
           </div>
+
         </div>
       </div>
     </section>

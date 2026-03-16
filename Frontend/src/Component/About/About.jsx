@@ -20,8 +20,8 @@ const About = () => {
         {/* heading */}
 
         <div className="About-header">
-          <h2>Welcome To Our School</h2>
-          <p>Starting with the new school year in our kindergarten</p>
+          <h2>Welcome To TEZZ DIMAG</h2>
+          <p>Helping young minds grow with creativity, confidence, and smart learning</p>
         </div>
 
         {/* content */}
@@ -35,20 +35,23 @@ const About = () => {
             <h3>Overview</h3>
 
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              TEZZ DIMAG is a learning platform dedicated to developing the hidden
+              potential of children. Our programs focus on improving mind power,
+              memory skills, creativity, and overall personality development.
+              We believe that every child has unique abilities that can grow
+              with the right guidance and learning environment.
             </p>
 
             <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident.
+              Through research-based and scientifically designed activities,
+              TEZZ DIMAG helps students strengthen their thinking ability,
+              concentration, and confidence. Our goal is to support children in
+              becoming independent learners who are prepared for the future
+              with strong skills and positive mindset.
             </p>
 
             <button className="About-btn" onClick={goToHero}>
-              Readmore
+              Contact Us
             </button>
 
           </div>
@@ -56,7 +59,7 @@ const About = () => {
           {/* right image */}
 
           <div className="About-image">
-            <img src={aboutImg} alt="kids swimming" />
+            <img src={aboutImg} alt="Children learning and developing skills at TEZZ DIMAG" />
           </div>
 
         </div>
@@ -66,7 +69,7 @@ const About = () => {
       {/* grass bottom */}
 
       <div className="About-grass">
-        <img src={grass} alt="grass decoration"/>
+        <img src={grass} alt="decorative grass shape"/>
       </div>
 
     </section>

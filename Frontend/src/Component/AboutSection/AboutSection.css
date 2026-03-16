@@ -5,7 +5,12 @@
   background: linear-gradient(180deg, #ffffff 0%, #f5f9ff 100%);
   overflow: hidden;
 }
-
+.homeabout-desc{
+line-height:1.7;
+text-align:justify;
+max-width:600px;
+color:#555;
+}
 /* Decorative line */
 .homeabout-line {
   position: absolute;
