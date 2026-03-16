@@ -7,14 +7,19 @@ import ContactUs from "../../Component/ContactUs/ContactUs";
 import About from "../../Component/About/About";
 import HomeCourse from "../../Component/HomeCourse/HomeCourse";
 import HomeParents from "../../Component/HomeParents/HomeParents";
+import OurGallary from "../../Component/OurGallary/OurGallary";
+import Admission from "../../Component/Admission/Admission";
+import AboutSection from "../../Component/AboutSection/AboutSection";
 
 const Home = () => {
   return (
     <div>
 
-      <section id="home">
+      <section id="/">
         <HeroSection />
       </section>
+
+      <AboutSection />
 
       <section id="about">
         <About />
@@ -23,6 +28,8 @@ const Home = () => {
       <section id="sclf">
         <SchoolFacilites />
       </section>
+
+      <Admission />
 
       <section id="teacher">
         <OurTeachers />
@@ -39,6 +46,8 @@ const Home = () => {
       <section id="blog">
         <OurBlog />
       </section>
+
+      <OurGallary />
 
       <section id="contact">
         <ContactUs />

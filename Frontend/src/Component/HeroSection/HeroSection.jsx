@@ -49,25 +49,24 @@ const HeroSection = () => {
 
   return (
     <section className="HeroSection">
-
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={index === current ? "HeroSection-slide active" : "HeroSection-slide"}
+          className={
+            index === current ? "HeroSection-slide active" : "HeroSection-slide"
+          }
           style={{ backgroundImage: `url(${slide.image})` }}
         >
           <div className="HeroSection-overlay"></div>
 
           <div className="HeroSection-content">
-
             <h4 className="fade-up">{slide.titleTop}</h4>
 
             <h1 className="fade-up delay">{slide.title}</h1>
 
-            <Link to={slide.link} className="HeroSection-btn fade-up delay2">
-              LEARN MORE
-            </Link>
-
+            <a href="#contact" className="HeroSection-btn fade-up delay2">
+              CONTACT US
+            </a>
           </div>
         </div>
       ))}
@@ -84,12 +83,13 @@ const HeroSection = () => {
         {slides.map((_, index) => (
           <span
             key={index}
-            className={index === current ? "HeroSection-dot active" : "HeroSection-dot"}
+            className={
+              index === current ? "HeroSection-dot active" : "HeroSection-dot"
+            }
             onClick={() => setCurrent(index)}
           ></span>
         ))}
       </div>
-
     </section>
   );
 };

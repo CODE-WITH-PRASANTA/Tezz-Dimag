@@ -1,28 +1,28 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/TezzDimag_Bhubaneswar_logo.png";
+
 import { IoClose } from "react-icons/io5";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Navbar = () => {
-  const [kgNavOpen, setKgNavOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setKgNavOpen(!kgNavOpen);
+    setMenuOpen(!menuOpen);
   };
 
   const closeMenu = () => {
-    setKgNavOpen(false);
+    setMenuOpen(false);
   };
 
-  // Smooth Scroll Function
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
 
     if (section) {
       section.scrollIntoView({
         behavior: "smooth",
-        block: "start"
+        block: "start",
       });
     }
 
@@ -30,74 +30,72 @@ const Navbar = () => {
   };
 
   return (
-    <header className="kgNavbar-wrapper">
-      <div className="kgNavbar-container">
+    <>
+      <header className="navbar">
+        <div className="navbar-container">
 
-        {/* LOGO */}
-        <div className="kgNavbar-logoSection">
-          <img src={logo} alt="logo" className="kgNavbar-logoImg" />
-        </div>
-
-        {/* NAVIGATION */}
-        <nav className={`kgNavbar-menu ${kgNavOpen ? "kgNavbar-active" : ""}`}>
-
-          {/* CLOSE BUTTON */}
-          <div className="kgNavbar-closeBtn" onClick={closeMenu}>
-            <IoClose />
+          {/* LOGO */}
+          <div className="navbar-logo">
+            <img src={logo} alt="TezzDimag Logo" />
           </div>
 
-          <button onClick={() => scrollToSection("home")} className="kgNavbar-link">Home</button>
+          {/* MENU */}
+          <nav className={`navbar-menu ${menuOpen ? "active" : ""}`}>
 
-          <button onClick={() => scrollToSection("about")} className="kgNavbar-link">About</button>
-
-          <button onClick={() => scrollToSection("event")} className="kgNavbar-link">Event</button>
-
-          <button onClick={() => scrollToSection("course")} className="kgNavbar-link">Course</button>
-
-          <button onClick={() => scrollToSection("blog")} className="kgNavbar-link">Blog</button>
-
-          <button onClick={() => scrollToSection("teacher")} className="kgNavbar-link">Teacher</button>
-
-          <button onClick={() => scrollToSection("schedule")} className="kgNavbar-link">Schedule</button>
-
-          <button onClick={() => scrollToSection("test")} className="kgNavbar-link">Testimonial</button>
-
-          <button onClick={() => scrollToSection("contact")} className="kgNavbar-link">Contact</button>
-
-          {/* MOBILE FOOTER */}
-          <div className="kgNavbar-mobileFooter">
-            <a href="tel:+919876543210" className="kgNavbar-mobileCall">
-              Get Consultant
-              <br />
-              +91 9876543210
-            </a>
-
-            <div className="kgNavbar-mobileSocial">
-              <FaFacebookF />
-              <FaTwitter />
-              <FaInstagram />
+            {/* CLOSE BUTTON */}
+            <div className="menu-close" onClick={closeMenu}>
+              <IoClose />
             </div>
+
+            <a href="/" onClick={closeMenu}>Home</a>
+            <button onClick={() => scrollToSection("about")}>About</button>
+            <button onClick={() => scrollToSection("event")}>Event</button>
+            <button onClick={() => scrollToSection("course")}>Course</button>
+            <button onClick={() => scrollToSection("blog")}>Blog</button>
+            <button onClick={() => scrollToSection("teacher")}>Teacher</button>
+            <button onClick={() => scrollToSection("schedule")}>Schedule</button>
+            <button onClick={() => scrollToSection("test")}>Testimonial</button>
+            <button onClick={() => scrollToSection("contact")}>Contact</button>
+
+            {/* MOBILE FOOTER */}
+            <div className="menu-footer">
+
+              <a href="tel:+919876543210" className="mobile-call">
+                Get Consultant <br />
+                +91 9876543210
+              </a>
+
+              <div className="mobile-social">
+                <FaFacebookF />
+                <FaTwitter />
+                <FaInstagram />
+              </div>
+
+            </div>
+
+          </nav>
+
+          {/* CTA BUTTON */}
+          <div className="navbar-cta">
+            <a href="tel:+919876543210" className="cta-btn">
+              <span>Get Consultant</span>
+              <strong>+91 9876543210</strong>
+            </a>
           </div>
 
-        </nav>
+          {/* HAMBURGER */}
+          <div className="hamburger" onClick={toggleMenu}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
 
-        {/* RIGHT BUTTON */}
-        <div className="kgNavbar-right">
-          <a href="tel:+919876543210" className="kgNavbar-contactBtn">
-            <span className="kgNavbar-contactText">Get Consultant</span>
-            <span className="kgNavbar-phone">+91 9876543210</span>
-          </a>
         </div>
+      </header>
 
-        {/* HAMBURGER */}
-        <div className="kgNavbar-toggleBtn" onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-      </div>
-    </header>
+      {/* OVERLAY */}
+      {menuOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
+    </>
   );
 };
 
