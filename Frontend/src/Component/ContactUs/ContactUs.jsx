@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./ContactUs.css";
 
-import { FaMapMarkedAlt, FaMobileAlt, FaEnvelope, FaCalendarAlt } from "react-icons/fa";
+import {
+  FaMapMarkedAlt,
+  FaMobileAlt,
+  FaEnvelope,
+  FaCalendarAlt
+} from "react-icons/fa";
 
 import API from "../../api/axios";
 
@@ -33,74 +38,100 @@ const ContactUs = () => {
 
 
   return (
-    <section className="ContactUs-wrapper">
+    <section className="ContactUs-wrapper" id="contact">
 
       {/* HEADER */}
       <div className="ContactUs-header">
-        <h2 className="ContactUs-title">Contact Us</h2>
-        <p className="ContactUs-subtitle">If Need Any Help</p>
+
+        <h2 className="ContactUs-title">
+          Contact Tezz Dimag
+        </h2>
+
+        <p className="ContactUs-subtitle">
+          Visit our skill development centre in Bhubaneswar or get in touch for
+          course details and admission information.
+        </p>
+
       </div>
 
+
       {/* CONTACT INFO */}
+
       <div className="ContactUs-grid">
 
         <div className="ContactUs-card">
+
           <div className="ContactUs-icon orange">
             <FaMapMarkedAlt />
           </div>
+
           <div>
             <h4>Our Address</h4>
             <p>
-              {contact?.address || "No Address"}
+              {contact?.address || "Bhubaneswar, Odisha, India"}
             </p>
           </div>
+
         </div>
 
+
         <div className="ContactUs-card">
+
           <div className="ContactUs-icon blue">
             <FaMobileAlt />
           </div>
+
           <div>
             <h4>Phone</h4>
             <p>
-              {contact?.phone || "No Phone"}
+              {contact?.phone || "+91 9876543210"}
             </p>
           </div>
+
         </div>
 
+
         <div className="ContactUs-card">
+
           <div className="ContactUs-icon yellow">
             <FaEnvelope />
           </div>
+
           <div>
             <h4>Email</h4>
             <p>
-              {contact?.email || "No Email"}
+              {contact?.email || "info@tezzdimag.com"}
             </p>
           </div>
+
         </div>
 
+
         <div className="ContactUs-card">
+
           <div className="ContactUs-icon green">
             <FaCalendarAlt />
           </div>
+
           <div>
             <h4>Open Hours</h4>
             <p>
-              {contact?.openHours || "Not Available"}
+              {contact?.openHours || "Saturday & Sunday – 3 Hour Classes"}
             </p>
           </div>
+
         </div>
 
       </div>
 
 
-      {/* MAP */}
+      {/* GOOGLE MAP */}
+
       <div className="ContactUs-map">
 
         <iframe
-          title="map"
-          src="https://maps.google.com/maps?q=new%20york&t=&z=12&ie=UTF8&iwloc=&output=embed"
+          title="Tezz Dimag Bhubaneswar Location"
+          src="https://maps.google.com/maps?q=Bhubaneswar%2C%20Odisha&t=&z=13&ie=UTF8&iwloc=&output=embed"
           loading="lazy"
         ></iframe>
 

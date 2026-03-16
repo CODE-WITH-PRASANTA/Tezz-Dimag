@@ -12,10 +12,35 @@ const OurGallary = () => {
 
   const [activeImg, setActiveImg] = useState(null);
 
-  const images = [img1, img2, img3, img4, img5, img6];
+  const images = [
+    {
+      src: img1,
+      alt: "Students learning abacus training at Tezz Dimag skill development class"
+    },
+    {
+      src: img2,
+      alt: "Children participating in brain development activities at Tezz Dimag"
+    },
+    {
+      src: img3,
+      alt: "Students practicing creative learning and memory development programs"
+    },
+    {
+      src: img4,
+      alt: "Kids learning robotics and coding in Tezz Dimag classroom"
+    },
+    {
+      src: img5,
+      alt: "Students attending spoken English and public speaking training"
+    },
+    {
+      src: img6,
+      alt: "Children enjoying skill development activities at Tezz Dimag institute"
+    }
+  ];
 
   return (
-    <section className="ourgallary-section">
+    <section className="ourgallary-section" id="gallery">
 
       <div className="ourgallary-header">
 
@@ -24,13 +49,25 @@ const OurGallary = () => {
         </div>
 
         <h2 className="ourgallary-title">
-          Happy Moments at <span>Our School</span>
+          Moments from <span>Tezz Dimag Classes</span>
         </h2>
 
         <p className="ourgallary-desc">
-          Explore real moments from Learning Step School through our gallery,
-          showcasing student activities, classroom learning, celebrations,
-          and a safe, child-friendly school environment.
+
+          Take a look at some memorable moments from Tezz Dimag, where
+          students actively participate in brain development activities,
+          abacus training, robotics learning, creative workshops and
+          communication skill programs.
+
+          <br /><br />
+
+          Our gallery reflects the vibrant learning environment we create
+          for students from Class 1 to Class 12. Through skill development
+          courses such as Vedic Maths, DMIT talent analysis, spoken English,
+          public speaking and coding classes, children gain confidence,
+          creativity and practical knowledge that supports their future
+          academic and personal growth.
+
         </p>
 
       </div>
@@ -44,9 +81,9 @@ const OurGallary = () => {
             <div
               className="ourgallary-card"
               key={index}
-              onClick={() => setActiveImg(img)}
+              onClick={() => setActiveImg(img.src)}
             >
-              <img src={img} alt="gallery"/>
+              <img src={img.src} alt={img.alt}/>
             </div>
           ))}
 
@@ -67,7 +104,7 @@ const OurGallary = () => {
 
           <img
             src={activeImg}
-            alt="preview"
+            alt="Tezz Dimag classroom activity preview"
             className="ourgallary-modal-img"
           />
 
