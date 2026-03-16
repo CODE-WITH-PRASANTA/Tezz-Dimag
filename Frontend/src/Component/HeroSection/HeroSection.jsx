@@ -3,28 +3,37 @@ import "./HeroSection.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import slide1 from "../../assets/slide_3.webp";
+import slide1 from "../../assets/image-1.webp";
 import slide2 from "../../assets/slide_1.webp";
-import slide3 from "../../assets/slide_2.webp";
+import slide3 from "../../assets/image-27.webp";
 
 const slides = [
   {
     image: slide1,
-    titleTop: "Our Courses",
-    title: "See What's In Our Courses",
+    titleTop: "Journey of Tezzdimag (Since 2019)",
+    title: "To recognize every child’s hidden potential and guide it in the right direction",
+    description:
+      "The aim of this organization is not limited to academics. It focuses on developing Mind Power,  Personality Development, and Future Skills in children and young people.",
     link: "/courses",
+    button: "Explore Courses",
   },
   {
     image: slide2,
-    titleTop: "The Best Theme For",
-    title: "Kids Education",
+    titleTop: "Modern Kids Education",
+    title: "Build Strong Minds From Early Age",
+    description:
+      "At TEZZ DIMAG, we focus on interactive learning methods that help children grow smarter, think faster, and develop problem-solving skills.",
     link: "/about",
+    button: "About Us",
   },
   {
     image: slide3,
-    titleTop: "Get Ready",
-    title: "to Join with us",
+    titleTop: "Start Your Child’s Journey",
+    title: "Join TEZZ DIMAG Today",
+    description:
+      "Give your child the right environment to learn, explore, and grow with engaging educational programs created specially for young minds.",
     link: "/contact",
+    button: "Contact Us",
   },
 ];
 
@@ -48,7 +57,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="HeroSection">
+    <section className="HeroSection" aria-label="Tezz Dimag Kids Learning Hero Section">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -60,22 +69,28 @@ const HeroSection = () => {
           <div className="HeroSection-overlay"></div>
 
           <div className="HeroSection-content">
+
             <h4 className="fade-up">{slide.titleTop}</h4>
 
             <h1 className="fade-up delay">{slide.title}</h1>
 
-            <a href="#contact" className="HeroSection-btn fade-up delay2">
-              CONTACT US
-            </a>
+            <p className="HeroSection-description fade-up delay">
+              {slide.description}
+            </p>
+
+            <Link to={slide.link} className="HeroSection-btn fade-up delay2">
+              {slide.button}
+            </Link>
+
           </div>
         </div>
       ))}
 
-      <button className="HeroSection-arrow left" onClick={prevSlide}>
+      <button className="HeroSection-arrow left" onClick={prevSlide} aria-label="Previous Slide">
         <FaChevronLeft />
       </button>
 
-      <button className="HeroSection-arrow right" onClick={nextSlide}>
+      <button className="HeroSection-arrow right" onClick={nextSlide} aria-label="Next Slide">
         <FaChevronRight />
       </button>
 

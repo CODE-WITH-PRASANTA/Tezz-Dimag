@@ -7,41 +7,56 @@ import ContactUs from "../../Component/ContactUs/ContactUs";
 import About from "../../Component/About/About";
 import HomeCourse from "../../Component/HomeCourse/HomeCourse";
 import HomeParents from "../../Component/HomeParents/HomeParents";
-
-
+import OurGallary from "../../Component/OurGallary/OurGallary";
+import Admission from "../../Component/Admission/Admission";
+import AboutSection from "../../Component/AboutSection/AboutSection";
+import ClubsSection from "../../Component/ClubsSection/ClubsSection";
 
 
 const Home = () => {
   return (
     <div>
-      <div id="/">
+
+      <section id="/">
         <HeroSection />
-      </div>
+      </section>
 
-      <div id="about">
+      <AboutSection />
+
+      <section id="about">
         <About />
-      </div>
-
-      <div id="sclf">
-        <SchoolFacilites />
-      </div>
-
-      <div id="teacher">
-        <OurTeachers />
-      </div>
-      <div id="course">
-        <HomeCourse />
-      </div>
-      <div id="test">
-        <HomeParents />
-      </div>
-      <div id="blog">
-        <OurBlog />
-      </div>
-      <div id="contact">
-        <ContactUs />
-      </div>
+      </section>
       
+      <ClubsSection />
+
+      <section id="sclf">
+        <SchoolFacilites />
+      </section>
+
+      <Admission />
+
+      <section id="teacher">
+        <OurTeachers />
+      </section>
+
+      <section id="course">
+        <HomeCourse />
+      </section>
+
+      <section id="test">
+        <HomeParents />
+      </section>
+
+      <section id="blog">
+        <OurBlog />
+      </section>
+
+      <OurGallary />
+
+      <section id="contact">
+        <ContactUs />
+      </section>
+
     </div>
   );
 };
