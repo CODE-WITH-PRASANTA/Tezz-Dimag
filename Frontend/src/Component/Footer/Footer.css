@@ -1,180 +1,317 @@
-/* MAIN FOOTER */
+/* =========================
+MAIN FOOTER
+========================= */
 
 .kgFooter{
-  background:#f5f6fa;
-  padding:70px 20px 0;
-  font-family:Poppins;
+background:#f5f6fa;
+padding:80px 20px 0;
+font-family:"Poppins",sans-serif;
 }
 
-/* CONTAINER */
+/* =========================
+CONTAINER
+========================= */
 
 .kgFooter-container{
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:50px;
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1.2fr 1fr 1.2fr;
+gap:60px;
+align-items:flex-start;
 }
 
-/* LOGO */
+/* =========================
+LOGO
+========================= */
 
 .kgFooter-logo{
-  width:120px;
-  margin-bottom:20px;
+width:140px;
+margin-bottom:20px;
 }
 
-/* ABOUT TEXT */
+/* =========================
+ABOUT TEXT
+========================= */
 
 .kgFooter-about p{
-  color:#6a6a6a;
-  line-height:1.8;
-  margin-bottom:25px;
-  font-size:15px;
+color:#666;
+font-size:15px;
+line-height:1.8;
+margin-bottom:25px;
+max-width:320px;
 }
 
-/* SOCIAL */
+/* =========================
+SOCIAL ICONS
+========================= */
 
 .kgFooter-social{
-  display:flex;
-  gap:12px;
+display:flex;
+gap:12px;
 }
 
-.kgFooter-social svg{
-  border:1px solid #ddd;
-  padding:8px;
-  font-size:15px;
-  cursor:pointer;
-  transition:.3s;
+.kgFooter-social a{
+width:36px;
+height:36px;
+border:1px solid #ddd;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:4px;
+color:#333;
+font-size:14px;
+transition:.3s;
 }
 
-.kgFooter-social svg:hover{
-  background:#ff4a4a;
-  color:#fff;
-  border-color:#ff4a4a;
+.kgFooter-social a:hover{
+background:#2f66ff;
+color:#fff;
+border-color:#2f66ff;
 }
 
-/* TITLES */
+/* =========================
+INFO SECTION
+========================= */
 
-.kgFooter-links h3,
-.kgFooter-category h3,
+.kgFooter-info h3{
+color:#2f66ff;
+font-size:20px;
+margin-bottom:25px;
+letter-spacing:.5px;
+}
+
+.kgFooter-info-links{
+display:flex;
+gap:70px;
+}
+
+.kgFooter-info-links ul{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.kgFooter-info-links li{
+margin-bottom:14px;
+}
+
+.kgFooter-info-links a{
+text-decoration:none;
+font-size:15px;
+color:#444;
+font-weight:500;
+transition:.3s;
+}
+
+.kgFooter-info-links a:hover{
+color:#2f66ff;
+padding-left:4px;
+}
+
+/* =========================
+NEWSLETTER
+========================= */
+
 .kgFooter-newsletter h3{
-  font-size:20px;
-  margin-bottom:20px;
+font-size:22px;
+margin-bottom:15px;
 }
-
-/* LINKS */
-
-.kgFooter-links ul,
-.kgFooter-category ul{
-  list-style:none;
-  padding:0;
-}
-
-.kgFooter-links li,
-.kgFooter-category li{
-  margin-bottom:12px;
-  color:#6a6a6a;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.kgFooter-links li:hover,
-.kgFooter-category li:hover{
-  color:#ff4a4a;
-}
-
-/* NEWSLETTER */
 
 .kgFooter-newsletter p{
-  color:#6a6a6a;
-  font-size:14px;
-  margin-bottom:20px;
+color:#666;
+font-size:14px;
+margin-bottom:22px;
+line-height:1.6;
+max-width:300px;
 }
 
-/* INPUT */
+/* =========================
+INPUT
+========================= */
 
 .kgFooter-inputBox{
-  display:flex;
-  border:1px solid #ddd;
-  border-radius:6px;
-  overflow:hidden;
-  margin-bottom:15px;
+display:flex;
+border:1px solid #ddd;
+border-radius:6px;
+overflow:hidden;
+max-width:320px;
+background:#fff;
 }
 
 .kgFooter-inputBox input{
-  flex:1;
-  border:none;
-  padding:12px;
-  outline:none;
+flex:1;
+border:none;
+padding:12px 14px;
+font-size:14px;
+outline:none;
 }
 
 .kgFooter-inputBox button{
-  border:none;
-  background:#2a6df4;
-  color:#fff;
-  width:60px;
-  font-size:18px;
-  cursor:pointer;
+width:60px;
+border:none;
+background:#2f66ff;
+color:#fff;
+font-size:18px;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:.3s;
 }
 
-/* CHECKBOX */
+.kgFooter-inputBox button:hover{
+background:#1849c6;
+}
+
+/* =========================
+CHECKBOX
+========================= */
 
 .kgFooter-checkbox{
-  font-size:13px;
-  color:#777;
-  display:flex;
-  gap:8px;
+margin-top:15px;
+display:flex;
+gap:8px;
+font-size:13px;
+color:#777;
+cursor:pointer;
+max-width:320px;
 }
 
-/* BOTTOM */
+.kgFooter-checkbox input{
+cursor:pointer;
+}
+
+/* =========================
+FOOTER BOTTOM
+========================= */
 
 .kgFooter-bottom{
-  text-align:center;
-  padding:25px 0;
-  margin-top:60px;
-  border-top:1px solid #ddd;
-  font-size:14px;
-  color:#777;
+margin-top:70px;
+border-top:1px solid #ddd;
+padding:25px 10px;
+text-align:center;
+font-size:14px;
+color:#777;
+line-height:1.6;
 }
 
+.kgFooter-bottom span{
+color:#555;
+font-weight:500;
+}
 
-/* ======================
-   TABLET
-====================== */
+/* =========================
+LARGE LAPTOP
+========================= */
 
-@media (max-width:992px){
+@media (max-width:1200px){
 
 .kgFooter-container{
-grid-template-columns:repeat(2,1fr);
 gap:40px;
 }
 
 }
 
+/* =========================
+TABLET
+========================= */
 
-/* ======================
-   MOBILE
-====================== */
+@media (max-width:992px){
 
-@media (max-width:600px){
+.kgFooter-container{
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.kgFooter-newsletter{
+grid-column:span 2;
+}
+
+}
+
+/* =========================
+SMALL TABLET
+========================= */
+
+@media (max-width:768px){
 
 .kgFooter-container{
 grid-template-columns:1fr;
 text-align:center;
 }
 
+.kgFooter-about p{
+margin:auto;
+margin-bottom:25px;
+}
+
 .kgFooter-social{
 justify-content:center;
 }
 
-.kgFooter-checkbox{
+.kgFooter-info-links{
 justify-content:center;
+gap:50px;
+}
+
+.kgFooter-newsletter p{
+margin:auto;
+margin-bottom:20px;
 }
 
 .kgFooter-inputBox{
-max-width:300px;
 margin:auto;
-margin-bottom:15px;
+}
+
+.kgFooter-checkbox{
+justify-content:center;
+margin:auto;
+}
+
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width:576px){
+
+.kgFooter{
+padding:60px 20px 0;
+}
+
+.kgFooter-logo{
+width:120px;
+}
+
+.kgFooter-info-links{
+flex-direction:column;
+gap:10px;
+}
+
+.kgFooter-info-links ul{
+margin-bottom:10px;
+}
+
+.kgFooter-bottom{
+font-size:13px;
+}
+
+}
+
+/* =========================
+SMALL MOBILE
+========================= */
+
+@media (max-width:400px){
+
+.kgFooter-inputBox{
+max-width:100%;
+}
+
+.kgFooter-checkbox{
+font-size:12px;
 }
 
 }

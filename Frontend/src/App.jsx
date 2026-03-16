@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import "./App.css";
@@ -7,33 +7,36 @@ import Navbar from "./Component/Navbar/Navbar";
 import Footer from "./Component/Footer/Footer";
 import Loader from "./Component/Loader/Loader";
 
+/* Pages */
 import Home from "./Pages/Home/Home";
+import Blog from "./Pages/Blog/Blog";
+import BlogDetails from "./Pages/BlogDetails/BlogDetails";
+import Price from "./Pages/Price/Price";
 
 function AppContent() {
-
-  const location = useLocation();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-
-    setLoading(true);
-
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000); // loader duration
 
     return () => clearTimeout(timer);
+  }, []); // run only once
 
-  }, [location]);
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <>
-      {loading && <Loader />}
-
       <Navbar />
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogDetails />} />
+        <Route path="/price" element={<Price />} />
       </Routes>
 
       <Footer />

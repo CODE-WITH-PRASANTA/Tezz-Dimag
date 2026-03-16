@@ -14,7 +14,8 @@ const ensureDir = (dir) => {
 const routeFolderMap = {
   "/teachers": "uploads/teachers",
   "/testimonials": "uploads/testimonials",
-  "/blog": "uploads/blog"
+  "/blog": "uploads/blog",
+  "/courses": "uploads/courses"
 };
 
 /* ================= GET UPLOAD PATH ================= */

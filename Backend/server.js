@@ -6,6 +6,10 @@ const connectDB = require("./config/db")
 const teacherRoutes = require("./routes/teacher.routes");
 const testimonialRoutes = require("./routes/testimonial.routes")
 const blogRoutes = require("./routes/blog.routes");
+const courseRoutes = require("./routes/course.routes");
+const contactRoutes = require("./routes/contact.routes");
+const messageRoutes = require("./routes/message.routes");
+
 
 
 
@@ -36,8 +40,9 @@ app.get("/", (req, res) => {
 app.use("/api", teacherRoutes);
 app.use("/api", testimonialRoutes)
 app.use("/api", blogRoutes);
-
-
+app.use("/api/courses", courseRoutes);
+app.use("/api/contact",contactRoutes);
+app.use("/api", messageRoutes);
 
 const PORT = process.env.PORT || 5000
 
