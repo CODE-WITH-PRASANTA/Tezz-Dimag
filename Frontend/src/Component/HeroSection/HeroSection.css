@@ -6,265 +6,279 @@
 /* ================= HERO SECTION ================= */
 
 .HeroSection {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-
-  font-family: "Poppins", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+position: relative;
+width: 100%;
+height: 100vh;
+overflow: hidden;
+font-family: "Poppins", sans-serif;
 }
 
 /* ================= SLIDE ================= */
 
 .HeroSection-slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transform: scale(1.05);
-  transition: opacity 1s ease-in-out, transform 6s ease;
+position: absolute;
+width: 100%;
+height: 100%;
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+opacity: 0;
+transform: scale(1.05);
+transition: opacity 1s ease-in-out, transform 6s ease;
 }
 
 .HeroSection-slide.active {
-  opacity: 1;
-  transform: scale(1);
-  z-index: 1;
+opacity: 1;
+transform: scale(1);
+z-index: 1;
 }
 
 /* ================= OVERLAY ================= */
 
 .HeroSection-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    rgba(0, 0, 0, 0.65),
-    rgba(0, 0, 0, 0.35)
-  );
-  z-index: 2;
+position: absolute;
+inset: 0;
+background: linear-gradient(
+120deg,
+rgba(0,0,0,0.65),
+rgba(0,0,0,0.35)
+);
+z-index: 2;
 }
 
 /* ================= CONTENT ================= */
 
 .HeroSection-content {
-  position: relative;
-  z-index: 3;
-  max-width: 1100px;
-  height: 100%;
-  margin: auto;
-  padding: 0 40px;
+position: relative;
+z-index: 3;
+max-width: 1200px;
+height: 100%;
+margin: auto;
+padding: 0 40px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+display: flex;
+align-items: center;
+}
 
-  color: #fff;
+.HeroSection-text{
+max-width:650px;
+color:#fff;
 }
 
 /* ================= SMALL HEADING ================= */
 
-.HeroSection-content h4 {
-  font-size: 20px;
-  letter-spacing: 4px;
-  word-spacing: 3px;
-  margin-bottom: 12px;
-  color: #ffd700;
-  font-weight: 600;
-  text-transform: uppercase;
+.HeroSection-text h3{
+font-size:20px;
+letter-spacing:3px;
+margin-bottom:12px;
+color:#ffd700;
+font-weight:600;
 }
 
 /* ================= MAIN HEADING ================= */
 
-.HeroSection-content h1 {
-  font-size: 60px;
-  font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: 1.2px;
-  word-spacing: 4px;
-  max-width: 650px;
-  margin-bottom: 28px;
+.HeroSection-text h2{
+font-size:56px;
+font-weight:700;
+line-height:1.2;
+margin-bottom:25px;
+}
+
+/* description */
+
+.HeroSection-description{
+font-size:18px;
+line-height:1.7;
+margin-bottom:30px;
 }
 
 /* ================= BUTTON ================= */
 
 .HeroSection-btn {
-  display: inline-block;
-  padding: 14px 34px;
-  background: #ff7a00;
-  color: #fff;
-  font-weight: 600;
-  border-radius: 40px;
-  text-decoration: none;
-  transition: 0.3s;
-
-  letter-spacing: 1px;
-  word-spacing: 2px;
+display:inline-block;
+padding:14px 34px;
+background:#ff7a00;
+color:#fff;
+font-weight:600;
+border-radius:40px;
+text-decoration:none;
+transition:0.3s;
 }
 
 .HeroSection-btn:hover {
-  background: #ff5200;
-  transform: translateY(-3px);
+background:#ff5200;
+transform:translateY(-3px);
 }
 
 /* ================= ARROWS ================= */
 
 .HeroSection-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+z-index:5;
 
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
+width:50px;
+height:50px;
+border-radius:50%;
+border:none;
 
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(6px);
+background:rgba(255,255,255,0.25);
+backdrop-filter:blur(6px);
 
-  color: #fff;
-  font-size: 20px;
+color:#fff;
+font-size:20px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+display:flex;
+align-items:center;
+justify-content:center;
 
-  cursor: pointer;
-  transition: 0.3s;
+cursor:pointer;
+transition:0.3s;
 }
 
-.HeroSection-arrow:hover {
-  background: #ff7a00;
+.HeroSection-arrow:hover{
+background:#ff7a00;
 }
 
-.HeroSection-arrow.left {
-  left: 25px;
+.HeroSection-arrow.left{
+left:25px;
 }
 
-.HeroSection-arrow.right {
-  right: 25px;
+.HeroSection-arrow.right{
+right:25px;
 }
 
 /* ================= DOTS ================= */
 
-.HeroSection-dots {
-  position: absolute;
-  bottom: 35px;
-  width: 100%;
-  text-align: center;
-  z-index: 5;
+.HeroSection-dots{
+position:absolute;
+bottom:35px;
+width:100%;
+text-align:center;
+z-index:5;
 }
 
-.HeroSection-dot {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin: 0 6px;
+.HeroSection-dot{
+display:inline-block;
+width:12px;
+height:12px;
+margin:0 6px;
 
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
+border-radius:50%;
+background:rgba(255,255,255,0.5);
 
-  cursor: pointer;
-  transition: 0.3s;
+cursor:pointer;
+transition:0.3s;
 }
 
-.HeroSection-dot.active {
-  background: #ff7a00;
-  transform: scale(1.3);
+.HeroSection-dot.active{
+background:#ff7a00;
+transform:scale(1.3);
 }
 
 /* ================= TEXT ANIMATION ================= */
 
-.fade-up {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 0.8s forwards;
+.fade-up{
+opacity:0;
+transform:translateY(40px);
+animation:fadeUp 0.8s forwards;
 }
 
-.fade-up.delay {
-  animation-delay: 0.3s;
+.fade-up.delay{
+animation-delay:0.3s;
 }
 
-.fade-up.delay2 {
-  animation-delay: 0.6s;
+.fade-up.delay2{
+animation-delay:0.6s;
 }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 /* ================= RESPONSIVE ================= */
 
-@media (max-width: 1200px) {
-  .HeroSection-content h1 {
-    font-size: 50px;
-  }
+@media (max-width:1200px){
+
+.HeroSection-text h2{
+font-size:48px;
 }
 
-@media (max-width: 992px) {
-  .HeroSection {
-    height: 80vh;
-  }
-
-  .HeroSection-content h1 {
-    font-size: 40px;
-  }
-
-  .HeroSection-content h4 {
-    font-size: 18px;
-  }
 }
 
-@media (max-width: 768px) {
-  .HeroSection {
-    height: 75vh;
-  }
+@media (max-width:992px){
 
-  .HeroSection-content {
-    padding: 0 25px;
-    align-items: center;
-    text-align: center;
-  }
-
-  .HeroSection-content h1 {
-    font-size: 32px;
-  }
-
-  .HeroSection-content h4 {
-    font-size: 16px;
-  }
-
-  .HeroSection-btn {
-    padding: 12px 28px;
-    font-size: 14px;
-  }
-
-  .HeroSection-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
+.HeroSection{
+height:80vh;
 }
 
-@media (max-width: 480px) {
-  .HeroSection {
-    height: 70vh;
-  }
+.HeroSection-text h2{
+font-size:40px;
+}
 
-  .HeroSection-content h1 {
-    font-size: 26px;
-  }
+}
 
-  .HeroSection-btn {
-    padding: 10px 22px;
-  }
+@media (max-width:768px){
+
+.HeroSection{
+height:75vh;
+}
+
+.HeroSection-content{
+padding:0 25px;
+justify-content:center;
+text-align:center;
+}
+
+.HeroSection-text{
+max-width:500px;
+}
+
+.HeroSection-text h2{
+font-size:32px;
+}
+
+.HeroSection-text h3{
+font-size:16px;
+}
+
+.HeroSection-description{
+font-size:16px;
+}
+
+.HeroSection-btn{
+padding:12px 28px;
+font-size:14px;
+}
+
+.HeroSection-arrow{
+width:40px;
+height:40px;
+font-size:16px;
+}
+
+}
+
+@media (max-width:480px){
+
+.HeroSection{
+height:70vh;
+}
+
+.HeroSection-text h2{
+font-size:26px;
+}
+
+.HeroSection-description{
+font-size:15px;
+}
+
+.HeroSection-btn{
+padding:10px 22px;
+}
+
 }

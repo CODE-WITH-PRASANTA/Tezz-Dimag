@@ -13,7 +13,7 @@ const slides = [
     titleTop: "Journey of Tezzdimag (Since 2019)",
     title: "To recognize every child’s hidden potential and guide it in the right direction",
     description:
-      "The aim of this organization is not limited to academics. It focuses on developing Mind Power,  Personality Development, and Future Skills in children and young people.",
+      "The aim of this organization is not limited to academics. It focuses on developing Mind Power, Personality Development, and Future Skills in children and young people.",
     link: "/courses",
     button: "Explore Courses",
   },
@@ -57,40 +57,55 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="HeroSection" aria-label="Tezz Dimag Kids Learning Hero Section">
+    <section className="HeroSection">
+
       {slides.map((slide, index) => (
         <div
           key={index}
           className={
-            index === current ? "HeroSection-slide active" : "HeroSection-slide"
+            index === current
+              ? "HeroSection-slide active"
+              : "HeroSection-slide"
           }
           style={{ backgroundImage: `url(${slide.image})` }}
         >
+
           <div className="HeroSection-overlay"></div>
 
           <div className="HeroSection-content">
 
-            <h4 className="fade-up">{slide.titleTop}</h4>
+            <div className="HeroSection-text">
 
-            <h1 className="fade-up delay">{slide.title}</h1>
+              <h3 className="fade-up">{slide.titleTop}</h3>
 
-            <p className="HeroSection-description fade-up delay">
-              {slide.description}
-            </p>
+              <h2 className="fade-up delay">{slide.title}</h2>
 
-            <Link to={slide.link} className="HeroSection-btn fade-up delay2">
-              {slide.button}
-            </Link>
+              <p className="HeroSection-description fade-up delay">
+                {slide.description}
+              </p>
+
+              <Link to={slide.link} className="HeroSection-btn fade-up delay2">
+                {slide.button}
+              </Link>
+
+            </div>
 
           </div>
+
         </div>
       ))}
 
-      <button className="HeroSection-arrow left" onClick={prevSlide} aria-label="Previous Slide">
+      <button
+        className="HeroSection-arrow left"
+        onClick={prevSlide}
+      >
         <FaChevronLeft />
       </button>
 
-      <button className="HeroSection-arrow right" onClick={nextSlide} aria-label="Next Slide">
+      <button
+        className="HeroSection-arrow right"
+        onClick={nextSlide}
+      >
         <FaChevronRight />
       </button>
 
@@ -99,12 +114,15 @@ const HeroSection = () => {
           <span
             key={index}
             className={
-              index === current ? "HeroSection-dot active" : "HeroSection-dot"
+              index === current
+                ? "HeroSection-dot active"
+                : "HeroSection-dot"
             }
             onClick={() => setCurrent(index)}
           ></span>
         ))}
       </div>
+
     </section>
   );
 };
