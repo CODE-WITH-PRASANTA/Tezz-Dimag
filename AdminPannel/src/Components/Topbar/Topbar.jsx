@@ -23,9 +23,7 @@ const Topbar = ({ toggleSidebar }) => {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-
-    return () =>
-      document.removeEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
@@ -43,17 +41,19 @@ const Topbar = ({ toggleSidebar }) => {
 
       {/* RIGHT SECTION */}
       <div className="topbar-right-section" ref={dropdownRef}>
-
-        {/* PROFILE */}
+        
+        {/* USER PROFILE */}
         <div
           className="user-profile-wrapper"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <img
-            src="https://randomuser.me/api/portraits/men/32.jpg"
-            alt="Admin"
-            className="user-avatar"
-          />
+          <div className="user-avatar-wrapper">
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="Admin User"
+              className="user-avatar"
+            />
+          </div>
 
           <div className="user-details">
             <span className="user-name">
@@ -74,24 +74,36 @@ const Topbar = ({ toggleSidebar }) => {
           <div className="profile-dropdown">
             <ul className="dropdown-menu-list">
 
-              <Link to="/profile">
-                <li className="dropdown-item">
-                  <FaUser /> Edit Profile
+              <Link to="/profile" className="topbar-li">
+                <li className="dropdown-item profile-item">
+                  <div className="dropdown-icon profile-icon">
+                    <FaUser />
+                  </div>
+                  <span>Edit Profile</span>
                 </li>
               </Link>
 
-              <li className="dropdown-item">
-                <FaCog /> Account Settings
+              <li className="dropdown-item settings-item">
+                <div className="dropdown-icon settings-icon">
+                  <FaCog />
+                </div>
+                <span>Account Settings</span>
               </li>
 
-              <li className="dropdown-item">
-                <FaHeadset /> Support Center
+              <li className="dropdown-item support-item">
+                <div className="dropdown-icon support-icon">
+                  <FaHeadset />
+                </div>
+                <span>Support Center</span>
               </li>
 
               <div className="dropdown-divider"></div>
 
               <li className="dropdown-item logout-item">
-                <FaSignOutAlt /> Sign Out
+                <div className="dropdown-icon logout-icon">
+                  <FaSignOutAlt />
+                </div>
+                <span>Sign Out</span>
               </li>
 
             </ul>

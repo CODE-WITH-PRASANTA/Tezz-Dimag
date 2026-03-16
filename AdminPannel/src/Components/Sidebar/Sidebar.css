@@ -1,12 +1,13 @@
 /* SIDEBAR */
 
 .kgSidebar-wrapper{
-  background:#0F4C5C;            /* Main Sidebar Color */
+  background:#0F4C5C;
   color:#FFFFFF;
   height:100vh;
   transition:all .35s ease;
   display:flex;
   flex-direction:column;
+  font-family:"Poppins",sans-serif;
 }
 
 /* WIDTH */
@@ -25,7 +26,7 @@
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:20px;
+  padding:22px;
   border-bottom:1px solid rgba(255,255,255,.08);
 }
 
@@ -35,14 +36,10 @@
   transition:all .35s ease;
 }
 
-/* OPEN SIDEBAR */
-
 .logo-open{
   width:115px;
   height:85px;
 }
-
-/* CLOSED SIDEBAR */
 
 .logo-close{
   width:32px;
@@ -52,7 +49,8 @@
 
 .kgSidebar-menu{
   list-style:none;
-  padding:20px 0;
+  padding:25px 0;
+  flex:1;
 }
 
 /* MENU ITEM */
@@ -60,10 +58,11 @@
 .kgSidebar-menu li{
   display:flex;
   align-items:center;
-  gap:14px;
-  padding:14px 20px;
+  gap:16px;
+  padding:16px 24px;
   cursor:pointer;
   transition:.25s;
+  border-left:3px solid transparent;
 }
 
 /* MENU LINK */
@@ -71,24 +70,27 @@
 .kgSidebar-menu li a{
   display:flex;
   align-items:center;
-  gap:14px;
-  color:#E6F4F1;             /* Soft white text */
+  gap:16px;
+  color:#E6F4F1;
   text-decoration:none;
   width:100%;
-  font-size:15px;
+  font-size:16px;
+  font-weight:500;
+  letter-spacing:.3px;
 }
 
 /* ICON */
 
 .kgSidebar-menu li svg{
-  font-size:18px;
-  color:#B8E1DD;             /* Light teal icon */
+  font-size:20px;
+  color:#B8E1DD;
 }
 
 /* HOVER EFFECT */
 
 .kgSidebar-menu li:hover{
   background:#0B3A45;
+  border-left:3px solid #1ABC9C;
 }
 
 .kgSidebar-menu li:hover a{
@@ -96,24 +98,38 @@
 }
 
 .kgSidebar-menu li:hover svg{
-  color:#1ABC9C;             /* Green highlight */
+  color:#1ABC9C;
 }
 
-/* ACTIVE MENU */
+/* DIVIDER */
 
-.kgSidebar-menu li.active{
-  background:#1ABC9C;
+.kgSidebar-menu li:not(:last-child){
+  border-bottom:1px solid rgba(255,255,255,.05);
 }
 
-.kgSidebar-menu li.active a{
-  color:#FFFFFF;
+/* LOGOUT BUTTON */
+
+.kgSidebar-logout{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:18px 24px;
+  border-top:1px solid rgba(255,255,255,.08);
+  cursor:pointer;
+  transition:.25s;
+  font-size:16px;
+  font-weight:500;
 }
 
-.kgSidebar-menu li.active svg{
-  color:#FFFFFF;
+.kgSidebar-logout svg{
+  font-size:20px;
 }
 
-/* MOBILE CLOSE BUTTON */
+.kgSidebar-logout:hover{
+  background:#B22222;
+}
+
+/* MOBILE CLOSE */
 
 .kgSidebar-mobileClose{
   display:none;
@@ -124,7 +140,7 @@
   cursor:pointer;
 }
 
-/* MOBILE RESPONSIVE */
+/* MOBILE */
 
 @media (max-width:768px){
 
