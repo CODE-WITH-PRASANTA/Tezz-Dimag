@@ -28,12 +28,12 @@ const slides = [
   },
   {
     image: slide3,
-    titleTop: "Start Your Child’s Journey",
-    title: "Join TEZZ DIMAG Today",
-    description:
-      "Give your child the right environment to learn, explore, and grow with engaging educational programs created specially for young minds.",
-    link: "/contact",
-    button: "Contact Us",
+titleTop: "Start Your Child’s Journey",
+title: "Join TEZZ DIMAG Today",
+description:
+  "Give your child the right environment to learn, explore, and grow with engaging educational programs created specially for young minds. At Tezz Dimag, we focus on developing memory power, logical thinking, creativity, and communication skills through practical learning methods. Our skill-development courses help students from Class 1 to Class 12 build confidence, improve academic performance, and discover their hidden talents for a brighter future.",
+link: "/contact",
+button: "Contact Us",
   },
 ];
 

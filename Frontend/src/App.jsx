@@ -12,6 +12,7 @@ import Home from "./Pages/Home/Home";
 import Blog from "./Pages/Blog/Blog";
 import BlogDetails from "./Pages/BlogDetails/BlogDetails";
 import Price from "./Pages/Price/Price";
+import FloatingButtons from "./Component/FloatingButtons/FloatingButtons";
 
 function AppContent() {
   const [loading, setLoading] = useState(true);
@@ -40,6 +41,7 @@ function AppContent() {
       </Routes>
 
       <Footer />
+      <FloatingButtons />
     </>
   );
 }

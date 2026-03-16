@@ -12,38 +12,37 @@ import Admission from "../../Component/Admission/Admission";
 import AboutSection from "../../Component/AboutSection/AboutSection";
 import ClubsSection from "../../Component/ClubsSection/ClubsSection";
 
-
 const Home = () => {
   return (
     <div>
 
-      <section id="/">
+      <section id="home">
         <HeroSection />
       </section>
 
-      <AboutSection />
-
       <section id="about">
+        <AboutSection />
         <About />
       </section>
-      
-      <ClubsSection />
 
-      <section id="sclf">
-        <SchoolFacilites />
+      <section id="programs">
+        <ClubsSection />
       </section>
 
-      <Admission />
+      <section id="courses">
+        <SchoolFacilites />
+        <HomeCourse />
+      </section>
+
+      <section id="admission">
+        <Admission />
+      </section>
 
       <section id="teacher">
         <OurTeachers />
       </section>
 
-      <section id="course">
-        <HomeCourse />
-      </section>
-
-      <section id="test">
+      <section id="testimonial">
         <HomeParents />
       </section>
 
@@ -51,7 +50,9 @@ const Home = () => {
         <OurBlog />
       </section>
 
-      <OurGallary />
+      <section id="gallery">
+        <OurGallary />
+      </section>
 
       <section id="contact">
         <ContactUs />
