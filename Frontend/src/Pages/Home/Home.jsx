@@ -11,43 +11,48 @@ import OurGallary from "../../Component/OurGallary/OurGallary";
 import Admission from "../../Component/Admission/Admission";
 import AboutSection from "../../Component/AboutSection/AboutSection";
 
-
-
 const Home = () => {
   return (
     <div>
-      <div id="/">
-        <HeroSection />
-      </div>
-        <AboutSection />
-      <div id="about">
-        <About />
-      </div>
 
-      <div id="sclf">
+      <section id="/">
+        <HeroSection />
+      </section>
+
+      <AboutSection />
+
+      <section id="about">
+        <About />
+      </section>
+
+      <section id="sclf">
         <SchoolFacilites />
-      </div>
+      </section>
 
       <Admission />
 
-      <div id="teacher">
+      <section id="teacher">
         <OurTeachers />
-      </div>
-      <div id="course">
+      </section>
+
+      <section id="course">
         <HomeCourse />
-      </div>
-      <div id="test">
+      </section>
+
+      <section id="test">
         <HomeParents />
-      </div>
-      <div id="blog">
+      </section>
+
+      <section id="blog">
         <OurBlog />
-      </div>
+      </section>
+
       <OurGallary />
-      <div id="contact">
+
+      <section id="contact">
         <ContactUs />
-      </div>
-      
-      
+      </section>
+
     </div>
   );
 };

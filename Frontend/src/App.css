@@ -4,17 +4,11 @@
   padding:0;
   box-sizing:border-box;
 }
+/* ===============================
+LINK RESET
+=============================== */
 
-
-
-/* Main app layout */
-.appLayout{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-}
-
-/* Page content grows */
-.pageContent{
-  flex:1;
+a{
+  text-decoration: none;
+  color: inherit;
 }
