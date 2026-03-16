@@ -3,6 +3,8 @@ padding:80px 8%;
 background:#eef3f7;
 }
 
+/* CONTAINER */
+
 .admission-container{
 display:flex;
 align-items:center;
@@ -11,7 +13,9 @@ gap:60px;
 flex-wrap:wrap;
 }
 
-/* LEFT IMAGES */
+/* ======================
+LEFT IMAGES
+====================== */
 
 .admission-images{
 position:relative;
@@ -40,7 +44,9 @@ left:-10px;
 transform:rotate(10deg);
 }
 
-/* RIGHT CONTENT */
+/* ======================
+RIGHT CONTENT
+====================== */
 
 .admission-content{
 flex:1;
@@ -51,6 +57,7 @@ max-width:700px;
 font-size:48px;
 font-weight:700;
 margin-bottom:25px;
+line-height:1.2;
 }
 
 /* FEATURES */
@@ -59,6 +66,7 @@ margin-bottom:25px;
 display:flex;
 gap:60px;
 margin-bottom:30px;
+flex-wrap:wrap;
 }
 
 .admission-features p{
@@ -73,7 +81,9 @@ font-size:16px;
 color:#ff1744;
 }
 
-/* FORM */
+/* ======================
+FORM
+====================== */
 
 .admission-form{
 border:3px solid #4a0d57;
@@ -107,6 +117,7 @@ padding:10px;
 border-radius:10px;
 border:1px solid #ccc;
 outline:none;
+font-size:14px;
 }
 
 /* DATE */
@@ -123,7 +134,9 @@ transform:translateY(-50%);
 color:#555;
 }
 
-/* BOTTOM */
+/* ======================
+BOTTOM
+====================== */
 
 .admission-bottom{
 margin-top:25px;
@@ -156,26 +169,73 @@ transition:0.3s;
 transform:scale(1.05);
 }
 
-/* RESPONSIVE */
+/* ======================
+LAPTOP
+====================== */
+
+@media (max-width:1200px){
+
+.admission-images{
+width:360px;
+height:360px;
+}
+
+.admission-title{
+font-size:42px;
+}
+
+}
+
+/* ======================
+TABLET
+====================== */
 
 @media (max-width:992px){
 
 .admission-container{
 flex-direction:column;
+text-align:center;
 }
 
 .admission-images{
 width:320px;
 height:320px;
+margin-bottom:40px;
+}
+
+.admission-img-top{
+top:-40px;
+left:10px;
+}
+
+.admission-img-bottom{
+bottom:-60px;
+left:0;
 }
 
 .admission-title{
 font-size:36px;
 }
 
+.admission-features{
+justify-content:center;
 }
 
+.admission-bottom{
+justify-content:center;
+}
+
+}
+
+/* ======================
+MOBILE
+====================== */
+
 @media (max-width:600px){
+
+.admission-section{
+padding:60px 20px;
+}
 
 .admission-form-grid{
 grid-template-columns:1fr;
@@ -188,6 +248,48 @@ gap:10px;
 
 .admission-title{
 font-size:28px;
+}
+
+.admission-form{
+padding:25px;
+}
+
+.admission-btn{
+width:100%;
+text-align:center;
+}
+
+}
+
+/* ======================
+SMALL MOBILE
+====================== */
+
+@media (max-width:420px){
+
+.admission-images{
+width:260px;
+height:260px;
+}
+
+.admission-img{
+border-width:4px;
+}
+
+.admission-img-top{
+transform:rotate(-6deg);
+}
+
+.admission-img-bottom{
+transform:rotate(6deg);
+}
+
+.admission-title{
+font-size:24px;
+}
+
+.admission-field input{
+height:42px;
 }
 
 }
