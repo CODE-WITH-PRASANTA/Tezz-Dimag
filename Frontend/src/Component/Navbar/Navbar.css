@@ -1,246 +1,275 @@
-/* ===== GLOBAL FONT ===== */
+/* =============================
+GLOBAL FONT
+============================= */
 
 body{
-  font-family: 'Oswald', sans-serif;
+font-family:'Oswald', sans-serif;
 }
 
-
-/* ===== NAVBAR WRAPPER ===== */
+/* =============================
+NAVBAR WRAPPER
+============================= */
 
 .kgNavbar-wrapper{
-  width:100%;
-  background:#f5f6f8;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  box-shadow:0 2px 10px rgba(0,0,0,0.06);
+width:100%;
+background:#f5f6f8;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.06);
 }
 
-
-/* ===== CONTAINER ===== */
+/* =============================
+CONTAINER
+============================= */
 
 .kgNavbar-container{
-  max-width:1300px;
-  margin:auto;
-  padding:10px 30px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+max-width:1300px;
+margin:auto;
+padding:12px 30px;
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
 
-
-/* ===== LOGO ===== */
-
-.kgNavbar-logoSection{
-  display:flex;
-  align-items:center;
-}
+/* =============================
+LOGO
+============================= */
 
 .kgNavbar-logoImg{
-  width:130px;
-  height:auto;
-  object-fit:contain;
+width:130px;
+height:auto;
+object-fit:contain;
 }
 
-
-/* ===== MENU ===== */
+/* =============================
+MENU
+============================= */
 
 .kgNavbar-menu{
-  display:flex;
-  gap:34px;
-  align-items:center;
+display:flex;
+gap:32px;
+align-items:center;
 }
+
+/* LINKS */
 
 .kgNavbar-link{
-  text-decoration:none;
-  color:#222;
-  font-weight:500;
-  font-size:17px;
-  letter-spacing:1px;
-  transition:all .3s ease;
-  position:relative;
+text-decoration:none;
+color:#222;
+font-weight:500;
+font-size:17px;
+letter-spacing:.5px;
+transition:all .3s ease;
+position:relative;
 }
 
-
-/* Hover */
+/* hover */
 
 .kgNavbar-link:hover{
-  color:#ff5757;
+color:#ff5757;
 }
 
-
-/* Active */
+/* active */
 
 .kgNavbar-link.active{
-  color:#ff5757;
+color:#ff5757;
 }
 
-
-/* ===== RIGHT SIDE BUTTON ===== */
+/* =============================
+RIGHT BUTTON
+============================= */
 
 .kgNavbar-right{
-  display:flex;
-  align-items:center;
+display:flex;
+align-items:center;
 }
 
 .kgNavbar-contactBtn{
-  padding:10px 24px;
-  background:#ff5757;
-  color:white;
-  text-decoration:none;
-  border-radius:30px;
-  font-size:15px;
-  font-weight:500;
-  transition:.3s;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+padding:10px 24px;
+background:#ff5757;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-size:15px;
+font-weight:500;
+transition:.3s;
+display:flex;
+align-items:center;
+gap:8px;
+white-space:nowrap;
 }
 
 .kgNavbar-contactBtn:hover{
-  background:#e84444;
+background:#e84444;
 }
 
-
-/* ===== HAMBURGER ===== */
+/* =============================
+HAMBURGER
+============================= */
 
 .kgNavbar-toggleBtn{
-  display:none;
-  flex-direction:column;
-  gap:5px;
-  cursor:pointer;
+display:none;
+flex-direction:column;
+gap:5px;
+cursor:pointer;
 }
 
 .kgNavbar-toggleBtn span{
-  width:26px;
-  height:3px;
-  background:#333;
-  border-radius:2px;
+width:26px;
+height:3px;
+background:#333;
+border-radius:2px;
+transition:.3s;
 }
 
-
-/* ===== CLOSE BUTTON ===== */
+/* =============================
+CLOSE BUTTON
+============================= */
 
 .kgNavbar-closeBtn{
-  display:none;
+display:none;
 }
 
+/* =============================
+LARGE DESKTOP
+============================= */
 
-/* =========================
-   LARGE LAPTOP
-========================= */
+@media (min-width:1400px){
+
+.kgNavbar-container{
+max-width:1400px;
+}
+
+.kgNavbar-menu{
+gap:40px;
+}
+
+}
+
+/* =============================
+LAPTOP
+============================= */
 
 @media (max-width:1200px){
 
-  .kgNavbar-menu{
-    gap:24px;
-  }
+.kgNavbar-menu{
+gap:24px;
+}
+
+.kgNavbar-link{
+font-size:16px;
+}
 
 }
 
-
-/* =========================
-   SMALL LAPTOP
-========================= */
+/* =============================
+TABLET
+============================= */
 
 @media (max-width:1024px){
 
-  .kgNavbar-container{
-    padding:10px 20px;
-  }
+.kgNavbar-container{
+padding:10px 20px;
+}
 
-  .kgNavbar-contactBtn{
-    padding:8px 20px;
-    font-size:14px;
-  }
+.kgNavbar-contactBtn{
+padding:8px 20px;
+font-size:14px;
+}
 
 }
 
-
-/* =========================
-   MOBILE MENU
-========================= */
+/* =============================
+MOBILE MENU
+============================= */
 
 @media (max-width:900px){
 
-  .kgNavbar-toggleBtn{
-    display:flex;
-  }
+.kgNavbar-toggleBtn{
+display:flex;
+}
 
-  .kgNavbar-right{
-    display:none;
-  }
+.kgNavbar-right{
+display:none;
+}
 
-  .kgNavbar-menu{
-    position:fixed;
-    top:0;
-    right:-100%;
-    width:260px;
-    height:100vh;
-    background:#f9f8f8;
-    flex-direction:column;
-    padding-top:90px;
-    gap:0;
-    box-shadow:-5px 0 20px rgba(0,0,0,0.08);
-    transition:.35s ease;
-    align-items:stretch;
-  }
+.kgNavbar-menu{
+position:fixed;
+top:0;
+right:-100%;
+width:260px;
+height:100vh;
+background:#f9f8f8;
+flex-direction:column;
+padding-top:90px;
+gap:0;
+box-shadow:-5px 0 20px rgba(0,0,0,0.08);
+transition:.35s ease;
+align-items:stretch;
+}
 
-  .kgNavbar-active{
-    right:0;
-  }
+.kgNavbar-active{
+right:0;
+}
 
-  /* CLOSE BUTTON */
+/* CLOSE BUTTON */
 
-  .kgNavbar-closeBtn{
-    display:block;
-    position:absolute;
-    top:20px;
-    left:20px;
-    font-size:30px;
-    cursor:pointer;
-    font-weight:600;
-    color:#000;
-  }
+.kgNavbar-closeBtn{
+display:block;
+position:absolute;
+top:20px;
+left:20px;
+font-size:30px;
+cursor:pointer;
+font-weight:600;
+color:#000;
+}
 
-  /* MOBILE LINKS */
+/* MOBILE LINKS */
 
-  .kgNavbar-link{
-    font-size:20px;
-    width:100%;
-    padding:16px 0;
-    text-align:center;
-    border-bottom:1px solid #ddd;
-  }
+.kgNavbar-link{
+font-size:18px;
+width:100%;
+padding:16px 0;
+text-align:center;
+border-bottom:1px solid #ddd;
+}
 
 }
 
-
-/* =========================
-   MOBILE
-========================= */
+/* =============================
+MOBILE
+============================= */
 
 @media (max-width:600px){
 
-  .kgNavbar-logoImg{
-    width:95px;
-  }
+.kgNavbar-logoImg{
+width:95px;
+}
 
-  .kgNavbar-menu{
-    width:230px;
-  }
+.kgNavbar-menu{
+width:230px;
+}
+
+.kgNavbar-link{
+font-size:17px;
+}
 
 }
 
-
-/* =========================
-   SMALL MOBILE
-========================= */
+/* =============================
+SMALL MOBILE
+============================= */
 
 @media (max-width:400px){
 
-  .kgNavbar-logoImg{
-    width:85px;
-  }
+.kgNavbar-logoImg{
+width:85px;
+}
+
+.kgNavbar-menu{
+width:200px;
+}
 
 }
