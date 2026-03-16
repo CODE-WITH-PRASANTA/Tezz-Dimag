@@ -10,6 +10,7 @@ import HomeParents from "../../Component/HomeParents/HomeParents";
 
 
 
+
 const Home = () => {
   return (
     <div>
@@ -40,6 +41,7 @@ const Home = () => {
       <div id="contact">
         <ContactUs />
       </div>
+      
     </div>
   );
 };
