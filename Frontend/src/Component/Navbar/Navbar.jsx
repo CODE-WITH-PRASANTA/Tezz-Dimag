@@ -3,7 +3,7 @@ import "./Navbar.css";
 import logo from "../../assets/TezzDimag_Bhubaneswar_logo.png";
 
 import { IoClose } from "react-icons/io5";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaPhoneAlt } from "react-icons/fa";
 
 const Navbar = () => {
 
@@ -51,16 +51,40 @@ const Navbar = () => {
               <IoClose />
             </div>
 
-            <a href="/" onClick={closeMenu}>Home</a>
+           <a href="#home" onClick={() => scrollToSection("home")}>Home</a>
 
-            <button onClick={() => scrollToSection("about")}>About</button>
-            <button onClick={() => scrollToSection("event")}>Event</button>
-            <button onClick={() => scrollToSection("course")}>Course</button>
-            <button onClick={() => scrollToSection("blog")}>Blog</button>
-            <button onClick={() => scrollToSection("teacher")}>Teacher</button>
-            <button onClick={() => scrollToSection("schedule")}>Schedule</button>
-            <button onClick={() => scrollToSection("test")}>Testimonial</button>
-            <button onClick={() => scrollToSection("contact")}>Contact</button>
+<button onClick={() => scrollToSection("about")}>
+About
+</button>
+
+<button onClick={() => scrollToSection("programs")}>
+What is Tezz Dimag
+</button>
+
+<button onClick={() => scrollToSection("courses")}>
+Our Programs
+</button>
+
+<button onClick={() => scrollToSection("courses")}>
+Course
+</button>
+
+<button onClick={() => scrollToSection("teacher")}>
+Teacher
+</button>
+
+<button onClick={() => scrollToSection("admission")}>
+Pricing
+</button>
+
+<button onClick={() => scrollToSection("testimonial")}>
+Testimonial
+</button>
+
+<button onClick={() => scrollToSection("contact")}>
+Contact
+</button>
+             
 
 
             {/* MOBILE FOOTER */}
@@ -83,14 +107,22 @@ const Navbar = () => {
 
 
           {/* CTA BUTTON */}
-          <div className="Navbar-cta">
+         <div className="Navbar-cta">
 
-            <a href="tel:+919876543210" className="Navbar-ctaBtn">
-              <span>Get Consultant</span>
-              <strong>+91 9876543210</strong>
-            </a>
+  <a href="tel:+919876543210" className="Navbar-ctaBtn">
 
-          </div>
+    <div className="Navbar-ctaIcon">
+      <FaPhoneAlt />
+    </div>
+
+    <div className="Navbar-ctaText">
+      <span>Get Consultant</span>
+      <strong>+91 9876543210</strong>
+    </div>
+
+  </a>
+
+</div>
 
 
           {/* HAMBURGER */}
