@@ -26,7 +26,9 @@ justify-content:space-between;
 height:45px;
 }
 
-/* MENU */
+/* ======================
+MENU DESKTOP
+====================== */
 
 .Navbar-menu{
 display:flex;
@@ -51,10 +53,10 @@ transition:0.3s;
 color:#ffcc00;
 }
 
-/* CTA */
+/* CTA BUTTON */
 
 .Navbar-ctaBtn{
-background:#1d0251;
+background:linear-gradient(135deg,#1d0251,#4c0aa3);
 color:#fff;
 padding:10px 18px;
 border-radius:40px;
@@ -70,8 +72,8 @@ font-size:14px;
 }
 
 .Navbar-ctaBtn:hover{
-background:#ffcc00;
-color:#000;
+transform:translateY(-2px);
+box-shadow:0 6px 14px rgba(0,0,0,0.15);
 }
 
 /* HAMBURGER */
@@ -111,12 +113,13 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.4);
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(2px);
 z-index:998;
 }
 
 /* ================= */
-/* TABLET */
+/* TABLET & MOBILE */
 /* ================= */
 
 @media(max-width:992px){
@@ -130,67 +133,125 @@ height:100vh;
 background:#ffffff;
 flex-direction:column;
 align-items:flex-start;
-padding:80px 30px;
-gap:20px;
+padding:90px 30px;
+gap:12px;
 transition:0.4s;
 z-index:999;
+border-left:3px solid #1d0251;
+box-shadow:-5px 0 20px rgba(0,0,0,0.08);
 }
 
 .Navbar-menu.active{
 right:0;
 }
 
+/* CLOSE BUTTON */
+
 .Navbar-close{
 display:block;
 position:absolute;
 top:20px;
 right:20px;
+color:#333;
 }
+
+/* HAMBURGER */
 
 .Navbar-hamburger{
 display:flex;
 }
 
+/* HIDE DESKTOP CTA */
+
 .Navbar-cta{
 display:none;
 }
 
-/* MOBILE FOOTER */
-@media(max-width:992px){
+/* MENU ITEMS */
 
 .Navbar-menu a,
 .Navbar-menu button{
 font-weight:600;
 font-size:16px;
+width:100%;
+text-align:left;
+padding:12px 14px;
+border-radius:8px;
+transition:0.3s;
+border-left:3px solid transparent;
 }
 
+/* HOVER EFFECT */
+
+.Navbar-menu a:hover,
+.Navbar-menu button:hover{
+background:#f5f5f5;
+border-left:3px solid #1d0251;
+padding-left:18px;
 }
+
+/* DIVIDER */
+
+.Navbar-menu::after{
+content:"";
+width:100%;
+height:1px;
+background:#eee;
+margin:15px 0;
+}
+
+/* MOBILE FOOTER */
+
 .Navbar-mobileFooter{
 display:block;
-margin-top:40px;
-padding-top:20px;
+margin-top:35px;
+padding-top:25px;
 border-top:1px solid #eee;
 }
 
+/* CONSULTANT BUTTON */
+
 .Navbar-mobileCall{
+display:inline-block;
+background:linear-gradient(135deg,#1d0251,#4c0aa3);
+color:#fff;
 text-decoration:none;
-color:#1d0251;
+padding:12px 22px;
+border-radius:30px;
+font-size:14px;
 font-weight:600;
-display:block;
-margin-bottom:15px;
+margin-bottom:18px;
+transition:0.3s;
 }
+
+.Navbar-mobileCall:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 12px rgba(0,0,0,0.2);
+}
+
+/* SOCIAL ICONS */
 
 .Navbar-mobileSocial{
 display:flex;
 gap:15px;
 font-size:16px;
+}
+
+.Navbar-mobileSocial svg{
+font-size:18px;
 color:#1d0251;
+cursor:pointer;
+transition:0.3s;
+}
+
+.Navbar-mobileSocial svg:hover{
+color:#ffcc00;
 }
 
 }
 
 /* ================= */
-/* MOBILE */
+/* SMALL MOBILE */
 /* ================= */
 
 @media(max-width:600px){
@@ -205,6 +266,7 @@ height:38px;
 
 .Navbar-menu{
 width:260px;
+padding:80px 25px;
 }
 
 }
