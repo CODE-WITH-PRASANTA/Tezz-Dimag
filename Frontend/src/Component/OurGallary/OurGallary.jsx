@@ -1,43 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./OurGallary.css";
-
-import img1 from "../../assets/Blog-1.webp";
-import img2 from "../../assets/Blog_2.webp";
-import img3 from "../../assets/Blog-3.webp";
-import img4 from "../../assets/course_1.webp";
-import img5 from "../../assets/course_2.webp";
-import img6 from "../../assets/course_3.webp";
+import API from "../../api/axios";
 
 const OurGallary = () => {
 
   const [activeImg, setActiveImg] = useState(null);
+  const [images, setImages] = useState([]);
 
-  const images = [
-    {
-      src: img1,
-      alt: "Students learning abacus training at Tezz Dimag skill development class"
-    },
-    {
-      src: img2,
-      alt: "Children participating in brain development activities at Tezz Dimag"
-    },
-    {
-      src: img3,
-      alt: "Students practicing creative learning and memory development programs"
-    },
-    {
-      src: img4,
-      alt: "Kids learning robotics and coding in Tezz Dimag classroom"
-    },
-    {
-      src: img5,
-      alt: "Students attending spoken English and public speaking training"
-    },
-    {
-      src: img6,
-      alt: "Children enjoying skill development activities at Tezz Dimag institute"
-    }
-  ];
+  // ✅ FETCH FROM BACKEND
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const res = await API.get("/gallery");
+        setImages(res.data.data || []);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchImages();
+  }, []);
 
   return (
     <section className="ourgallary-section" id="gallery">
@@ -53,7 +35,6 @@ const OurGallary = () => {
         </h2>
 
         <p className="ourgallary-desc">
-
           Take a look at some memorable moments from Tezz Dimag, where
           students actively participate in brain development activities,
           abacus training, robotics learning, creative workshops and
@@ -67,7 +48,6 @@ const OurGallary = () => {
           public speaking and coding classes, children gain confidence,
           creativity and practical knowledge that supports their future
           academic and personal growth.
-
         </p>
 
       </div>
@@ -77,13 +57,20 @@ const OurGallary = () => {
 
         <div className="ourgallary-track">
 
+          {/* ✅ DYNAMIC IMAGES */}
           {[...images, ...images].map((img, index) => (
             <div
               className="ourgallary-card"
               key={index}
-              onClick={() => setActiveImg(img.src)}
+              onClick={() =>
+                setActiveImg(`http://localhost:5000${img.image}`) // ✅ FIX
+              }
             >
-              <img src={img.src} alt={img.alt}/>
+              <img
+                src={`http://localhost:5000${img.image}`} // ✅ FIX
+                alt={img.alt || "gallery image"}
+                loading="lazy" // ✅ performance
+              />
             </div>
           ))}
 
@@ -93,7 +80,6 @@ const OurGallary = () => {
 
 
       {/* IMAGE MODAL */}
-
       {activeImg && (
         <div
           className="ourgallary-modal"
