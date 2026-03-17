@@ -11,6 +11,9 @@ import OurGallary from "../../Component/OurGallary/OurGallary";
 import Admission from "../../Component/Admission/Admission";
 import AboutSection from "../../Component/AboutSection/AboutSection";
 import ClubsSection from "../../Component/ClubsSection/ClubsSection";
+import FaqSection from "../../Component/FaqSection/FaqSection";
+import StudentKnowledgeSection from "../../Component/StudentKnowledgeSection/StudentKnowledgeSection";
+import PricingSection from "../../Component/PricingSection/PricingSection";
 
 const Home = () => {
   return (
@@ -53,7 +56,9 @@ const Home = () => {
       <section id="gallery">
         <OurGallary />
       </section>
-
+          <FaqSection/>
+          <StudentKnowledgeSection/>
+          <PricingSection/>
       <section id="contact">
         <ContactUs />
       </section>
