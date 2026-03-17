@@ -69,7 +69,7 @@ const Topbar = ({ toggleSidebar }) => {
           />
         </div>
 
-        {/* DROPDOWN MENU */}
+        {/* DROPDOWN */}
         {isOpen && (
           <div className="profile-dropdown">
             <ul className="dropdown-menu-list">
