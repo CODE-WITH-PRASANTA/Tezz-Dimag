@@ -9,6 +9,11 @@ const blogRoutes = require("./routes/blog.routes");
 const courseRoutes = require("./routes/course.routes");
 const contactRoutes = require("./routes/contact.routes");
 const messageRoutes = require("./routes/message.routes");
+const advertisementRoutes = require("./routes/advertisement.routes");
+const enquiryRoutes = require("./routes/enquiry.routes");
+const admissionRoutes = require("./routes/admission.routes");
+const gallery = require("./routes/gallery.routes");
+
 
 
 
@@ -43,6 +48,12 @@ app.use("/api", blogRoutes);
 app.use("/api/courses", courseRoutes);
 app.use("/api/contact",contactRoutes);
 app.use("/api", messageRoutes);
+app.use("/api/advertisements", advertisementRoutes);
+app.use("/api/enquiries", enquiryRoutes);
+app.use("/api", admissionRoutes);
+app.use("/api", gallery);
+
+
 
 const PORT = process.env.PORT || 5000
 

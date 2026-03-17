@@ -1,6 +1,6 @@
 import React from "react";
 import "./Sidebar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   FaTachometerAlt,
   FaChalkboardTeacher,
@@ -9,12 +9,74 @@ import {
   FaBlog,
   FaEnvelope,
   FaSignOutAlt,
-  FaTimes
+  FaTimes,
+  FaBullhorn,
+  FaUserPlus,
+  FaList,
+  FaImages
 } from "react-icons/fa";
 
 import logo from "../../assets/Tezz-Logo.webp";
 
+/* ✅ ROUTES CONFIG */
+const menuItems = [
+  {
+    path: "/admin",
+    name: "Dashboard",
+    icon: FaTachometerAlt,
+  },
+  {
+    path: "/teacher-posting",
+    name: "Teacher Posting",
+    icon: FaChalkboardTeacher,
+  },
+  {
+    path: "/courses-posting",
+    name: "Courses Posting",
+    icon: FaBook,
+  },
+  {
+    path: "/testimonial",
+    name: "Testimonial",
+    icon: FaQuoteRight,
+  },
+  {
+    path: "/blog-posting",
+    name: "Blog Posting",
+    icon: FaBlog,
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    icon: FaEnvelope,
+  },
+
+  /* ✅ ADMIN */
+  {
+    path: "/admin/advertisement",
+    name: "Advertisement",
+    icon: FaBullhorn,
+  },
+  {
+    path: "/admin/coldlead",
+    name: "Cold Leads",
+    icon: FaUserPlus,
+  },
+  {
+    path: "/admin/admission-list",
+    name: "Admission List",
+    icon: FaList,
+  },
+  {
+    path: "/admin/gallery",
+    name: "Gallery",
+    icon: FaImages,
+  },
+];
+
 const Sidebar = ({ kgSidebarOpen, setKgSidebarOpen }) => {
+  const location = useLocation();
+
   return (
     <div
       className={`kgSidebar-wrapper ${
@@ -39,52 +101,25 @@ const Sidebar = ({ kgSidebarOpen, setKgSidebarOpen }) => {
 
       {/* MENU */}
       <ul className="kgSidebar-menu">
+        {menuItems.map((item, index) => {
+          const Icon = item.icon;
+          const isActive = location.pathname === item.path;
 
-        <li>
-          <Link to="/">
-            <FaTachometerAlt />
-            {kgSidebarOpen && <span>Dashboard</span>}
-          </Link>
-        </li>
-
-        <li>
-          <Link to="/teacher-posting">
-            <FaChalkboardTeacher />
-            {kgSidebarOpen && <span>Teacher Posting</span>}
-          </Link>
-        </li>
-
-        <li>
-          <Link to="/courses-posting">
-            <FaBook />
-            {kgSidebarOpen && <span>Courses Posting</span>}
-          </Link>
-        </li>
-
-        <li>
-          <Link to="/testimonial">
-            <FaQuoteRight />
-            {kgSidebarOpen && <span>Testimonial</span>}
-          </Link>
-        </li>
-
-        <li>
-          <Link to="/blog-posting">
-            <FaBlog />
-            {kgSidebarOpen && <span>Blog Posting</span>}
-          </Link>
-        </li>
-
-        <li>
-          <Link to="/contact">
-            <FaEnvelope />
-            {kgSidebarOpen && <span>Contact</span>}
-          </Link>
-        </li>
-
+          return (
+            <li
+              key={index}
+              className={isActive ? "active-menu" : ""}
+            >
+              <Link to={item.path}>
+                <Icon />
+                {kgSidebarOpen && <span>{item.name}</span>}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
 
-      {/* LOGOUT BUTTON */}
+      {/* LOGOUT */}
       <div className="kgSidebar-logout">
         <FaSignOutAlt />
         {kgSidebarOpen && <span>Logout</span>}
