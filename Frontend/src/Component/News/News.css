@@ -26,7 +26,7 @@
   align-items: center;
   gap: 10px;
   padding: 10px 18px;
-  border: 2px solid #3aa6a3; /* your teal color */
+  border: 2px solid #050c7a; /* your teal color */
   border-radius: 30px;
   background: #fff;
   white-space: nowrap;
@@ -47,7 +47,7 @@
 .News-text {
   font-size: 14px;
   font-weight: 500;
-  color: #ff6600;
+  color: #4b034e;
 }
 
 /* ANIMATION */

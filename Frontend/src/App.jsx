@@ -13,6 +13,8 @@ import Blog from "./Pages/Blog/Blog";
 import BlogDetails from "./Pages/BlogDetails/BlogDetails";
 import Price from "./Pages/Price/Price";
 import FloatingButtons from "./Component/FloatingButtons/FloatingButtons";
+import News from "./Component/News/News";
+import Topbar from "./Component/Topbar/Topbar";
 
 function AppContent() {
   const [loading, setLoading] = useState(true);
@@ -31,7 +33,9 @@ function AppContent() {
 
   return (
     <>
+    <Topbar />
       <Navbar />
+      <News />
 
       <Routes>
         <Route path="/" element={<Home />} />
