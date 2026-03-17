@@ -15,6 +15,8 @@ import Price from "./Pages/Price/Price";
 import FloatingButtons from "./Component/FloatingButtons/FloatingButtons";
 import News from "./Component/News/News";
 import Topbar from "./Component/Topbar/Topbar";
+import FloatingForm from "./Component/FloatingForm/FloatingForm";
+
 
 function AppContent() {
   const [loading, setLoading] = useState(true);
@@ -42,9 +44,11 @@ function AppContent() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/price" element={<Price />} />
+       
       </Routes>
 
       <Footer />
+      <FloatingForm/>
       <FloatingButtons />
     </>
   );

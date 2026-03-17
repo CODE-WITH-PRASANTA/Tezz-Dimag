@@ -13,12 +13,10 @@ import lineshape from "../../assets/line-shape.png";
 const AboutSection = () => {
   return (
     <section className="homeabout">
-
       {/* Decorative Line */}
       <img src={lineshape} alt="" className="homeabout-line" />
 
       <div className="homeabout-container">
-
         {/* LEFT SIDE IMAGE */}
         <div className="homeabout-left">
           <img src={Bordershape} alt="" className="homeabout-border" />
@@ -40,18 +38,24 @@ const AboutSection = () => {
           </h2>
 
           <p className="homeabout-desc">
-            TEZZ DIMAG is a professionally managed institute dedicated to building and nurturing young talent. Our goal is to help students discover their true potential and develop the skills they need for a successful future.
-
-            We offer a research-based and scientifically designed holistic learning curriculum that encourages children to imagine, innovate, and grow intellectually. Our programs are carefully structured to support the overall development of a child’s mind, creativity, and confidence.
-
-            At TEZZ DIMAG, we believe that the potential of the human brain goes far beyond our imagination. With this belief, we have developed a unique program under the brand name “TEZZDIMAG”, designed to support the learning and development needs of students.
+            TEZZ DIMAG is a professionally managed institute dedicated to
+            building and nurturing young talent. Our goal is to help students
+            discover their true potential and develop the skills they need for a
+            successful future. We offer a research-based and scientifically
+            designed holistic learning curriculum that encourages children to
+            imagine, innovate, and grow intellectually. Our programs are
+            carefully structured to support the overall development of a child’s
+            mind, creativity, and confidence. At TEZZ DIMAG, we believe that the
+            potential of the human brain goes far beyond our imagination. With
+            this belief, we have developed a unique program under the brand name
+            “TEZZDIMAG”, designed to support the learning and development needs
+            of students.
           </p>
 
           {/* FEATURES */}
           <div className="homeabout-features">
-
-            {/* Mission */}
-            <div className="homeabout-feature1">
+            {/* MISSION */}
+            <div className="feature-card mission-card">
               <div className="feature-icon">
                 <img src={MissionIcon} alt="Mission" />
               </div>
@@ -59,13 +63,14 @@ const AboutSection = () => {
               <div>
                 <h4>Our Mission</h4>
                 <p>
-                  OUR MISSION IS TO PLACE INDIA IN TOP 3 COUNTRIES ACROSS THE WORLD IN HAPPINESS INDEX TILL 2025
+                  OUR MISSION IS TO PLACE INDIA IN TOP 3 COUNTRIES ACROSS THE
+                  WORLD IN HAPPINESS INDEX TILL 2025
                 </p>
               </div>
             </div>
 
-            {/* Vision */}
-            <div className="homeabout-feature2">
+            {/* VISION */}
+            <div className="feature-card vision-card">
               <div className="feature-icon">
                 <img src={VisionIcon} alt="Vision" />
               </div>
@@ -73,18 +78,16 @@ const AboutSection = () => {
               <div>
                 <h4>Our Vision</h4>
                 <p>
-                  TEZZ DIMAG IS A VISION TRANSFORMED TO CREATE AN EDUCATION SYSTEM WITH A GOAL TO DEVELOP A WHOLE NEW ART OF TEACHING AND LEARNING ENCIRCLED WITHIN FUN AND CREATIVITY..
+                  TEZZ DIMAG IS A VISION TRANSFORMED TO CREATE AN EDUCATION
+                  SYSTEM WITH A GOAL TO DEVELOP A WHOLE NEW ART OF TEACHING AND
+                  LEARNING ENCIRCLED WITHIN FUN AND CREATIVITY.
                 </p>
               </div>
             </div>
-
           </div>
-
-          <hr className="homeabout-divider" />
 
           {/* AUTHOR / FOUNDER SECTION */}
           <div className="homeabout-author">
-
             <div className="author-info">
               <img src={authorimg} alt="Founder" />
 
@@ -107,9 +110,7 @@ const AboutSection = () => {
                 <strong>+91 7327817155</strong>
               </div>
             </a>
-
           </div>
-
         </div>
       </div>
     </section>

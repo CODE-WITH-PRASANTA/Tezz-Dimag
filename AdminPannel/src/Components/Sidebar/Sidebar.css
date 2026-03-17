@@ -140,6 +140,49 @@
   cursor:pointer;
 }
 
+
+
+
+
+/* ACTIVE MENU */
+
+.active-menu {
+  background: linear-gradient(90deg, #1ABC9C, #16A085);
+  border-left: 3px solid #fff;
+}
+
+.active-menu a {
+  color: #fff !important;
+}
+
+.active-menu svg {
+  color: #fff !important;
+}
+
+/* SMOOTH SCROLL (premium feel) */
+.kgSidebar-menu {
+  overflow-y: auto;
+}
+
+/* SCROLLBAR */
+.kgSidebar-menu::-webkit-scrollbar {
+  width: 4px;
+}
+.kgSidebar-menu::-webkit-scrollbar-thumb {
+  background: #1ABC9C;
+  border-radius: 10px;
+}
+
+/* HOVER IMPROVEMENT */
+.kgSidebar-menu li {
+  border-radius: 0 25px 25px 0;
+}
+
+/* LOGOUT HOVER */
+.kgSidebar-logout:hover {
+  background: linear-gradient(90deg, #B22222, #8B0000);
+}
+
 /* MOBILE */
 
 @media (max-width:768px){
