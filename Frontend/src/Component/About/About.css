@@ -79,11 +79,11 @@ background:#e2572d;
 /* right image */
 
 .About-image{
-flex:1;
+flex:-8;
 }
 
 .About-image img{
-width:68%;
+width:97%;
 height:600px;
 object-fit:cover;
 }

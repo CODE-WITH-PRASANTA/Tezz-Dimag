@@ -3,10 +3,14 @@ import "./Navbar.css";
 import logo from "../../assets/TezzDimag_Bhubaneswar_logo.png";
 
 import { IoClose } from "react-icons/io5";
-import { FaFacebookF, FaTwitter, FaInstagram, FaPhoneAlt } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaPhoneAlt,
+} from "react-icons/fa";
 
 const Navbar = () => {
-
   const [NavbarMenuOpen, setNavbarMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -18,13 +22,12 @@ const Navbar = () => {
   };
 
   const scrollToSection = (id) => {
-
     const section = document.getElementById(id);
 
     if (section) {
       section.scrollIntoView({
         behavior: "smooth",
-        block: "start"
+        block: "start",
       });
     }
 
@@ -34,96 +37,77 @@ const Navbar = () => {
   return (
     <>
       <header className="Navbar">
-
         <div className="Navbar-container">
-
           {/* LOGO */}
-          <div className="Navbar-logo">
+          <div className="Navbar-logo" onClick={() => scrollToSection("home")}>
             <img src={logo} alt="TezzDimag Logo" />
           </div>
 
-
           {/* MENU */}
           <nav className={`Navbar-menu ${NavbarMenuOpen ? "active" : ""}`}>
-
             {/* CLOSE BUTTON */}
             <div className="Navbar-close" onClick={closeMenu}>
               <IoClose />
             </div>
 
-           <a href="#home" onClick={() => scrollToSection("home")}>Home</a>
+            <button onClick={() => scrollToSection("home")}>Home</button>
 
-<button onClick={() => scrollToSection("about")}>
-About
-</button>
+            <button onClick={() => scrollToSection("about")}>About</button>
 
-<button onClick={() => scrollToSection("programs")}>
-What is Tezz Dimag
-</button>
+            <button onClick={() => scrollToSection("programs")}>
+              What is Tezz Dimag
+            </button>
 
-<button onClick={() => scrollToSection("courses")}>
-Our Programs
-</button>
+            <button onClick={() => scrollToSection("courses")}>
+              Our Programs
+            </button>
 
-<button onClick={() => scrollToSection("courses")}>
-Course
-</button>
+            <button onClick={() => scrollToSection("courses")}>Course</button>
 
-<button onClick={() => scrollToSection("teacher")}>
-Teacher
-</button>
+            <button onClick={() => scrollToSection("teacher")}>Teacher</button>
 
-<button onClick={() => scrollToSection("admission")}>
-Pricing
-</button>
+            <button onClick={() => scrollToSection("admission")}>Pricing</button>
 
-<button onClick={() => scrollToSection("testimonial")}>
-Testimonial
-</button>
+            <button onClick={() => scrollToSection("testimonial")}>
+              Testimonial
+            </button>
 
-<button onClick={() => scrollToSection("contact")}>
-Contact
-</button>
-             
-
+            <button onClick={() => scrollToSection("contact")}>Contact</button>
 
             {/* MOBILE FOOTER */}
             <div className="Navbar-mobileFooter">
-
               <a href="tel:+919876543210" className="Navbar-mobileCall">
                 Get Consultant <br />
                 +91 9876543210
               </a>
 
               <div className="Navbar-mobileSocial">
-                <FaFacebookF />
-                <FaTwitter />
-                <FaInstagram />
+                <a href="/" aria-label="Facebook">
+                  <FaFacebookF />
+                </a>
+                <a href="/" aria-label="Twitter">
+                  <FaTwitter />
+                </a>
+                <a href="/" aria-label="Instagram">
+                  <FaInstagram />
+                </a>
               </div>
-
             </div>
-
           </nav>
 
-
           {/* CTA BUTTON */}
-         <div className="Navbar-cta">
+          <div className="Navbar-cta">
+            <a href="tel:+919876543210" className="Navbar-ctaBtn">
+              <div className="Navbar-ctaIcon">
+                <FaPhoneAlt />
+              </div>
 
-  <a href="tel:+919876543210" className="Navbar-ctaBtn">
-
-    <div className="Navbar-ctaIcon">
-      <FaPhoneAlt />
-    </div>
-
-    <div className="Navbar-ctaText">
-      <span>Get Consultant</span>
-      <strong>+91 9876543210</strong>
-    </div>
-
-  </a>
-
-</div>
-
+              <div className="Navbar-ctaText">
+                <span>Get Consultant</span>
+                <strong>+91 9876543210</strong>
+              </div>
+            </a>
+          </div>
 
           {/* HAMBURGER */}
           <div
@@ -134,9 +118,7 @@ Contact
             <span></span>
             <span></span>
           </div>
-
         </div>
-
       </header>
 
       {/* OVERLAY */}
