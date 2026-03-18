@@ -15,7 +15,8 @@ const routeFolderMap = {
   "/teachers": "uploads/teachers",
   "/testimonials": "uploads/testimonials",
   "/blog": "uploads/blog",
-  "/courses": "uploads/courses"
+  "/courses": "uploads/courses",
+   "/gallery": "uploads/gallery" 
 };
 
 /* ================= GET UPLOAD PATH ================= */
