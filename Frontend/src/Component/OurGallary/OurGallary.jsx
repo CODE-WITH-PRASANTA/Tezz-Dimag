@@ -1,21 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./OurGallary.css";
-
-import img1 from "../../assets/Blog-1.webp";
-import img2 from "../../assets/Blog_2.webp";
-import img3 from "../../assets/Blog-3.webp";
-import img4 from "../../assets/course_1.webp";
-import img5 from "../../assets/course_2.webp";
-import img6 from "../../assets/course_3.webp";
+import API from "../../api/axios";
 
 const OurGallary = () => {
 
   const [activeImg, setActiveImg] = useState(null);
+  const [images, setImages] = useState([]);
 
-  const images = [img1, img2, img3, img4, img5, img6];
+  // ✅ FETCH FROM BACKEND
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const res = await API.get("/gallery");
+        setImages(res.data.data || []);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchImages();
+  }, []);
 
   return (
-    <section className="ourgallary-section">
+    <section className="ourgallary-section" id="gallery">
 
       <div className="ourgallary-header">
 
@@ -24,13 +31,23 @@ const OurGallary = () => {
         </div>
 
         <h2 className="ourgallary-title">
-          Happy Moments at <span>Our School</span>
+          Moments from <span>Tezz Dimag Classes</span>
         </h2>
 
         <p className="ourgallary-desc">
-          Explore real moments from Learning Step School through our gallery,
-          showcasing student activities, classroom learning, celebrations,
-          and a safe, child-friendly school environment.
+          Take a look at some memorable moments from Tezz Dimag, where
+          students actively participate in brain development activities,
+          abacus training, robotics learning, creative workshops and
+          communication skill programs.
+
+          <br /><br />
+
+          Our gallery reflects the vibrant learning environment we create
+          for students from Class 1 to Class 12. Through skill development
+          courses such as Vedic Maths, DMIT talent analysis, spoken English,
+          public speaking and coding classes, children gain confidence,
+          creativity and practical knowledge that supports their future
+          academic and personal growth.
         </p>
 
       </div>
@@ -40,13 +57,20 @@ const OurGallary = () => {
 
         <div className="ourgallary-track">
 
+          {/* ✅ DYNAMIC IMAGES */}
           {[...images, ...images].map((img, index) => (
             <div
               className="ourgallary-card"
               key={index}
-              onClick={() => setActiveImg(img)}
+              onClick={() =>
+                setActiveImg(`http://localhost:5000${img.image}`) // ✅ FIX
+              }
             >
-              <img src={img} alt="gallery"/>
+              <img
+                src={`http://localhost:5000${img.image}`} // ✅ FIX
+                alt={img.alt || "gallery image"}
+                loading="lazy" // ✅ performance
+              />
             </div>
           ))}
 
@@ -56,7 +80,6 @@ const OurGallary = () => {
 
 
       {/* IMAGE MODAL */}
-
       {activeImg && (
         <div
           className="ourgallary-modal"
@@ -67,7 +90,7 @@ const OurGallary = () => {
 
           <img
             src={activeImg}
-            alt="preview"
+            alt="Tezz Dimag classroom activity preview"
             className="ourgallary-modal-img"
           />
 

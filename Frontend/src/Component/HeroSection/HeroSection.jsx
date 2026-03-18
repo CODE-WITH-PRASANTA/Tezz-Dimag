@@ -3,28 +3,37 @@ import "./HeroSection.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import slide1 from "../../assets/slide_3.webp";
+import slide1 from "../../assets/image-1.webp";
 import slide2 from "../../assets/slide_1.webp";
-import slide3 from "../../assets/slide_2.webp";
+import slide3 from "../../assets/image-27.webp";
 
 const slides = [
   {
     image: slide1,
-    titleTop: "Our Courses",
-    title: "See What's In Our Courses",
+    titleTop: "Journey of Tezzdimag (Since 2019)",
+    title: "To recognize every child’s hidden potential and guide it in the right direction",
+    description:
+      "The aim of this organization is not limited to academics. It focuses on developing Mind Power, Personality Development, and Future Skills in children and young people.",
     link: "/courses",
+    button: "Explore Courses",
   },
   {
     image: slide2,
-    titleTop: "The Best Theme For",
-    title: "Kids Education",
+    titleTop: "Modern Kids Education",
+    title: "Build Strong Minds From Early Age",
+    description:
+      "At TEZZ DIMAG, we focus on interactive learning methods that help children grow smarter, think faster, and develop problem-solving skills.",
     link: "/about",
+    button: "About Us",
   },
   {
     image: slide3,
-    titleTop: "Get Ready",
-    title: "to Join with us",
-    link: "/contact",
+titleTop: "Start Your Child’s Journey",
+title: "Join TEZZ DIMAG Today",
+description:
+  "Give your child the right environment to learn, explore, and grow with engaging educational programs created specially for young minds. At Tezz Dimag, we focus on developing memory power, logical thinking, creativity, and communication skills through practical learning methods. Our skill-development courses help students from Class 1 to Class 12 build confidence, improve academic performance, and discover their hidden talents for a brighter future.",
+link: "/contact",
+button: "Contact Us",
   },
 ];
 
@@ -49,33 +58,54 @@ const HeroSection = () => {
 
   return (
     <section className="HeroSection">
+
       {slides.map((slide, index) => (
         <div
           key={index}
           className={
-            index === current ? "HeroSection-slide active" : "HeroSection-slide"
+            index === current
+              ? "HeroSection-slide active"
+              : "HeroSection-slide"
           }
           style={{ backgroundImage: `url(${slide.image})` }}
         >
+
           <div className="HeroSection-overlay"></div>
 
           <div className="HeroSection-content">
-            <h4 className="fade-up">{slide.titleTop}</h4>
 
-            <h1 className="fade-up delay">{slide.title}</h1>
+            <div className="HeroSection-text">
 
-            <a href="#contact" className="HeroSection-btn fade-up delay2">
-              CONTACT US
-            </a>
+              <h3 className="fade-up">{slide.titleTop}</h3>
+
+              <h2 className="fade-up delay">{slide.title}</h2>
+
+              <p className="HeroSection-description fade-up delay">
+                {slide.description}
+              </p>
+
+              <Link to={slide.link} className="HeroSection-btn fade-up delay2">
+                {slide.button}
+              </Link>
+
+            </div>
+
           </div>
+
         </div>
       ))}
 
-      <button className="HeroSection-arrow left" onClick={prevSlide}>
+      <button
+        className="HeroSection-arrow left"
+        onClick={prevSlide}
+      >
         <FaChevronLeft />
       </button>
 
-      <button className="HeroSection-arrow right" onClick={nextSlide}>
+      <button
+        className="HeroSection-arrow right"
+        onClick={nextSlide}
+      >
         <FaChevronRight />
       </button>
 
@@ -84,12 +114,15 @@ const HeroSection = () => {
           <span
             key={index}
             className={
-              index === current ? "HeroSection-dot active" : "HeroSection-dot"
+              index === current
+                ? "HeroSection-dot active"
+                : "HeroSection-dot"
             }
             onClick={() => setCurrent(index)}
           ></span>
         ))}
       </div>
+
     </section>
   );
 };

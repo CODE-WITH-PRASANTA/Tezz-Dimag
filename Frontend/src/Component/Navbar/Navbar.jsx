@@ -3,26 +3,28 @@ import "./Navbar.css";
 import logo from "../../assets/TezzDimag_Bhubaneswar_logo.png";
 
 import { IoClose } from "react-icons/io5";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaPhoneAlt } from "react-icons/fa";
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+
+  const [NavbarMenuOpen, setNavbarMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setNavbarMenuOpen(!NavbarMenuOpen);
   };
 
   const closeMenu = () => {
-    setMenuOpen(false);
+    setNavbarMenuOpen(false);
   };
 
   const scrollToSection = (id) => {
+
     const section = document.getElementById(id);
 
     if (section) {
       section.scrollIntoView({
         behavior: "smooth",
-        block: "start",
+        block: "start"
       });
     }
 
@@ -31,41 +33,69 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="navbar">
-        <div className="navbar-container">
+      <header className="Navbar">
+
+        <div className="Navbar-container">
 
           {/* LOGO */}
-          <div className="navbar-logo">
+          <div className="Navbar-logo">
             <img src={logo} alt="TezzDimag Logo" />
           </div>
 
+
           {/* MENU */}
-          <nav className={`navbar-menu ${menuOpen ? "active" : ""}`}>
+          <nav className={`Navbar-menu ${NavbarMenuOpen ? "active" : ""}`}>
 
             {/* CLOSE BUTTON */}
-            <div className="menu-close" onClick={closeMenu}>
+            <div className="Navbar-close" onClick={closeMenu}>
               <IoClose />
             </div>
 
-            <a href="/" onClick={closeMenu}>Home</a>
-            <button onClick={() => scrollToSection("about")}>About</button>
-            <button onClick={() => scrollToSection("event")}>Event</button>
-            <button onClick={() => scrollToSection("course")}>Course</button>
-            <button onClick={() => scrollToSection("blog")}>Blog</button>
-            <button onClick={() => scrollToSection("teacher")}>Teacher</button>
-            <button onClick={() => scrollToSection("schedule")}>Schedule</button>
-            <button onClick={() => scrollToSection("test")}>Testimonial</button>
-            <button onClick={() => scrollToSection("contact")}>Contact</button>
+           <a href="#home" onClick={() => scrollToSection("home")}>Home</a>
+
+<button onClick={() => scrollToSection("about")}>
+About
+</button>
+
+<button onClick={() => scrollToSection("programs")}>
+What is Tezz Dimag
+</button>
+
+<button onClick={() => scrollToSection("courses")}>
+Our Programs
+</button>
+
+<button onClick={() => scrollToSection("courses")}>
+Course
+</button>
+
+<button onClick={() => scrollToSection("teacher")}>
+Teacher
+</button>
+
+<button onClick={() => scrollToSection("admission")}>
+Pricing
+</button>
+
+<button onClick={() => scrollToSection("testimonial")}>
+Testimonial
+</button>
+
+<button onClick={() => scrollToSection("contact")}>
+Contact
+</button>
+             
+
 
             {/* MOBILE FOOTER */}
-            <div className="menu-footer">
+            <div className="Navbar-mobileFooter">
 
-              <a href="tel:+919876543210" className="mobile-call">
+              <a href="tel:+919876543210" className="Navbar-mobileCall">
                 Get Consultant <br />
                 +91 9876543210
               </a>
 
-              <div className="mobile-social">
+              <div className="Navbar-mobileSocial">
                 <FaFacebookF />
                 <FaTwitter />
                 <FaInstagram />
@@ -75,26 +105,44 @@ const Navbar = () => {
 
           </nav>
 
+
           {/* CTA BUTTON */}
-          <div className="navbar-cta">
-            <a href="tel:+919876543210" className="cta-btn">
-              <span>Get Consultant</span>
-              <strong>+91 9876543210</strong>
-            </a>
-          </div>
+         <div className="Navbar-cta">
+
+  <a href="tel:+919876543210" className="Navbar-ctaBtn">
+
+    <div className="Navbar-ctaIcon">
+      <FaPhoneAlt />
+    </div>
+
+    <div className="Navbar-ctaText">
+      <span>Get Consultant</span>
+      <strong>+91 9876543210</strong>
+    </div>
+
+  </a>
+
+</div>
+
 
           {/* HAMBURGER */}
-          <div className="hamburger" onClick={toggleMenu}>
+          <div
+            className={`Navbar-hamburger ${NavbarMenuOpen ? "active" : ""}`}
+            onClick={toggleMenu}
+          >
             <span></span>
             <span></span>
             <span></span>
           </div>
 
         </div>
+
       </header>
 
       {/* OVERLAY */}
-      {menuOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
+      {NavbarMenuOpen && (
+        <div className="Navbar-overlay" onClick={closeMenu}></div>
+      )}
     </>
   );
 };

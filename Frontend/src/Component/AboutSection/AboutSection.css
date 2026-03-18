@@ -5,7 +5,12 @@
   background: linear-gradient(180deg, #ffffff 0%, #f5f9ff 100%);
   overflow: hidden;
 }
-
+.homeabout-desc{
+line-height:1.7;
+text-align:justify;
+max-width:600px;
+color:#555;
+}
 /* Decorative line */
 .homeabout-line {
   position: absolute;
@@ -437,4 +442,72 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 900;
+}
+
+
+
+/* COMMON CARD */
+.feature-card {
+  display: flex;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  color: #fff;
+  flex: 1;
+  min-width: 250px;
+}
+
+/* MISSION STYLE */
+.mission-card {
+  background: linear-gradient(135deg, #e00002, #ff4d4f);
+}
+
+/* VISION STYLE */
+.vision-card {
+  background: linear-gradient(135deg, #fb6d01, #ff9a3c);
+}
+
+/* HOVER EFFECT */
+.feature-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* ICON */
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: #fff; */
+  border-radius: 12px;
+  padding: 8px;
+  min-width: 42px;
+  height: 42px;
+  /* color: black; */
+}
+
+.feature-icon img {
+  width: 22px;
+}
+
+/* TEXT */
+.feature-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.feature-card p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #f1f1f1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .homeabout-features {
+    flex-direction: column;
+  }
 }

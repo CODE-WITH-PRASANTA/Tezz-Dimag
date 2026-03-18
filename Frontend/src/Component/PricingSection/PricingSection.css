@@ -1,0 +1,217 @@
+/* ===== MAIN SECTION ===== */
+.Pricing-Sec {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f5f7ff, #eef2ff);
+  font-family: "Poppins", sans-serif;
+}
+
+.Pricing-Sec-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== HEADER ===== */
+.Pricing-Sec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.Pricing-Sec-subtitle {
+  color: #6c63ff;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.Pricing-Sec-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  max-width: 500px;
+}
+
+/* ===== TOGGLE ===== */
+.Pricing-Sec-toggle {
+  display: flex;
+  background: #fff;
+  border-radius: 50px;
+  padding: 6px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+}
+
+.Pricing-Sec-toggle button {
+  border: none;
+  padding: 10px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  background: transparent;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.Pricing-Sec-toggle button.active {
+  background: linear-gradient(135deg, #6c63ff, #8f6bff);
+  color: #fff;
+}
+
+/* ===== CARDS GRID ===== */
+.Pricing-Sec-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
+}
+
+/* ===== CARD ===== */
+.Pricing-Sec-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 55px 30px;
+  color: #fff;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.Pricing-Sec-card:hover {
+  transform: translateY(-10px);
+}
+
+/* ===== GRADIENT COLORS ===== */
+.Pricing-Sec-card.purple {
+  background: linear-gradient(135deg, #8e2de2, #c850c0);
+}
+
+.Pricing-Sec-card.red {
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+}
+
+.Pricing-Sec-card.blue {
+  background: linear-gradient(135deg, #2193b0, #6dd5ed);
+}
+
+/* ===== WAVE TOP ===== */
+.Pricing-Sec-wave-top {
+  position: absolute;
+  top: -45px;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: inherit;
+  border-bottom-left-radius: 70% 100%;
+  border-bottom-right-radius: 70% 100%;
+}
+
+/* ===== WAVE BOTTOM ===== */
+.Pricing-Sec-wave-bottom {
+  position: absolute;
+  bottom: -45px;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: inherit;
+  border-top-left-radius: 70% 100%;
+  border-top-right-radius: 70% 100%;
+}
+
+/* ===== BADGE ===== */
+.Pricing-Sec-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #fff;
+  color: #ff9800;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ===== CONTENT ===== */
+.Pricing-Sec-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.Pricing-Sec-desc {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+
+/* ===== PRICE ===== */
+.Pricing-Sec-price {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 22px;
+}
+
+.Pricing-Sec-price span {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ===== FEATURES ===== */
+.Pricing-Sec-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.Pricing-Sec-features li {
+  font-size: 14px;
+  margin: 12px 0;
+  padding-left: 22px;
+  position: relative;
+}
+
+/* CHECK ICON */
+.Pricing-Sec-features li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  font-size: 13px;
+  color: #fff;
+}
+
+/* ===== BUTTON ===== */
+.Pricing-Sec-btn {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.Pricing-Sec-btn:hover {
+  background: #fff;
+  color: #333;
+}
+
+/* ===== HIGHLIGHT ===== */
+.Pricing-Sec-card.highlight {
+  transform: scale(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .Pricing-Sec-header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .Pricing-Sec-card {
+    padding: 45px 20px;
+  }
+
+  .Pricing-Sec-title {
+    font-size: 26px;
+  }
+}

@@ -1,9 +1,19 @@
+/* GOOGLE FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
 /* SECTION */
 
 .ourgallary-section{
 padding:90px 8%;
 background:#f7f7fb;
 overflow:hidden;
+font-family:'Baloo 2', cursive;
+letter-spacing:0.4px;
+word-spacing:1px;
+line-height:1.6;
 }
 
 
@@ -23,12 +33,17 @@ border-radius:25px;
 font-size:13px;
 font-weight:600;
 margin-bottom:15px;
+letter-spacing:1px;
+word-spacing:2px;
 }
 
 .ourgallary-title{
 font-size:48px;
 font-weight:700;
 margin-bottom:15px;
+letter-spacing:1.5px;
+word-spacing:3px;
+line-height:1.2;
 }
 
 .ourgallary-title span{
@@ -39,7 +54,11 @@ color:#f39c34;
 max-width:700px;
 margin:auto;
 color:#6a6a6a;
-line-height:1.7;
+line-height:1.8;
+font-family:"Poppins",sans-serif;
+letter-spacing:0.4px;
+word-spacing:1.5px;
+text-align: justify;
 }
 
 
@@ -144,6 +163,7 @@ cursor:pointer;
 
 .ourgallary-title{
 font-size:36px;
+letter-spacing:1px;
 }
 
 .ourgallary-card{
@@ -157,6 +177,11 @@ height:170px;
 
 .ourgallary-title{
 font-size:28px;
+letter-spacing:0.8px;
+}
+
+.ourgallary-desc{
+font-size:14px;
 }
 
 .ourgallary-card{

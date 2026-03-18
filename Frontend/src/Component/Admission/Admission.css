@@ -1,193 +1,311 @@
-.admission-section{
-padding:80px 8%;
-background:#eef3f7;
+/* GOOGLE FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ================= SECTION ================= */
+.admission-section {
+    padding: 80px 6%;
+    background: #eef3f7;
+    font-family: 'Baloo 2', cursive;
+    letter-spacing: 0.4px;
+    word-spacing: 1px;
+    line-height: 1.6;
 }
 
-.admission-container{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:60px;
-flex-wrap:wrap;
+/* ================= CONTAINER ================= */
+.admission-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
 }
 
-/* LEFT IMAGES */
-
-.admission-images{
-position:relative;
-width:420px;
-height:420px;
+/* ================= LEFT IMAGES ================= */
+.admission-images {
+    position: relative;
+    width: 420px;
+    height: 420px;
+    flex-shrink: 0;
 }
 
-.admission-img{
-position:absolute;
-width:100%;
-border-radius:25px;
-box-shadow:0 15px 35px rgba(0,0,0,0.2);
-border:6px solid white;
+.admission-img {
+    position: absolute;
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 6px solid white;
+    transition: transform 0.4s ease;
 }
 
-.admission-img-top{
-top:-75px;
-left:20px;
-transform:rotate(-9deg);
-z-index:2;
+.admission-img:hover {
+    transform: scale(1.03);
 }
 
-.admission-img-bottom{
-bottom:-110px;
-left:-10px;
-transform:rotate(10deg);
+.admission-img-top {
+    top: -70px;
+    left: 20px;
+    transform: rotate(-8deg);
+    z-index: 2;
 }
 
-/* RIGHT CONTENT */
-
-.admission-content{
-flex:1;
-max-width:700px;
+.admission-img-bottom {
+    bottom: -100px;
+    left: -10px;
+    transform: rotate(8deg);
 }
 
-.admission-title{
-font-size:48px;
-font-weight:700;
-margin-bottom:25px;
+/* ================= RIGHT CONTENT ================= */
+.admission-content {
+    flex: 1;
+    max-width: 700px;
 }
 
-/* FEATURES */
-
-.admission-features{
-display:flex;
-gap:60px;
-margin-bottom:30px;
+.admission-title {
+    font-size: 46px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
 }
 
-.admission-features p{
-display:flex;
-align-items:center;
-gap:10px;
-margin-bottom:12px;
-font-size:16px;
+/* ================= FEATURES ================= */
+.admission-features {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
-.admission-features svg{
-color:#ff1744;
+.admission-features p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
 }
 
-/* FORM */
-
-.admission-form{
-border:3px solid #4a0d57;
-border-radius:25px;
-padding:35px;
-background:white;
+.admission-features svg {
+    color: #ff1744;
+    min-width: 16px;
 }
 
-.admission-form-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-column-gap:20px;
-row-gap:12px;
+/* ================= FORM ================= */
+.admission-form {
+    border: 3px solid #4a0d57;
+    border-radius: 25px;
+    padding: 30px;
+    background: white;
 }
 
-.admission-field label{
-font-size:14px;
-margin-bottom:6px;
-display:block;
+.admission-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
 }
 
-.admission-field span{
-color:red;
-font-size:13px;
+.admission-field label {
+    font-size: 13px;
+    margin-bottom: 5px;
+    display: block;
+    font-family: "Poppins", sans-serif;
 }
 
-.admission-field input{
-width:100%;
-height:45px;
-padding:10px;
-border-radius:10px;
-border:1px solid #ccc;
-outline:none;
+.admission-field span {
+    color: red;
+    font-size: 12px;
+}
+
+.admission-field input {
+    width: 100%;
+    height: 44px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
 }
 
 /* DATE */
-
-.admission-date{
-position:relative;
+.admission-date {
+    position: relative;
 }
 
-.admission-date svg{
-position:absolute;
-right:10px;
-top:50%;
-transform:translateY(-50%);
-color:#555;
+.admission-date svg {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
 }
 
-/* BOTTOM */
-
-.admission-bottom{
-margin-top:25px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-gap:20px;
+/* ================= BOTTOM ================= */
+.admission-bottom {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.admission-checkbox{
-display:flex;
-align-items:center;
-gap:10px;
-font-size:14px;
+.admission-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
 }
 
-.admission-btn{
-background:#ff1744;
-color:white;
-border:none;
-padding:14px 35px;
-border-radius:30px;
-font-weight:600;
-cursor:pointer;
-transition:0.3s;
+.admission-btn {
+    background: #ff1744;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.admission-btn:hover{
-transform:scale(1.05);
+.admission-btn:hover {
+    transform: scale(1.05);
 }
 
-/* RESPONSIVE */
+/* ================= LAPTOP ================= */
+@media (max-width:1200px) {
 
-@media (max-width:992px){
+    .admission-section {
+        padding: 70px 5%;
+    }
 
-.admission-container{
-flex-direction:column;
-}
+    .admission-images {
+        width: 350px;
+        height: 350px;
+    }
 
-.admission-images{
-width:320px;
-height:320px;
-}
-
-.admission-title{
-font-size:36px;
-}
+    .admission-title {
+        font-size: 40px;
+    }
 
 }
 
-@media (max-width:600px){
+/* ================= TABLET ================= */
+@media (max-width:992px) {
 
-.admission-form-grid{
-grid-template-columns:1fr;
+    .admission-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .admission-images {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 40px;
+    }
+
+    .admission-img-top {
+        top: -40px;
+        left: 10px;
+    }
+
+    .admission-img-bottom {
+        bottom: -60px;
+        left: 0;
+    }
+
+    .admission-title {
+        font-size: 32px;
+    }
+
+    .admission-features {
+        justify-content: center;
+    }
+
+    .admission-bottom {
+        justify-content: center;
+    }
+
 }
 
-.admission-features{
-flex-direction:column;
-gap:10px;
+/* ================= MOBILE ================= */
+@media (max-width:600px) {
+
+    .admission-section {
+        padding: 50px 20px;
+    }
+
+    .admission-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admission-features {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .admission-title {
+        font-size: 26px;
+    }
+
+    .admission-form {
+        padding: 20px;
+    }
+
+    .admission-btn {
+        width: 100%;
+    }
+
 }
 
-.admission-title{
-font-size:28px;
-}
+/* ================= SMALL MOBILE ================= */
+@media (max-width:420px) {
+
+    .admission-images {
+        width: 240px;
+        height: 240px;
+    }
+
+    .admission-img {
+        border-width: 4px;
+    }
+
+    .admission-img-top {
+        transform: rotate(-5deg);
+    }
+
+    .admission-img-bottom {
+        transform: rotate(5deg);
+    }
+
+    .admission-title {
+        font-size: 22px;
+    }
+
+    .admission-field input {
+        height: 40px;
+    }
+
+    .admission-description {
+        text-align: justify;
+    }
+
+    .admission-features {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+    }
+
+    .admission-features-data {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+    }
+
+    .admission-features-data p {
+        font-size: 12px;
+        font-weight: bold;
+    }
 
 }
