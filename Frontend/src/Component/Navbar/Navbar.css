@@ -183,8 +183,69 @@ font-size:14px;
 /* =============================
 MOBILE MENU
 ============================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-@media (max-width:900px){
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+.navbar{
+width:100%;
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(255,255,255,0.9);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+.navbar-container{
+max-width:1300px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:14px 20px;
+}
+
+/* =========================
+LOGO
+========================= */
+
+.navbar-logo img{
+height:48px;
+cursor:pointer;
+transition:.3s;
+}
+
+.navbar-logo img:hover{
+transform:scale(1.05);
+}
+
+/* =========================
+MENU
+========================= */
+
+.navbar-menu{
+display:flex;
+align-items:center;
+gap:28px;
+}
 
 .kgNavbar-toggleBtn{
 display:flex;
@@ -236,6 +297,214 @@ text-align:center;
 border-bottom:1px solid #ddd;
 }
 
+/* Hover underline */
+
+.navbar-menu a,
+.navbar-menu button{
+font-size:15px;
+font-weight:500;
+background:none;
+border:none;
+cursor:pointer;
+position:relative;
+padding:5px 0;
+}
+
+.navbar-menu a::after,
+.navbar-menu button::after{
+content:"";
+position:absolute;
+bottom:-5px;
+left:50%;
+transform:translateX(-50%);
+width:0%;
+height:2px;
+background:linear-gradient(90deg,#ff6a00,#ff3c8d);
+transition:.3s;
+}
+
+.navbar-menu a:hover::after,
+.navbar-menu button:hover::after{
+width:100%;
+}
+
+.navbar-menu a:hover,
+.navbar-menu button:hover{
+color:#ff3c8d;
+}
+
+/* =========================
+CTA BUTTON
+========================= */
+
+.cta-btn{
+display:flex;
+flex-direction:column;
+padding:8px 18px;
+border-radius:8px;
+background:linear-gradient(135deg,#ff6a00,#ff3c8d);
+color:white;
+box-shadow:0 6px 20px rgba(255,60,141,0.35);
+transition:.3s;
+}
+
+.cta-btn span{
+font-size:12px;
+}
+
+.cta-btn strong{
+font-size:15px;
+}
+
+.cta-btn:hover{
+transform:translateY(-2px);
+}
+
+/* =========================
+HAMBURGER
+========================= */
+
+.hamburger{
+display:none;
+flex-direction:column;
+gap:5px;
+cursor:pointer;
+}
+
+.hamburger span{
+width:26px;
+height:3px;
+background:#333;
+border-radius:3px;
+}
+
+/* =========================
+MENU CLOSE
+========================= */
+
+.menu-close{
+display:none;
+font-size:28px;
+align-self:flex-end;
+cursor:pointer;
+margin-bottom:10px;
+}
+
+/* =========================
+MOBILE FOOTER
+========================= */
+
+.menu-footer{
+display:none;
+margin-top:30px;
+width:100%;
+}
+
+.mobile-call{
+display:block;
+text-align:center;
+background:linear-gradient(135deg,#ff6a00,#ff3c8d);
+color:white;
+padding:12px;
+border-radius:8px;
+font-size:14px;
+}
+
+.mobile-social{
+display:flex;
+justify-content:center;
+gap:16px;
+margin-top:15px;
+}
+
+.mobile-social svg{
+font-size:20px;
+color:#ff3c8d;
+cursor:pointer;
+transition:.3s;
+}
+
+.mobile-social svg:hover{
+transform:scale(1.2);
+}
+
+/* =========================
+OVERLAY
+========================= */
+
+.menu-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(2px);
+z-index:900;
+}
+
+/* =========================
+TABLET & MOBILE
+========================= */
+
+@media (max-width:992px){
+
+.navbar-menu{
+position:fixed;
+top:0;
+right:-100%;
+width:80%;
+max-width:300px;
+height:100vh;
+
+background:white;
+
+flex-direction:column;
+align-items:flex-start;
+justify-content:flex-start;
+
+padding:30px;
+gap:18px;
+
+/* SCROLL FIX */
+
+overflow-y:hidden;
+overflow-x:hidden;
+
+box-shadow:-15px 0 40px rgba(0,0,0,0.15);
+transition:.35s ease;
+z-index:1001;
+}
+
+.navbar-menu.active{
+right:0;
+}
+
+.menu-close{
+display:block;
+}
+
+.navbar-menu a,
+.navbar-menu button{
+width:100%;
+padding:10px 0;
+border-bottom:1px solid rgba(0,0,0,0.05);
+font-size:16px;
+text-align:left;
+}
+
+.navbar-cta{
+display:none;
+}
+
+.hamburger{
+display:flex;
+}
+
+.menu-footer{
+display:block;
+}
+
 }
 
 /* =============================
@@ -269,7 +538,24 @@ width:85px;
 }
 
 .kgNavbar-menu{
+
 width:200px;
+}
+
+}
+
+/* =========================
+SMALL MOBILE
+========================= */
+
+@media (max-width:600px){
+
+.navbar-container{
+padding:12px 16px;
+}
+
+.navbar-logo img{
+height:42px;
 }
 
 }

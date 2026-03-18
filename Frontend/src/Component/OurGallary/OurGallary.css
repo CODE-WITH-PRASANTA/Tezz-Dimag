@@ -1,0 +1,167 @@
+/* SECTION */
+
+.ourgallary-section{
+padding:90px 8%;
+background:#f7f7fb;
+overflow:hidden;
+}
+
+
+/* HEADER */
+
+.ourgallary-header{
+text-align:center;
+margin-bottom:60px;
+}
+
+.ourgallary-badge{
+display:inline-block;
+padding:8px 22px;
+background:linear-gradient(45deg,#ff8a00,#7b3fe4);
+color:white;
+border-radius:25px;
+font-size:13px;
+font-weight:600;
+margin-bottom:15px;
+}
+
+.ourgallary-title{
+font-size:48px;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.ourgallary-title span{
+color:#f39c34;
+}
+
+.ourgallary-desc{
+max-width:700px;
+margin:auto;
+color:#6a6a6a;
+line-height:1.7;
+}
+
+
+/* SLIDER */
+
+.ourgallary-slider{
+width:100%;
+overflow:hidden;
+position:relative;
+}
+
+
+/* TRACK */
+
+.ourgallary-track{
+display:flex;
+gap:25px;
+animation: galleryScroll 30s linear infinite;
+}
+
+
+/* PAUSE ON HOVER */
+
+.ourgallary-slider:hover .ourgallary-track{
+animation-play-state:paused;
+}
+
+
+/* CARD */
+
+.ourgallary-card{
+flex-shrink:0;
+width:300px;
+height:200px;
+border-radius:20px;
+overflow:hidden;
+cursor:pointer;
+}
+
+.ourgallary-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.4s;
+}
+
+.ourgallary-card:hover img{
+transform:scale(1.08);
+}
+
+
+/* INFINITE ANIMATION */
+
+@keyframes galleryScroll{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
+}
+
+
+/* MODAL */
+
+.ourgallary-modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.75);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.ourgallary-modal-img{
+max-width:80%;
+max-height:85%;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
+
+.ourgallary-close{
+position:absolute;
+top:30px;
+right:40px;
+font-size:35px;
+color:white;
+cursor:pointer;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width:992px){
+
+.ourgallary-title{
+font-size:36px;
+}
+
+.ourgallary-card{
+width:250px;
+height:170px;
+}
+
+}
+
+@media (max-width:600px){
+
+.ourgallary-title{
+font-size:28px;
+}
+
+.ourgallary-card{
+width:200px;
+height:140px;
+}
+
+}

@@ -1,107 +1,131 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Topbar.css";
 
-import { FaBars, FaChevronDown } from "react-icons/fa";
+import {
+  FaBars,
+  FaChevronDown,
+  FaUser,
+  FaCog,
+  FaHeadset,
+  FaSignOutAlt
+} from "react-icons/fa";
 
 const Topbar = ({ toggleSidebar }) => {
 
-const [open,setOpen] = useState(false);
-const dropdownRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
-useEffect(()=>{
+  useEffect(() => {
 
-const handleClickOutside = (e)=>{
-if(dropdownRef.current && !dropdownRef.current.contains(e.target)){
-setOpen(false);
-}
-};
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
 
-document.addEventListener("mousedown",handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
 
-return ()=> document.removeEventListener("mousedown",handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
 
-},[]);
+  }, []);
 
-return (
+  return (
 
-<div className="kgTopbar-wrapper">
+    <header className="topbar-container">
 
-{/* LEFT MENU */}
+      {/* LEFT SECTION */}
+      <div className="topbar-left-section">
 
-<div className="kgTopbar-left">
+        <button
+          className="sidebar-toggle-btn"
+          onClick={toggleSidebar}
+        >
+          <FaBars />
+        </button>
 
-<FaBars
-className="kgTopbar-menuIcon"
-onClick={toggleSidebar}
-/>
-
-</div>
-
-
-{/* RIGHT PROFILE */}
-
-<div className="kgTopbar-right" ref={dropdownRef}>
-
-<div
-className="kgTopbar-profile"
-onClick={()=>setOpen(!open)}
->
-
-<img
-src="https://randomuser.me/api/portraits/men/32.jpg"
-alt="user"
-className="kgTopbar-avatar"
-/>
-
-<span className="kgTopbar-username">
-Musharof
-</span>
-
-<FaChevronDown className="kgTopbar-arrow"/>
-
-</div>
+      </div>
 
 
-{/* DROPDOWN */}
+      {/* RIGHT SECTION */}
+      <div className="topbar-right-section" ref={dropdownRef}>
 
-{open && (
+        {/* USER PROFILE */}
+        <div
+          className="user-profile-wrapper"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <div className="user-avatar-wrapper">
 
-<div className="kgTopbar-dropdown">
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="Admin User"
+              className="user-avatar"
+            />
 
-<div className="kgTopbar-userInfo">
+          </div>
+          <div className="user-details">
 
-<h4>Musharof Chowdhury</h4>
+            <span className="user-name">
+              Musharof Chowdhury
+            </span>
 
-<p>randomuser@pimjo.com</p>
+            <span className="user-role">
+              Super Admin
+            </span>
 
-</div>
+          </div>
+          <FaChevronDown
+            className={`dropdown-arrow ${isOpen ? "active" : ""}`}
+          />
+        </div>
 
-<ul>
+        {/* DROPDOWN MENU */}
+        {isOpen && (
 
-<li>Edit Profile</li>
+          <div className="profile-dropdown">
+           {/* MENU LIST */}
+        <ul className="dropdown-menu-list">
 
-<li>Account Settings</li>
+        <li className="dropdown-item profile-item">
+            <div className="dropdown-icon profile-icon">
+            <FaUser />
+            </div>
+            <span>Edit Profile</span>
+        </li>
 
-<li>Support</li>
+        <li className="dropdown-item settings-item">
+            <div className="dropdown-icon settings-icon">
+            <FaCog />
+            </div>
+            <span>Account Settings</span>
+        </li>
 
-<hr/>
+        <li className="dropdown-item support-item">
+            <div className="dropdown-icon support-icon">
+            <FaHeadset />
+            </div>
+            <span>Support Center</span>
+        </li>
 
-<li className="logout">
-Sign Out
-</li>
+        <div className="dropdown-divider"></div>
 
-</ul>
+        <li className="dropdown-item logout-item">
+            <div className="dropdown-icon logout-icon">
+            <FaSignOutAlt />
+            </div>
+            <span>Sign Out</span>
+        </li>
 
-</div>
+        </ul>
+          </div>
 
-)}
+        )}
 
-</div>
+      </div>
 
-</div>
+    </header>
 
-);
-
+  );
 };
 
 export default Topbar;

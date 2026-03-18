@@ -1,275 +1,178 @@
-/* ================================
-FOOTER MAIN
-================================ */
+/* GOOGLE FONT */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
-.kgFooter{
-background:#f5f6fa;
-padding:80px 20px 0;
-font-family:Poppins, sans-serif;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Poppins",sans-serif;
 }
 
-/* ================================
-CONTAINER
-================================ */
+/* =========================
+NAVBAR
+========================= */
 
-.kgFooter-container{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:60px;
-}
-
-/* ================================
-LOGO
-================================ */
-
-.kgFooter-logo{
-width:130px;
-margin-bottom:22px;
-}
-
-/* ================================
-ABOUT TEXT
-================================ */
-
-.kgFooter-about p{
-color:#6a6a6a;
-line-height:1.8;
-margin-bottom:25px;
-font-size:15px;
-max-width:260px;
-}
-
-/* ================================
-SOCIAL ICONS
-================================ */
-
-.kgFooter-social{
+.kgNavbar{
+width:100%;
+background:#19004b;
+color:white;
+padding:18px 8%;
 display:flex;
-gap:12px;
+align-items:center;
+justify-content:space-between;
+position:relative;
+z-index:1000;
 }
 
-.kgFooter-social svg{
-border:1px solid #ddd;
-padding:10px;
-font-size:16px;
-cursor:pointer;
-border-radius:4px;
-transition:.3s;
-}
+/* LOGO */
 
-.kgFooter-social svg:hover{
-background:#ff4a4a;
-color:#fff;
-border-color:#ff4a4a;
-transform:translateY(-3px);
-}
-
-/* ================================
-TITLES
-================================ */
-
-.kgFooter-links h3,
-.kgFooter-category h3,
-.kgFooter-newsletter h3{
-font-size:20px;
-margin-bottom:22px;
+.kgNavbar-logo{
+font-size:22px;
 font-weight:600;
 }
 
-/* ================================
-LINK LIST
-================================ */
+/* NAV LINKS */
 
-.kgFooter-links ul,
-.kgFooter-category ul{
+.kgNavbar-links{
+display:flex;
+gap:30px;
 list-style:none;
-padding:0;
 }
 
-.kgFooter-links li,
-.kgFooter-category li{
-margin-bottom:12px;
-color:#6a6a6a;
-cursor:pointer;
-transition:.3s;
+.kgNavbar-links a{
+color:white;
+text-decoration:none;
 font-size:15px;
-}
-
-.kgFooter-links li:hover,
-.kgFooter-category li:hover{
-color:#ff4a4a;
-padding-left:6px;
-}
-
-/* ================================
-NEWSLETTER
-================================ */
-
-.kgFooter-newsletter p{
-color:#6a6a6a;
-font-size:14px;
-margin-bottom:20px;
-line-height:1.6;
-}
-
-/* ================================
-INPUT BOX
-================================ */
-
-.kgFooter-inputBox{
-display:flex;
-border:1px solid #ddd;
-border-radius:6px;
-overflow:hidden;
-margin-bottom:15px;
-background:white;
-}
-
-.kgFooter-inputBox input{
-flex:1;
-border:none;
-padding:12px 14px;
-outline:none;
-font-size:14px;
-}
-
-.kgFooter-inputBox button{
-border:none;
-background:#2a6df4;
-color:#fff;
-width:60px;
-font-size:18px;
-cursor:pointer;
 transition:.3s;
 }
 
-.kgFooter-inputBox button:hover{
-background:#1b4fc0;
+.kgNavbar-links a:hover{
+color:#ffd400;
 }
 
-/* ================================
-CHECKBOX
-================================ */
+/* BUTTON */
 
-.kgFooter-checkbox{
-font-size:13px;
-color:#777;
-display:flex;
-gap:8px;
-line-height:1.4;
-}
-
-/* ================================
-BOTTOM BAR
-================================ */
-
-.kgFooter-bottom{
-text-align:center;
-padding:28px 0;
-margin-top:70px;
-border-top:1px solid #ddd;
+.kgNavbar-btn{
+background:#ffd400;
+color:black;
+padding:10px 18px;
+border-radius:25px;
 font-size:14px;
-color:#777;
+text-decoration:none;
+transition:.3s;
 }
 
-/* =========================================
-LARGE DESKTOP (1400px+)
-========================================= */
-
-@media (min-width:1400px){
-
-.kgFooter-container{
-max-width:1350px;
-gap:70px;
+.kgNavbar-btn:hover{
+background:#ffcc00;
 }
 
+/* =========================
+HAMBURGER
+========================= */
+
+.kgNavbar-toggle{
+display:none;
+flex-direction:column;
+cursor:pointer;
+gap:5px;
 }
 
-/* =========================================
-LAPTOP
-========================================= */
-
-@media (max-width:1200px){
-
-.kgFooter-container{
-grid-template-columns:repeat(3,1fr);
-gap:50px;
+.kgNavbar-toggle span{
+width:25px;
+height:3px;
+background:white;
+border-radius:5px;
+transition:.3s;
 }
 
-}
-
-/* =========================================
-TABLET
-========================================= */
-
-@media (max-width:992px){
-
-.kgFooter-container{
-grid-template-columns:repeat(2,1fr);
-gap:40px;
-}
-
-.kgFooter-about p{
-max-width:100%;
-}
-
-}
-
-/* =========================================
-MOBILE LARGE
-========================================= */
+/* =========================
+MOBILE MENU
+========================= */
 
 @media (max-width:768px){
 
-.kgFooter{
-padding:60px 20px 0;
+.kgNavbar{
+padding:16px 6%;
 }
 
-.kgFooter-container{
-grid-template-columns:1fr;
-text-align:center;
-gap:35px;
+/* SHOW HAMBURGER */
+
+.kgNavbar-toggle{
+display:flex;
 }
 
-.kgFooter-social{
-justify-content:center;
+/* MENU */
+
+.kgNavbar-links{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#19004b;
+flex-direction:column;
+align-items:center;
+gap:20px;
+padding:30px 0;
+display:none;
 }
 
-.kgFooter-checkbox{
-justify-content:center;
+.kgNavbar-links.active{
+display:flex;
 }
 
-.kgFooter-inputBox{
-max-width:350px;
-margin:auto;
-margin-bottom:15px;
+/* BUTTON */
+
+.kgNavbar-btn{
+display:none;
 }
 
 }
 
-/* =========================================
-SMALL MOBILE
-========================================= */
+/* =========================
+TABLET
+========================= */
 
-@media (max-width:480px){
+@media (min-width:769px) and (max-width:1023px){
 
-.kgFooter{
-padding:50px 16px 0;
+.kgNavbar-links{
+gap:20px;
 }
 
-.kgFooter-logo{
-margin:auto;
-}
-
-.kgFooter-inputBox{
-max-width:100%;
-}
-
-.kgFooter-bottom{
+.kgNavbar-btn{
+padding:8px 16px;
 font-size:13px;
-padding:22px 0;
+}
+
+}
+
+/* =========================
+LAPTOP
+========================= */
+
+@media (min-width:1024px) and (max-width:1439px){
+
+.kgNavbar{
+padding:18px 6%;
+}
+
+.kgNavbar-links{
+gap:25px;
+}
+
+}
+
+/* =========================
+DESKTOP
+========================= */
+
+@media (min-width:1440px){
+
+.kgNavbar{
+padding:20px 10%;
+}
+
+.kgNavbar-links{
+gap:35px;
 }
 
 }

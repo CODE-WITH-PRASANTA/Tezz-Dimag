@@ -1,83 +1,101 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-import logo from "../../assets/Tezz-Logo.webp";
+import logo from "../../assets/TezzDimag_Bhubaneswar_logo.png";
+
 import { IoClose } from "react-icons/io5";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Navbar = () => {
-  const [kgNavOpen, setKgNavOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setKgNavOpen(!kgNavOpen);
+    setMenuOpen(!menuOpen);
   };
 
   const closeMenu = () => {
-    setKgNavOpen(false);
+    setMenuOpen(false);
+  };
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+    closeMenu();
   };
 
   return (
-    <header className="kgNavbar-wrapper">
-      <div className="kgNavbar-container">
-        {/* Logo */}
-        <div className="kgNavbar-logoSection">
-          <img src={logo} alt="logo" className="kgNavbar-logoImg" />
-        </div>
+    <>
+      <header className="navbar">
+        <div className="navbar-container">
 
-        {/* Navigation */}
-        <nav className={`kgNavbar-menu ${kgNavOpen ? "kgNavbar-active" : ""}`}>
-          {/* Close Button */}
-          <div className="kgNavbar-closeBtn" onClick={closeMenu}>
-            <IoClose />
+          {/* LOGO */}
+          <div className="navbar-logo">
+            <img src={logo} alt="TezzDimag Logo" />
           </div>
 
-          <NavLink to="/" onClick={closeMenu} className="kgNavbar-link">
-            Home
-          </NavLink>
+          {/* MENU */}
+          <nav className={`navbar-menu ${menuOpen ? "active" : ""}`}>
 
-          <NavLink to="/about" onClick={closeMenu} className="kgNavbar-link">
-            About Us
-          </NavLink>
+            {/* CLOSE BUTTON */}
+            <div className="menu-close" onClick={closeMenu}>
+              <IoClose />
+            </div>
 
-          <NavLink to="/event" onClick={closeMenu} className="kgNavbar-link">
-            Event
-          </NavLink>
+            <a href="/" onClick={closeMenu}>Home</a>
+            <button onClick={() => scrollToSection("about")}>About</button>
+            <button onClick={() => scrollToSection("event")}>Event</button>
+            <button onClick={() => scrollToSection("course")}>Course</button>
+            <button onClick={() => scrollToSection("blog")}>Blog</button>
+            <button onClick={() => scrollToSection("teacher")}>Teacher</button>
+            <button onClick={() => scrollToSection("schedule")}>Schedule</button>
+            <button onClick={() => scrollToSection("test")}>Testimonial</button>
+            <button onClick={() => scrollToSection("contact")}>Contact</button>
 
-          <NavLink to="/course" onClick={closeMenu} className="kgNavbar-link">
-            Course
-          </NavLink>
+            {/* MOBILE FOOTER */}
+            <div className="menu-footer">
 
-          <NavLink to="/blog" onClick={closeMenu} className="kgNavbar-link">
-            Blog Page
-          </NavLink>
+              <a href="tel:+919876543210" className="mobile-call">
+                Get Consultant <br />
+                +91 9876543210
+              </a>
 
-          <NavLink to="/teacher" onClick={closeMenu} className="kgNavbar-link">
-            Teacher
-          </NavLink>
+              <div className="mobile-social">
+                <FaFacebookF />
+                <FaTwitter />
+                <FaInstagram />
+              </div>
 
-          <NavLink to="/schedule" onClick={closeMenu} className="kgNavbar-link">
-            Schedule
-          </NavLink>
+            </div>
 
-          <NavLink to="/contact" onClick={closeMenu} className="kgNavbar-link">
-            Contact
-          </NavLink>
-        </nav>
+          </nav>
 
-       {/* RIGHT SIDE BUTTON */}
-<div className="kgNavbar-right">
-  <a href="tel:+919876543210" className="kgNavbar-contactBtn">
-    Get Consultant: +91 9876543210
-  </a>
-</div>
+          {/* CTA BUTTON */}
+          <div className="navbar-cta">
+            <a href="tel:+919876543210" className="cta-btn">
+              <span>Get Consultant</span>
+              <strong>+91 9876543210</strong>
+            </a>
+          </div>
 
-        {/* Mobile Hamburger */}
-        <div className="kgNavbar-toggleBtn" onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
+          {/* HAMBURGER */}
+          <div className="hamburger" onClick={toggleMenu}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
         </div>
-      </div>
-    </header>
+      </header>
+
+      {/* OVERLAY */}
+      {menuOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
+    </>
   );
 };
 

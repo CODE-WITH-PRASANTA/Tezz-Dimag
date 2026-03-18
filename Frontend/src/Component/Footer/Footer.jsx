@@ -1,12 +1,12 @@
 import React from "react";
 import "./Footer.css";
-import logo from "../../assets/Tezz-Logo.webp";
+import logo from "../../assets/TezzDimag_Bhubaneswar_logo.png";
 
 import {
   FaFacebookF,
   FaTwitter,
   FaLinkedinIn,
-  FaInstagram,
+  FaInstagram
 } from "react-icons/fa";
 
 import { IoSend } from "react-icons/io5";
@@ -14,60 +14,59 @@ import { IoSend } from "react-icons/io5";
 const Footer = () => {
   return (
     <footer className="kgFooter">
-
       <div className="kgFooter-container">
 
-        {/* LEFT SECTION */}
+        {/* ABOUT */}
         <div className="kgFooter-about">
-          <img src={logo} alt="logo" className="kgFooter-logo" />
+          <img src={logo} alt="Tezz Dimag Logo" className="kgFooter-logo" />
 
           <p>
             Through a combination of lectures, readings and discussions,
-            students will gain solid foundation in education.
+            students gain a strong educational foundation and build
+            creativity, confidence and values for the future.
           </p>
 
           <div className="kgFooter-social">
-            <FaTwitter />
-            <FaFacebookF />
-            <FaLinkedinIn />
-            <FaInstagram />
+            <a href="#"><FaFacebookF /></a>
+            <a href="#"><FaTwitter /></a>
+            <a href="#"><FaLinkedinIn /></a>
+            <a href="#"><FaInstagram /></a>
           </div>
         </div>
 
-        {/* USEFUL LINKS */}
-        <div className="kgFooter-links">
-          <h3>Useful Link</h3>
 
-          <ul>
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Event</li>
-            <li>Course</li>
-            <li>Blog Page</li>
-            <li>Teacher</li>
-            <li>Schedule</li>
-            <li>Contact</li>
-          </ul>
+        {/* INFORMATION */}
+        <div className="kgFooter-info">
+          <h3>Information</h3>
+
+          <div className="kgFooter-info-links">
+
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#teacher">Teachers</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#course">Classes</a></li>
+              <li><a href="#event">Events</a></li>
+              <li><a href="#test">Testimonials</a></li>
+            </ul>
+
+          </div>
         </div>
 
-        {/* CATEGORIES */}
-        <div className="kgFooter-category">
-          <h3>Categories</h3>
-
-          <ul>
-            <li>Art Design</li>
-            <li>Graphic Design</li>
-            <li>Web Design</li>
-            <li>UX/UI Design</li>
-          </ul>
-        </div>
 
         {/* NEWSLETTER */}
         <div className="kgFooter-newsletter">
+
           <h3>Newsletter</h3>
 
           <p>
-            Sign up for our newsletter and get 34% off your next course.
+            Subscribe to our newsletter and stay updated with our
+            latest courses and educational programs.
           </p>
 
           <div className="kgFooter-inputBox">
@@ -77,17 +76,22 @@ const Footer = () => {
             </button>
           </div>
 
-          <div className="kgFooter-checkbox">
+          <label className="kgFooter-checkbox">
             <input type="checkbox" />
-            <span>I agree to the terms of use and privacy policy.</span>
-          </div>
+            <span>I agree to the terms and privacy policy.</span>
+          </label>
+
         </div>
 
       </div>
 
-      {/* FOOTER BOTTOM */}
+
+      {/* BOTTOM */}
       <div className="kgFooter-bottom">
-        Copyright © 2026 All Rights Reserved by Eduan
+        <p>
+          © 2025 Tezz Dimag Bhubaneswar. All Rights Reserved.
+          <span> | Powered by Tezz Dimag | Developed by PR WEBSTOCK</span>
+        </p>
       </div>
 
     </footer>

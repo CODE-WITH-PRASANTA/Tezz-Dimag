@@ -1,9 +1,9 @@
 import React from "react";
 import "./PhotoSection.css";
 
-import learningImg from "../../assets/image.webp";
+import { IMAGE_URL } from "../../api/axios";
 
-const PhotoSection = () => {
+const PhotoSection = ({ image }) => {
 
   const base = "photo-section";
 
@@ -16,7 +16,7 @@ const PhotoSection = () => {
         <div className={`${base}__image-wrapper`}>
 
           <img
-            src={learningImg}
+            src={`${IMAGE_URL}${image}`}
             alt="Learning"
             className={`${base}__image`}
           />

@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./BlogDetails.css";
+
+import { useParams } from "react-router-dom";
 
 import BlogDetailsHero from "../../Component/BlogDetailsHero/BlogDetailsHero";
 import PhotoSection from "../../Component/Photosection/Photosection";
@@ -7,50 +9,52 @@ import Educational from "../../Component/Educational/Educational";
 import SendMessage from "../../Component/SendMessage/SendMessage";
 import Search from "../../Component/Search/Search";
 
+import API from "../../api/axios";
+
 const BlogDetails = () => {
+  const base = "blog-details";
 
-const base = "blog-details";
+  const { id } = useParams();
 
-return (
+  const [blog, setBlog] = useState(null);
 
-<section className={base}>
+  const fetchBlog = async () => {
+    try {
+      const res = await API.get(`/blogs/${id}`);
 
-{/* HERO */}
-<BlogDetailsHero/>
+      if (res.data.success) {
+        setBlog(res.data.data);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-{/* IMAGE SECTION */}
-<PhotoSection/>
+  useEffect(() => {
+    fetchBlog();
+  }, [id]);
 
+  if (!blog) return null;
 
-{/* MAIN CONTENT AREA */}
+  return (
+    <section className={base}>
+      <BlogDetailsHero title={blog.title} />
 
-<div className={`${base}__container`}>
+      <PhotoSection image={blog.image} />
 
-{/* LEFT CONTENT */}
+      <div className={`${base}__container`}>
+        <div className={`${base}__left`}>
+          <Educational blog={blog} />
 
-<div className={`${base}__left`}>
+          <SendMessage />
+        </div>
 
-<Educational/>
-
-<SendMessage/>
-
-</div>
-
-
-{/* RIGHT SIDEBAR */}
-
-<div className={`${base}__right`}>
-
-<Search/>
-
-</div>
-
-</div>
-
-</section>
-
-);
-
+        <div className={`${base}__right`}>
+          <Search />
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default BlogDetails;
