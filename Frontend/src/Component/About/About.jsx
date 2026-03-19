@@ -1,10 +1,9 @@
 import React from "react";
 import "./About.css";
-import aboutImg from "../../assets/about.webp";
-import grass from "../../assets/about_bottom_shape.webp";   // grass image
+import aboutImg from "../../assets/WelcomeSection.webp";
+import grass from "../../assets/about_bottom_shape.webp";
 
 const About = () => {
-
   const goToHero = () => {
     window.scrollTo({
       top: 0,
@@ -14,24 +13,19 @@ const About = () => {
 
   return (
     <section className="About">
-
       <div className="About-container">
-
         {/* heading */}
-
         <div className="About-header">
           <h2>Welcome To TEZZ DIMAG</h2>
-          <p>Helping young minds grow with creativity, confidence, and smart learning</p>
+          <p>
+            Helping young minds grow with creativity, confidence, and smart learning
+          </p>
         </div>
 
         {/* content */}
-
         <div className="About-content">
-
           {/* left text */}
-
           <div className="About-text">
-
             <h3>Overview</h3>
 
             <p>
@@ -50,28 +44,36 @@ const About = () => {
               with strong skills and positive mindset.
             </p>
 
+            <p>
+              At TEZZ DIMAG, we offer a wide range of modern and practical
+              learning programs such as Abacus, Vedic Mathematics, Robotics,
+              STEM Education, Artificial Intelligence, Public Speaking,
+              Calligraphy, Mind Training, and Mid Brain Activation. These
+              programs are designed to help children improve both academic
+              performance and personal growth in a balanced way.
+            </p>
+
+           
+
             <button className="About-btn" onClick={goToHero}>
               Contact Us
             </button>
-
           </div>
 
           {/* right image */}
-
           <div className="About-image">
-            <img src={aboutImg} alt="Children learning and developing skills at TEZZ DIMAG" />
+            <img
+              src={aboutImg}
+              alt="Children learning and developing skills at TEZZ DIMAG"
+            />
           </div>
-
         </div>
-
       </div>
 
       {/* grass bottom */}
-
       <div className="About-grass">
-        <img src={grass} alt="decorative grass shape"/>
+        <img src={grass} alt="decorative grass shape" />
       </div>
-
     </section>
   );
 };

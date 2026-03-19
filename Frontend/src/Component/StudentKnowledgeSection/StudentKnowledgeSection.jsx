@@ -9,10 +9,8 @@ const StudentKnowledgeSection = () => {
   return (
     <section className="StudentKnowledgeSection">
       <div className="StudentKnowledgeSection-container">
-
         {/* LEFT CONTENT */}
         <div className="StudentKnowledgeSection-left">
-
           <img
             src={treeImg}
             alt="Tezz Dimag learning tree"
@@ -21,31 +19,34 @@ const StudentKnowledgeSection = () => {
 
           <div className="StudentKnowledgeSection-content">
             <p className="StudentKnowledgeSection-subtitle">
-              Student Knowledge
+              Tezz Dimag Bhubaneswar
             </p>
 
             <h2 className="StudentKnowledgeSection-title">
-              Knowledge for All learn <br />
-              design Excellence for <br />
-              Everyone
+              Mid Brain Activation <br />
+              Mind Power Training <br />
+              For Smart Growth
             </h2>
 
             <p className="StudentKnowledgeSection-desc">
-              At Tezz Dimag, we believe every child deserves quality education
-              that builds confidence, creativity, and strong thinking skills.
-              Our learning approach focuses on clarity, engagement, and real
-              understanding to help students grow academically and personally.
+              At Tezz Dimag Bhubaneswar, we offer Mid Brain Activation programs
+              designed for children and students to improve focus, memory,
+              concentration, confidence, and overall personality development.
+              Our structured learning journey includes 3rd eye activation,
+              mind training, photographic memory practice, meditation-based
+              focus sessions, counselling support, and future-ready development
+              activities that help learners grow with discipline and
+              self-belief.
             </p>
 
             <button className="StudentKnowledgeSection-btn">
-              Learn More
+              Explore Program
             </button>
           </div>
         </div>
 
         {/* RIGHT BOXES */}
         <div className="StudentKnowledgeSection-right">
-
           <img
             src={turtleImg}
             alt="Cute turtle learning"
@@ -53,29 +54,28 @@ const StudentKnowledgeSection = () => {
           />
 
           <div className="StudentKnowledgeSection-box box-large">
-            <span>Years</span>
+            <span>Age Groups</span>
           </div>
 
           <div className="StudentKnowledgeSection-box box-1">
-            <span>3-5<br />Years</span>
+            <span>5-8<br />Years</span>
           </div>
 
           <div className="StudentKnowledgeSection-box box-2">
-            <span>6-8<br />Years</span>
+            <span>9-12<br />Years</span>
           </div>
 
           <div className="StudentKnowledgeSection-box box-3">
-            <span>9-11<br />Years</span>
+            <span>13-16<br />Years</span>
           </div>
 
           <div className="StudentKnowledgeSection-box box-4">
-            <span>12-15<br />Years</span>
-          </div>
-
-          <div className="StudentKnowledgeSection-box box-5">
             <span>16-18<br />Years</span>
           </div>
 
+          <div className="StudentKnowledgeSection-box box-5">
+            <span>18+<br />Years</span>
+          </div>
         </div>
       </div>
     </section>

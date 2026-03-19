@@ -4,7 +4,7 @@ import "./AboutSection.css";
 // Assets
 import MissionIcon from "../../assets/Mission-icon.svg";
 import VisionIcon from "../../assets/Vision-icon.svg";
-import authorimg from "../../assets/author.jpeg";
+import authorimg from "../../assets/TezzDimag.webp";
 import Bordershape from "../../assets/border-shape.png";
 import lefthomeAboutimg from "../../assets/Home-About.webp";
 import frame from "../../assets/frame.png";
@@ -92,14 +92,14 @@ const AboutSection = () => {
               <img src={authorimg} alt="Founder" />
 
               <div>
-                <h5>Mr. Vishnu Sharma</h5>
-                <span>Founder & Managing Director</span>
+                <h5>Archana Kumari Mahapatra</h5>
+                <span>Distributor & Franchise Owner</span>
               </div>
             </div>
 
             {/* CALL BUTTON */}
             <a
-              href="tel:+917014627894"
+              href="tel:+917327817155"
               className="author-call"
               aria-label="Call Learning Step International School"
             >

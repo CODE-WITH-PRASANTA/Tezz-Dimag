@@ -6,44 +6,76 @@ const PricingSection = () => {
 
   const plans = [
     {
-      title: "1ST SESSION",
-      monthly: 12559,
-      yearly: 99999,
+      title: "ONLINE",
+      monthly: 1000,
+      yearly: 11000,
+      discount: "Save ₹1000",
       color: "purple",
+      desc: "Online skill-based learning program for Nursery to Class 12 with flexible evening timing.",
+      note: "Registration Fee: ₹3000",
+      extra: "Time: 7:00 PM - 8:00 PM or 8:00 PM - 9:00 PM",
       features: [
-        "Outdoor Games",
-        "School Transports",
-        "Best/Special Programs",
-        "Annual Tours & Travels",
+        "Nursery to Class 4th programs",
+        "Abacus",
+        "Vedic Math",
+        "Memory Science",
+        "Mid Brain Activation",
+        "Art & Craft",
+        "Phonics",
+        "Public Speaking",
+        "Brain Gym",
+        "Calligraphy / Handwriting",
+        "Classes 3 days a week",
+        "1 hour guided session",
       ],
     },
     {
-      title: "1ST SESSION",
-      monthly: 24959,
-      yearly: 189999,
+      title: "OFFLINE",
+      monthly: 2000,
+      yearly: 22000,
+      discount: "Save ₹2000",
       color: "red",
       highlight: true,
+      desc: "Offline classroom learning with structured courses, practical guidance, and activity-based development.",
+      note: "Registration Fee: ₹3000",
+      extra: "Includes class-based support and selected learning materials",
       features: [
-        "Outdoor Games",
-        "School Transports",
-        "Best/Special Programs",
-        "Annual Tours & Travels",
-        "Fun & Game Campaign",
-        "Tiffen & Lunch Package",
+        "Class 5th to Class 12th programs",
+        "Spoken English",
+        "Public Speaking",
+        "Robotics",
+        "Coding",
+        "STEM",
+        "Arduino Robotics",
+        "AI Basic",
+        "AI Advance",
+        "Mid Brain Activation",
+        "Monthly classroom learning",
+        "Interactive offline practice",
       ],
     },
     {
-      title: "1ST SESSION",
-      monthly: 39859,
-      yearly: 299999,
+      title: "DMIT TEST",
+      monthly: 3000,
+      yearly: 15000,
+      discount: "Best Value",
       color: "blue",
+      desc: "Assessment and development package with training support, activity tools, and level-based guidance.",
+      note: "Assessment / Registration: ₹3000",
+      extra: "Level-based plan with add-on practice tools and guided activities",
       features: [
-        "Outdoor Games",
-        "School Transports",
-        "Best/Special Programs",
-        "Annual Tours & Travels",
-        "Fun & Game Campaign",
-        "Tiffen & Lunch Package",
+        "3 Month Level Course Structure",
+        "Mid Brain Activation",
+        "Seven Chakra Session",
+        "Brain Gym",
+        "Advanced Mid Brain Activation",
+        "Telekinesis Practice",
+        "Photographic Memory",
+        "Healing Session",
+        "NLP Basics",
+        "Blindfold Practice Kit",
+        "Color Card & Triangle Pyramid",
+        "Level-wise support materials",
       ],
     },
   ];
@@ -51,13 +83,12 @@ const PricingSection = () => {
   return (
     <section className="Pricing-Sec">
       <div className="Pricing-Sec-container">
-
         {/* HEADER */}
         <div className="Pricing-Sec-header">
           <div>
             <p className="Pricing-Sec-subtitle">Pricing Plan</p>
             <h2 className="Pricing-Sec-title">
-              We Provide Awesome Pricing Package For Study
+              Choose The Right Learning Package For Your Child
             </h2>
           </div>
 
@@ -81,44 +112,49 @@ const PricingSection = () => {
         <div className="Pricing-Sec-cards">
           {plans.map((plan, index) => (
             <div
-  key={index}
-  className={`Pricing-Sec-card ${plan.color} ${
-    plan.highlight ? "highlight" : ""
-  }`}
->
-  {/* TOP CURVE */}
-  <div className="Pricing-Sec-wave-top"></div>
+              key={index}
+              className={`Pricing-Sec-card ${plan.color} ${
+                plan.highlight ? "highlight" : ""
+              }`}
+            >
+              <div className="Pricing-Sec-wave-top"></div>
 
-  {plan.highlight && (
-    <div className="Pricing-Sec-badge">★★★★★</div>
-  )}
+              {plan.highlight && (
+                <div className="Pricing-Sec-badge">Popular</div>
+              )}
 
-  <div className="Pricing-Sec-content">
-    <h3>{plan.title}</h3>
+              {billing === "yearly" && (
+                <div className="Pricing-Sec-ribbon">
+                  <span>{plan.discount}</span>
+                </div>
+              )}
 
-    <p className="Pricing-Sec-desc">
-      Sit amet, consectetur adipiscing elit sed eiusmod tempor
-    </p>
+              <div className="Pricing-Sec-content">
+                <h3>{plan.title}</h3>
 
-    <h2 className="Pricing-Sec-price">
-      ₹{billing === "monthly" ? plan.monthly : plan.yearly}
-      <span>/{billing}</span>
-    </h2>
+                <p className="Pricing-Sec-desc">{plan.desc}</p>
 
-    <ul className="Pricing-Sec-features">
-      {plan.features.map((f, i) => (
-        <li key={i}>{f}</li>
-      ))}
-    </ul>
+                <div className="Pricing-Sec-priceWrap">
+                  <h2 className="Pricing-Sec-price">
+                    ₹{billing === "monthly" ? plan.monthly : plan.yearly}
+                    <span> / {billing}</span>
+                  </h2>
+                </div>
 
-    <button className="Pricing-Sec-btn">
-      CHOOSE PLAN →
-    </button>
-  </div>
+                <p className="Pricing-Sec-note">{plan.note}</p>
+                <p className="Pricing-Sec-extra">{plan.extra}</p>
 
-  {/* BOTTOM CURVE */}
-  <div className="Pricing-Sec-wave-bottom"></div>
-</div>
+                <ul className="Pricing-Sec-features">
+                  {plan.features.map((f, i) => (
+                    <li key={i}>{f}</li>
+                  ))}
+                </ul>
+
+                <button className="Pricing-Sec-btn">7327817155 →</button>
+              </div>
+
+              <div className="Pricing-Sec-wave-bottom"></div>
+            </div>
           ))}
         </div>
       </div>

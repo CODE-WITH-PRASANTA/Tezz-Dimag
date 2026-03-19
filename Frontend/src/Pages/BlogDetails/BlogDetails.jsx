@@ -4,7 +4,7 @@ import "./BlogDetails.css";
 import { useParams } from "react-router-dom";
 
 import BlogDetailsHero from "../../Component/BlogDetailsHero/BlogDetailsHero";
-import PhotoSection from "../../Component/Photosection/Photosection";
+import PhotoSection from "../../Component/PhotoSection/PhotoSection";
 import Educational from "../../Component/Educational/Educational";
 import SendMessage from "../../Component/SendMessage/SendMessage";
 import Search from "../../Component/Search/Search";
