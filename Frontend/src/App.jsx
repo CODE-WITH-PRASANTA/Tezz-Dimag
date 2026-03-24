@@ -16,6 +16,7 @@ import FloatingButtons from "./Component/FloatingButtons/FloatingButtons";
 import News from "./Component/News/News";
 import Topbar from "./Component/Topbar/Topbar";
 import FloatingForm from "./Component/FloatingForm/FloatingForm";
+import Fransice from "./Pages/Fransice/Fransice";
 
 
 function AppContent() {
@@ -44,6 +45,7 @@ function AppContent() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/price" element={<Price />} />
+        <Route path="/fransice" element={<Fransice/>}/>
        
       </Routes>
 

@@ -1,0 +1,377 @@
+.teachersSection {
+  width: 100%;
+  padding: 90px 20px 80px;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+
+.teachersSection__container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.teachersSection__heading {
+  max-width: 760px;
+  margin: 0 auto 52px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.teachersSection--visible .teachersSection__heading {
+  animation: teachersSectionFadeUp 0.9s ease forwards;
+}
+
+.teachersSection__title {
+  margin: 0 0 18px;
+  font-size: 4rem;
+  line-height: 1.05;
+  font-weight: 800;
+  color: #22242a;
+  letter-spacing: -1px;
+}
+
+.teachersSection__subtitle {
+  margin: 0 auto;
+  max-width: 700px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #6d727b;
+}
+
+.teachersSection__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.teachersSection__card {
+  opacity: 0;
+  transform: translateY(45px);
+}
+
+.teachersSection--visible .teachersSection__card {
+  animation: teachersSectionCardUp 0.85s ease forwards;
+}
+
+.teachersSection__imageWrap {
+  position: relative;
+  width: 100%;
+  height: 405px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #e8e8e8;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.teachersSection__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 28px;
+  transition: transform 0.6s ease;
+}
+
+.teachersSection__card:hover .teachersSection__image {
+  transform: scale(1.04);
+}
+
+.teachersSection__socialBar {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f7bc2f 0%, #f38b2f 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  box-shadow: 0 14px 30px rgba(243, 139, 47, 0.35);
+  z-index: 4;
+  overflow: hidden;
+  transition: height 0.35s ease, padding 0.35s ease, width 0.35s ease;
+}
+
+.teachersSection__socialBar--open {
+  height: 172px;
+  padding: 12px 0 10px;
+}
+
+.teachersSection__socialIcons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.teachersSection__socialBar--open .teachersSection__socialIcons {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.teachersSection__socialItem {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.teachersSection__socialItem:hover {
+  transform: scale(1.15);
+  opacity: 0.9;
+}
+
+.teachersSection__toggleBtn {
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.teachersSection__toggleBtn:hover {
+  transform: rotate(90deg);
+}
+
+.teachersSection__content {
+  padding: 18px 8px 0 18px;
+}
+
+.teachersSection__name {
+  margin: 0 0 6px;
+  font-size: 1.12rem;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #1f2430;
+}
+
+.teachersSection__role {
+  margin: 0;
+  font-size: 0.98rem;
+  color: #0a4fa5;
+  font-weight: 500;
+}
+
+.teachersSection__mobileSlider {
+  display: none;
+}
+
+.teachersSection__mobileCardWrap {
+  width: 100%;
+}
+
+.teachersSection__card--mobile {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+.teachersSection__mobilePagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.teachersSection__mobileNavBtn {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #0a4fa5;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(21, 30, 58, 0.08);
+  transition: all 0.3s ease;
+}
+
+.teachersSection__mobileNavBtn:hover {
+  transform: translateY(-2px);
+  background: #0a4fa5;
+  color: #ffffff;
+}
+
+.teachersSection__dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.teachersSection__dot {
+  width: 9px;
+  height: 9px;
+  border: none;
+  border-radius: 50%;
+  background: #cfd6df;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.teachersSection__dot--active {
+  width: 24px;
+  border-radius: 999px;
+  background: #0a4fa5;
+}
+
+@keyframes teachersSectionFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes teachersSectionCardUp {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1199px) {
+  .teachersSection__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .teachersSection__title {
+    font-size: 3.2rem;
+  }
+
+  .teachersSection__imageWrap {
+    height: 430px;
+  }
+}
+
+@media (max-width: 767px) {
+  .teachersSection {
+    padding: 70px 16px;
+  }
+
+  .teachersSection__heading {
+    margin-bottom: 34px;
+  }
+
+  .teachersSection__title {
+    font-size: 2.5rem;
+    line-height: 1.12;
+  }
+
+  .teachersSection__subtitle {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .teachersSection__grid {
+    display: none;
+  }
+
+  .teachersSection__mobileSlider {
+    display: block;
+  }
+
+  .teachersSection__imageWrap {
+    height: 420px;
+  }
+
+  .teachersSection__socialBar {
+    left: 14px;
+    bottom: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .teachersSection__title {
+    font-size: 2.1rem;
+  }
+
+  .teachersSection__subtitle {
+    font-size: 0.92rem;
+  }
+
+  .teachersSection__imageWrap {
+    height: 360px;
+    border-radius: 22px;
+  }
+
+  .teachersSection__image {
+    border-radius: 22px;
+  }
+
+  .teachersSection__name {
+    font-size: 1rem;
+  }
+
+  .teachersSection__role {
+    font-size: 0.92rem;
+  }
+
+  .teachersSection__socialBar {
+    left: 12px;
+    bottom: 12px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .teachersSection__socialBar--open {
+    height: 164px;
+  }
+
+  .teachersSection__toggleBtn {
+    width: 40px;
+    height: 40px;
+    font-size: 0.95rem;
+  }
+
+  .teachersSection__socialItem {
+    font-size: 0.9rem;
+  }
+
+  .teachersSection__mobileNavBtn {
+    width: 34px;
+    height: 34px;
+    font-size: 0.82rem;
+  }
+
+  .teachersSection__dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .teachersSection__dot--active {
+    width: 20px;
+  }
+}

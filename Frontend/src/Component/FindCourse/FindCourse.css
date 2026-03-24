@@ -1,0 +1,513 @@
+.findCourse {
+  width: 100%;
+  padding: 90px 20px 80px;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+
+.findCourse__container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.findCourse__grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 34px;
+  align-items: start;
+}
+
+.findCourse__left,
+.findCourse__right {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.findCourse--visible .findCourse__left {
+  animation: findCourseFadeUp 0.9s ease forwards;
+}
+
+.findCourse--visible .findCourse__right {
+  animation: findCourseFadeUp 0.9s ease 0.15s forwards;
+}
+
+.findCourse__leftContent {
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+.findCourse__title {
+  margin: 0 0 18px;
+  font-size: 3.8rem;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: #25272d;
+}
+
+.findCourse__desc {
+  margin: 0 0 24px;
+  max-width: 500px;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #626975;
+}
+
+.findCourse__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0b4ea2;
+  transition: 0.3s ease;
+}
+
+.findCourse__phone:hover {
+  transform: translateX(4px);
+}
+
+.findCourse__phoneIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #f4a532;
+  font-size: 1.7rem;
+}
+
+.findCourse__imageArea {
+  position: relative;
+  min-height: 500px;
+  max-width: 520px;
+}
+
+.findCourse__imageCard {
+  position: absolute;
+  overflow: hidden;
+  background: #e9e9e9;
+  box-shadow: 0 18px 40px rgba(19, 33, 68, 0.08);
+}
+
+.findCourse__imageCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.findCourse__imageCard:hover img {
+  transform: scale(1.06);
+}
+
+.findCourse__imageCard--large {
+  left: 0;
+  top: 0;
+  width: 270px;
+  height: 398px;
+  border-radius: 34px;
+}
+
+.findCourse__imageCard--small {
+  left: 300px;
+  bottom: 8px;
+  width: 170px;
+  height: 290px;
+  border-radius: 32px;
+}
+
+.findCourse__shape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.findCourse__shape--big {
+  width: 84px;
+  height: 84px;
+  left: 255px;
+  top: 92px;
+  background: #f4c22f;
+  z-index: 2;
+}
+
+.findCourse__shape--small {
+  width: 36px;
+  height: 36px;
+  left: 372px;
+  top: 48px;
+  background: linear-gradient(180deg, #f6c233 0%, #f28a2f 100%);
+  z-index: 2;
+}
+
+.findCourse__shape--striped {
+  width: 64px;
+  height: 64px;
+  left: 296px;
+  top: 129px;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(109, 145, 187, 0.95) 0 6px,
+    rgba(109, 145, 187, 0) 6px 12px
+  );
+  z-index: 1;
+}
+
+.findCourse__shape--bottom {
+  width: 88px;
+  height: 88px;
+  left: 115px;
+  bottom: 60px;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(109, 145, 187, 0.95) 0 8px,
+    rgba(109, 145, 187, 0) 8px 16px
+  );
+  z-index: 0;
+}
+
+.findCourse__eventList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 40px;
+}
+
+.findCourse__eventCard {
+  position: relative;
+  background: #fbfbfb;
+  border-radius: 24px;
+  padding: 22px 24px 20px;
+  box-shadow: 0 10px 26px rgba(23, 33, 64, 0.05);
+  border: 1px solid #eceff4;
+  opacity: 0;
+  transform: translateY(36px);
+  max-width: 570px;
+}
+
+.findCourse--visible .findCourse__eventCard {
+  animation: findCourseCardUp 0.8s ease forwards;
+}
+
+.findCourse__eventCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 34px rgba(23, 33, 64, 0.09);
+}
+
+.findCourse__eventAccent {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 5px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f6c233 0%, #f28a2f 100%);
+}
+
+.findCourse__eventTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.findCourse__dateTime {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.findCourse__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  color: #5b6472;
+}
+
+.findCourse__meta svg {
+  color: #f2b52f;
+  font-size: 0.88rem;
+}
+
+.findCourse__metaText {
+  font-size: 0.92rem;
+  color: #4e5664;
+}
+
+.findCourse__price {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #0b4ea2;
+  white-space: nowrap;
+}
+
+.findCourse__eventTitle {
+  margin: 0 0 18px;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  font-weight: 700;
+  color: #1d2230;
+}
+
+.findCourse__eventBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.findCourse__teacher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.findCourse__teacherImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.findCourse__teacherName {
+  font-size: 0.92rem;
+  color: #4c5360;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.findCourse__location {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #4c5360;
+}
+
+.findCourse__location svg {
+  color: #f2b52f;
+  flex-shrink: 0;
+}
+
+.findCourse__footerLinkWrap {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 24px;
+  max-width: 570px;
+}
+
+.findCourse__footerLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #0b4ea2;
+  transition: 0.3s ease;
+}
+
+.findCourse__footerLink:hover {
+  transform: translateX(4px);
+}
+
+@keyframes findCourseFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes findCourseCardUp {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1199px) {
+  .findCourse__grid {
+    grid-template-columns: 1fr;
+    gap: 46px;
+  }
+
+  .findCourse__title {
+    font-size: 3.1rem;
+  }
+
+  .findCourse__eventCard,
+  .findCourse__footerLinkWrap {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .findCourse {
+    padding: 70px 16px;
+  }
+
+  .findCourse__title {
+    font-size: 2.45rem;
+    line-height: 1.12;
+  }
+
+  .findCourse__desc {
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+
+  .findCourse__imageArea {
+    min-height: 540px;
+    max-width: 100%;
+  }
+
+  .findCourse__imageCard--large {
+    width: 235px;
+    height: 350px;
+    border-radius: 28px;
+  }
+
+  .findCourse__imageCard--small {
+    left: 190px;
+    width: 150px;
+    height: 255px;
+    border-radius: 28px;
+  }
+
+  .findCourse__shape--big {
+    left: 205px;
+    top: 92px;
+    width: 72px;
+    height: 72px;
+  }
+
+  .findCourse__shape--small {
+    left: 304px;
+    top: 52px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .findCourse__shape--striped {
+    left: 240px;
+    top: 125px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .findCourse__shape--bottom {
+    width: 76px;
+    height: 76px;
+    left: 100px;
+    bottom: 78px;
+  }
+
+  .findCourse__eventCard {
+    padding: 20px 18px 18px;
+    border-radius: 20px;
+  }
+
+  .findCourse__eventBottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .findCourse__footerLinkWrap {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .findCourse__title {
+    font-size: 2.05rem;
+  }
+
+  .findCourse__phone {
+    font-size: 0.96rem;
+  }
+
+  .findCourse__phoneIcon {
+    font-size: 1.5rem;
+  }
+
+  .findCourse__imageArea {
+    min-height: 470px;
+  }
+
+  .findCourse__imageCard--large {
+    width: 180px;
+    height: 285px;
+    border-radius: 24px;
+  }
+
+  .findCourse__imageCard--small {
+    left: 138px;
+    width: 124px;
+    height: 200px;
+    border-radius: 24px;
+  }
+
+  .findCourse__shape--big {
+    left: 160px;
+    top: 70px;
+    width: 58px;
+    height: 58px;
+  }
+
+  .findCourse__shape--small {
+    left: 248px;
+    top: 40px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .findCourse__shape--striped {
+    left: 193px;
+    top: 95px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .findCourse__shape--bottom {
+    width: 62px;
+    height: 62px;
+    left: 70px;
+    bottom: 72px;
+  }
+
+  .findCourse__eventTop {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 14px;
+  }
+
+  .findCourse__eventTitle {
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+
+  .findCourse__teacherName,
+  .findCourse__location,
+  .findCourse__meta,
+  .findCourse__metaText {
+    font-size: 0.86rem;
+  }
+}

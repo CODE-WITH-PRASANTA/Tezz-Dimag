@@ -81,6 +81,11 @@ Pricing
 Testimonial
 </button>
 
+<button onClick={() => scrollToSection("fransice")}>
+Fransice
+</button>
+
+
 <button onClick={() => scrollToSection("contact")}>
 Contact
 </button>
