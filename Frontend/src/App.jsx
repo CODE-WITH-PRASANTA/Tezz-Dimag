@@ -39,16 +39,17 @@ function AppContent() {
     <Topbar />
       <Navbar />
       <News />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetails />} />
         <Route path="/price" element={<Price />} />
+<<<<<<< HEAD
         <Route path="/fransice" element={<Fransice/>}/>
        
+=======
+>>>>>>> b30f73ea30b9c0846ed6dce11f52237586d3148b
       </Routes>
-
       <Footer />
       <FloatingForm/>
       <FloatingButtons />

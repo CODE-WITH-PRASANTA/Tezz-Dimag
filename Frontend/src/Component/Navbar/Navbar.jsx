@@ -53,34 +53,35 @@ const Navbar = () => {
 
            <a href="#home" onClick={() => scrollToSection("home")}>Home</a>
 
-<button onClick={() => scrollToSection("about")}>
-About
-</button>
+              <button onClick={() => scrollToSection("about")}>
+              About
+              </button>
 
-<button onClick={() => scrollToSection("programs")}>
-What is Tezz Dimag
-</button>
+              <button onClick={() => scrollToSection("programs")}>
+              What is Tezz Dimag
+              </button>
 
-<button onClick={() => scrollToSection("courses")}>
-Our Programs
-</button>
+              <button onClick={() => scrollToSection("courses")}>
+              Our Programs
+              </button>
 
-<button onClick={() => scrollToSection("courses")}>
-Course
-</button>
+              <button onClick={() => scrollToSection("courses")}>
+              Course
+              </button>
 
-<button onClick={() => scrollToSection("teacher")}>
-Teacher
-</button>
+              <button onClick={() => scrollToSection("teacher")}>
+              Teacher
+              </button>
 
-<button onClick={() => scrollToSection("admission")}>
-Pricing
-</button>
+              <button onClick={() => scrollToSection("admission")}>
+              Pricing
+              </button>
 
-<button onClick={() => scrollToSection("testimonial")}>
-Testimonial
-</button>
+              <button onClick={() => scrollToSection("testimonial")}>
+              Testimonial
+              </button>
 
+<<<<<<< HEAD
 <button onClick={() => scrollToSection("fransice")}>
 Fransice
 </button>
@@ -89,9 +90,12 @@ Fransice
 <button onClick={() => scrollToSection("contact")}>
 Contact
 </button>
+=======
+              <button onClick={() => scrollToSection("contact")}>
+              Contact
+              </button>
+>>>>>>> b30f73ea30b9c0846ed6dce11f52237586d3148b
              
-
-
             {/* MOBILE FOOTER */}
             <div className="Navbar-mobileFooter">
 
