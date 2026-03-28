@@ -293,22 +293,6 @@
   right: 8px;
 }
 
-.fransiceHome__bgText {
-  position: absolute;
-  left: -8px;
-  top: 47%;
-  transform: translateY(-50%);
-  font-family: "Outfit", sans-serif;
-  font-size: clamp(110px, 14vw, 230px);
-  line-height: 0.8;
-  font-weight: 700;
-  color: rgba(244, 122, 52, 0.08);
-  letter-spacing: -5px;
-  user-select: none;
-  pointer-events: none;
-  z-index: 1;
-}
-
 .fransiceHome__shape {
   position: absolute;
   pointer-events: none;
@@ -534,14 +518,6 @@
   .fransiceHome__shape--tealRing {
     left: 14%;
     bottom: 94px;
-  }
-
-  .fransiceHome__bgText {
-    top: 44%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: clamp(78px, 13vw, 160px);
-    text-align: center;
   }
 
   .fransiceHome__photo--large {
@@ -788,11 +764,6 @@
   .fransiceHome__shape--dotTopThree {
     right: 8px;
   }
-
-  .fransiceHome__bgText {
-    font-size: 68px;
-    top: 46%;
-  }
 }
 
 @media (max-width: 480px) {
@@ -854,9 +825,5 @@
   .fransiceHome__shape--panel {
     width: 360px;
     height: 360px;
-  }
-
-  .fransiceHome__bgText {
-    font-size: 56px;
   }
 }

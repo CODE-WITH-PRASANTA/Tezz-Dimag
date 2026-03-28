@@ -62,8 +62,6 @@ const FransiceHome = () => {
       ref={sectionRef}
       className={`${base} ${visible ? `${base}--visible` : ""}`}
     >
-      <div className={`${base}__bgText`}>Shelly</div>
-
       <div className={`${base}__shape ${base}__shape--panel`}></div>
       <div className={`${base}__shape ${base}__shape--orangeLg`}></div>
       <div className={`${base}__shape ${base}__shape--orangeSm`}></div>
@@ -77,9 +75,13 @@ const FransiceHome = () => {
 
       <div className={`${base}__container`}>
         <div className={`${base}__content`}>
-          <div className={`${base}__topText ${base}__reveal ${base}__reveal--zero`}>
+          <div
+            className={`${base}__topText ${base}__reveal ${base}__reveal--zero`}
+          >
             <span className={`${base}__miniLine`}></span>
-            <span className={`${base}__eyebrow`}>Best Online Learning Platform</span>
+            <span className={`${base}__eyebrow`}>
+              Best Online Learning Platform
+            </span>
           </div>
 
           <h1 className={`${base}__title ${base}__reveal ${base}__reveal--one`}>
@@ -89,15 +91,18 @@ const FransiceHome = () => {
           </h1>
 
           <p className={`${base}__lead ${base}__reveal ${base}__reveal--two`}>
-            Learn from expert mentors, explore engaging lessons, and build your
-            future with a smarter, faster, and more enjoyable learning experience.
+            For Tezzdimag Kids Gurukulam Preschool Partners
+
+            We provide a complete academic and operational ecosystem designed to
+            help franchise partners start with confidence, operate smoothly, and
+            grow profitably. Our structured training, ready-to-use resources,
+            and ongoing implementation support ensure long-term success.
           </p>
 
           <p className={`${base}__desc ${base}__reveal ${base}__reveal--three`}>
-            Mauris malesuada enim eget blandit gravida. Duis hendrerit cursus
-            turpis, id mollis est rutrum nec. Sed interdum nisi id libero
-            tincidunt, sit amet vestibulum tortor porttitor. Cras ligula lacus,
-            ullamcorper sed, dignissim in, gravida a magna.
+            We offer a complete academic and operational system to help
+            franchise partners start, run, and grow successfully with
+            structured training and practical support.
           </p>
 
           <form

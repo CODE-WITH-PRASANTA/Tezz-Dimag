@@ -14,6 +14,7 @@ import ClubsSection from "../../Component/ClubsSection/ClubsSection";
 import FaqSection from "../../Component/FaqSection/FaqSection";
 import StudentKnowledgeSection from "../../Component/StudentKnowledgeSection/StudentKnowledgeSection";
 import PricingSection from "../../Component/PricingSection/PricingSection";
+import AwardSection from "../../Component/AwardSection/AwardSection";
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
       <section id="home">
         <HeroSection />
       </section>
+      
 
       <section id="about">
         <AboutSection />
@@ -51,6 +53,10 @@ const Home = () => {
 
       <section id="blog">
         <OurBlog />
+      </section>
+
+      <section id="award">
+        <AwardSection/>
       </section>
 
       <section id="gallery">

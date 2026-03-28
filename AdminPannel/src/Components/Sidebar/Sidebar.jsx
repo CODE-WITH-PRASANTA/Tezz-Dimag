@@ -13,6 +13,7 @@ import {
   FaBullhorn,
   FaUserPlus,
   FaList,
+  FaUserGraduate,
   FaImages
 } from "react-icons/fa";
 
@@ -71,6 +72,16 @@ const menuItems = [
     path: "/admin/gallery",
     name: "Gallery",
     icon: FaImages,
+  },
+  {
+    path: "/admin/student",
+    name: "StudentInfo",
+    icon: FaUserGraduate,
+  },
+  {
+    path: "/admin/studentdetails",
+    name: "StudentDetails",
+    icon: FaUserGraduate,
   },
 ];
 

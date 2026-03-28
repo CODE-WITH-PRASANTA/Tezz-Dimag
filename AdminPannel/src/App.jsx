@@ -12,6 +12,8 @@ import AdminAdvertisement from "./Pages/AdminAdvertisement";
 import AdminColdLeads from "./Pages/AdminColdLeads";
 import AdmissionList from "./Pages/AdmissionList ";
 import GalleryAdmin from "./Pages/GalleryAdmin";
+import StudentInfo from "./Pages/StudentInfo/StudentInfo";
+import StudentDetails from "./Pages/StudentDetails/StudentDetails";
 
 // import CoursesPost from "./pages/CoursesPost";
 // import Testimonial from "./pages/Testimonial";
@@ -40,6 +42,9 @@ function App() {
         <Route path="/admin/coldlead" element={<AdminColdLeads />} />
         <Route path="/admin/admission-list" element={<AdmissionList />} />
         <Route path="/admin/gallery" element={<GalleryAdmin />} />
+        <Route path="/admin/student" element={<StudentInfo/>}/>
+        <Route path="/admin/studentdetails" element={<StudentDetails/>}/>
+
 
         </Route>
 

@@ -76,7 +76,7 @@ position:relative;
 .ourgallary-track{
 display:flex;
 gap:25px;
-animation: galleryScroll 30s linear infinite;
+animation: galleryScroll 10s linear infinite;
 }
 
 
