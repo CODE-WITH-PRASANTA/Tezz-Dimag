@@ -81,7 +81,6 @@ const Navbar = () => {
               Testimonial
               </button>
 
-<<<<<<< HEAD
 <button onClick={() => scrollToSection("fransice")}>
 Fransice
 </button>
@@ -90,11 +89,9 @@ Fransice
 <button onClick={() => scrollToSection("contact")}>
 Contact
 </button>
-=======
               <button onClick={() => scrollToSection("contact")}>
               Contact
               </button>
->>>>>>> b30f73ea30b9c0846ed6dce11f52237586d3148b
              
             {/* MOBILE FOOTER */}
             <div className="Navbar-mobileFooter">

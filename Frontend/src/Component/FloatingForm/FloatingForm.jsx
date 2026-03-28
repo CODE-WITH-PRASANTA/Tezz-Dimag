@@ -194,12 +194,12 @@ const FloatingForm = () => {
             </div>
 
             <div className="floatingform-actions">
-              <a href="tel:7014627894" className="floatingform-action call">
+              <a href="tel:7327817155" className="floatingform-action call">
                 <FaPhoneAlt /> Call Us
               </a>
 
               <a
-                href="https://wa.me/919887868746"
+                href="https://wa.me/917327817155"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="floatingform-action whatsapp"
